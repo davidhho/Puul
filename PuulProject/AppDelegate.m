@@ -1,13 +1,15 @@
 //
 //  AppDelegate.m
-//  PuulProject
+//  Pool
 //
-//  Created by David Ho on 7/7/15.
+//  Created by David Ho on 3/16/15.
 //  Copyright (c) 2015 David Ho. All rights reserved.
 //
 
 #import "AppDelegate.h"
 
+#import "PURoute.h"
+#import "UIColor+PUColors.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +18,23 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [PURoute registerSubclass];
+    
+    [Parse setApplicationId:@"ivGqdOBrW4N9wEy16QeOoYm4IXDKnPkfmsNKUwoZ"
+                  clientKey:@"oL6VguODNoKrG1uyLxiWRgh0lMt2VjBxKJ7ZC9pr"];
+    
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    NSDictionary *textTitleOptions = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil];
+    [[UINavigationBar appearance] setTitleTextAttributes:textTitleOptions];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    [[UITabBar appearance] setTintColor:[UIColor puulRedColor]];
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
@@ -42,4 +60,7 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)setNewRootViewController:(UIViewController*)newViewController{
+    self.window.rootViewController = newViewController;
+}
 @end
