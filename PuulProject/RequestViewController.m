@@ -9,18 +9,32 @@
 
 #import "RequestViewController.h"
 #import "UIColor+PUColors.h"
+#import "Parse/Parse.h"
 
 @interface RequestViewController ()
 
 @end
-
 @implementation RequestViewController
+@synthesize findmeARideButton;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor puulRedColor];
+    findmeARideButton.layer.cornerRadius = 4.0f;
+    findmeARideButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    findmeARideButton.layer.borderWidth = 1.0f;
+    findmeARideButton.clipsToBounds =YES;
+   
     
+}
+
+- (void) checkFieldsComplete{
+    if ([_startAddress.text isEqualToString:@""] || [_pickUpTime.text isEqualToString:@""]|| [_endAddress.text isEqualToString:@""] || [_pay.text isEqualToString:@""]){
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops" message:@"You did not fill all the fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,5 +51,40 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (void) addRide{
+   }
 
+- (IBAction)findMeARide:(id)sender {
+        [self checkFieldsComplete];
+    NSString *startAddressString = _startAddress.text;
+    NSString *pickUpTimeString = _pickUpTime.text;
+    NSString *endAddressString = _endAddress.text;
+    NSString *payString = _pay.text;
+    
+    
+    PFObject *newRide = [PFObject objectWithClassName:@"Ride"];
+    newRide[@"startAddress"] = startAddressString;
+    newRide[@"pickUpTime"] = pickUpTimeString;
+    newRide[@"endAddress"] = endAddressString;
+    newRide[@"pay"] = payString;
+    
+    [newRide saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded == YES){
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ride" message:@"Your Ride has been Requested" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert show];
+            
+            NSLog(@"Ride Request Success");
+
+            UIStoryboard *mainstoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            
+            UIViewController *loginvc=[mainstoryboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+                        [self presentViewController:loginvc animated:NO completion:nil];
+        }
+        else {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops" message:@"Your Ride wasn't Requested" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert show];
+        }
+    }];
+
+}
 @end

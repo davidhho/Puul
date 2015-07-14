@@ -280,8 +280,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="20" width="53" height="30"/>
+                                    <rect key="frame" x="16" y="28" width="53" height="30"/>
                                 </variation>
+                                <connections>
+                                    <segue destination="6Fz-wE-szw" kind="show" id="7u8-Vq-ZIf"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request A Ride" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tf7-gC-4fu">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -289,44 +292,22 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="124" y="28" width="153" height="40.5"/>
+                                    <rect key="frame" x="124" y="40" width="153" height="40.5"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaR-Mm-4NT">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EL3-Qj-f1H">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Find Me A Ride!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="9" y="119" width="42" height="21"/>
-                                </variation>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8FJ-lX-lub">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="9" y="160" width="351" height="30"/>
-                                </variation>
-                            </textField>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="m83-yu-h9g">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="62" y="108" width="298" height="44"/>
+                                    <rect key="frame" x="-25" y="544" width="425" height="30"/>
                                 </variation>
                                 <connections>
-                                    <outlet property="delegate" destination="jo0-KN-lum" id="BV3-AQ-Wfj"/>
+                                    <action selector="findMeARide:" destination="jo0-KN-lum" eventType="touchUpInside" id="yeu-d1-It2"/>
                                 </connections>
-                            </searchBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pick Up Time" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lRP-1c-fGt">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="109" y="198" width="150" height="30"/>
-                                </variation>
-                            </textField>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3n-kk-RW8">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -371,52 +352,83 @@
                                     <rect key="frame" x="163" y="438" width="97" height="30"/>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EL3-Qj-f1H">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Find Me A Ride!">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaR-Mm-4NT">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="129" y="544" width="110" height="30"/>
+                                    <rect key="frame" x="9" y="143" width="42" height="21"/>
                                 </variation>
-                            </button>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8FJ-lX-lub">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="9" y="184" width="351" height="30"/>
+                                </variation>
+                            </textField>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="m83-yu-h9g">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="62" y="132" width="298" height="44"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="jo0-KN-lum" id="BV3-AQ-Wfj"/>
+                                </connections>
+                            </searchBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pick Up Time" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lRP-1c-fGt">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="109" y="222" width="150" height="30"/>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="CWW-2d-wni"/>
                                 <exclude reference="Tf7-gC-4fu"/>
-                                <exclude reference="qaR-Mm-4NT"/>
-                                <exclude reference="8FJ-lX-lub"/>
-                                <exclude reference="m83-yu-h9g"/>
-                                <exclude reference="lRP-1c-fGt"/>
+                                <exclude reference="EL3-Qj-f1H"/>
                                 <exclude reference="f3n-kk-RW8"/>
                                 <exclude reference="3cP-1e-XIT"/>
                                 <exclude reference="Tkz-dd-9J9"/>
                                 <exclude reference="hCZ-gP-zMU"/>
                                 <exclude reference="r26-RR-wj9"/>
-                                <exclude reference="EL3-Qj-f1H"/>
+                                <exclude reference="qaR-Mm-4NT"/>
+                                <exclude reference="8FJ-lX-lub"/>
+                                <exclude reference="m83-yu-h9g"/>
+                                <exclude reference="lRP-1c-fGt"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="CWW-2d-wni"/>
                                 <include reference="Tf7-gC-4fu"/>
-                                <include reference="qaR-Mm-4NT"/>
-                                <include reference="8FJ-lX-lub"/>
-                                <include reference="m83-yu-h9g"/>
-                                <include reference="lRP-1c-fGt"/>
+                                <include reference="EL3-Qj-f1H"/>
                                 <include reference="f3n-kk-RW8"/>
                                 <include reference="3cP-1e-XIT"/>
                                 <include reference="Tkz-dd-9J9"/>
                                 <include reference="hCZ-gP-zMU"/>
                                 <include reference="r26-RR-wj9"/>
-                                <include reference="EL3-Qj-f1H"/>
+                                <include reference="qaR-Mm-4NT"/>
+                                <include reference="8FJ-lX-lub"/>
+                                <include reference="m83-yu-h9g"/>
+                                <include reference="lRP-1c-fGt"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="endAddress" destination="Tkz-dd-9J9" id="t56-gv-M6S"/>
+                        <outlet property="findmeARideButton" destination="EL3-Qj-f1H" id="Qrb-yy-b5K"/>
+                        <outlet property="pay" destination="r26-RR-wj9" id="PHt-5R-meH"/>
+                        <outlet property="pickUpTime" destination="lRP-1c-fGt" id="LJ3-iq-BKX"/>
                         <outlet property="searchDisplayController" destination="aa8-Q5-3sm" id="uWr-vM-2em"/>
+                        <outlet property="startAddress" destination="8FJ-lX-lub" id="cee-Bf-0xv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Gw-6U-2qE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -439,7 +451,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-2562" y="-1604"/>
+            <point key="canvasLocation" x="-2607" y="-1592"/>
         </scene>
         <!--Profile-->
         <scene sceneID="LYf-Bg-Rz0">
@@ -618,4 +630,7 @@
         <image name="profile.png" width="32" height="32"/>
         <image name="settings.png" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="7u8-Vq-ZIf"/>
+    </inferredMetricsTieBreakers>
 </document>
