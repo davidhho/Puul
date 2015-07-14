@@ -28,6 +28,8 @@
 		EE48F70B1B4EFA0400E6792C /* feed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE48F7071B4EFA0400E6792C /* feed@2x.png */; };
 		EE48F70C1B4EFA0400E6792C /* profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE48F7081B4EFA0400E6792C /* profile@2x.png */; };
 		EE48F70D1B4EFA0400E6792C /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE48F7091B4EFA0400E6792C /* settings@2x.png */; };
+		EE9481CF1B5453C300E2DD4A /* RequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9481CE1B5453C300E2DD4A /* RequestViewController.m */; };
+		EE9481D21B5453DE00E2DD4A /* GiveRideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9481D11B5453DE00E2DD4A /* GiveRideViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,10 @@
 		EE48F7071B4EFA0400E6792C /* feed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "feed@2x.png"; path = "../../Puul/Puul/feed@2x.png"; sourceTree = "<group>"; };
 		EE48F7081B4EFA0400E6792C /* profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "profile@2x.png"; path = "../../Puul/Puul/profile@2x.png"; sourceTree = "<group>"; };
 		EE48F7091B4EFA0400E6792C /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings@2x.png"; path = "../../Puul/Puul/settings@2x.png"; sourceTree = "<group>"; };
+		EE9481CD1B5453C300E2DD4A /* RequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestViewController.h; sourceTree = "<group>"; };
+		EE9481CE1B5453C300E2DD4A /* RequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestViewController.m; sourceTree = "<group>"; };
+		EE9481D01B5453DE00E2DD4A /* GiveRideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiveRideViewController.h; sourceTree = "<group>"; };
+		EE9481D11B5453DE00E2DD4A /* GiveRideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiveRideViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,8 +241,7 @@
 		EE48F6F31B4DB82100E6792C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EE48F6F41B4DBB2D00E6792C /* ProfileViewController.h */,
-				EE48F6F51B4DBB2D00E6792C /* ProfileViewController.m */,
+				EE48F70F1B4F24B600E6792C /* ProfileViewControllers */,
 				EE48F6F71B4DBC4E00E6792C /* SettingsViewController.h */,
 				EE48F6F81B4DBC4E00E6792C /* SettingsViewController.m */,
 				EE48F6FA1B4EE97C00E6792C /* MainViewController.h */,
@@ -256,6 +261,19 @@
 				EE48F7091B4EFA0400E6792C /* settings@2x.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		EE48F70F1B4F24B600E6792C /* ProfileViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EE48F6F41B4DBB2D00E6792C /* ProfileViewController.h */,
+				EE48F6F51B4DBB2D00E6792C /* ProfileViewController.m */,
+				EE9481CD1B5453C300E2DD4A /* RequestViewController.h */,
+				EE9481CE1B5453C300E2DD4A /* RequestViewController.m */,
+				EE9481D01B5453DE00E2DD4A /* GiveRideViewController.h */,
+				EE9481D11B5453DE00E2DD4A /* GiveRideViewController.m */,
+			);
+			name = ProfileViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,12 +416,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE48F6D71B4C807100E6792C /* PURoute.m in Sources */,
+				EE9481D21B5453DE00E2DD4A /* GiveRideViewController.m in Sources */,
 				EE044AF91B4C531F0052CC67 /* AppDelegate.m in Sources */,
 				EE48F6F91B4DBC4E00E6792C /* SettingsViewController.m in Sources */,
 				EE48F6FC1B4EE97C00E6792C /* MainViewController.m in Sources */,
 				EE48F6CD1B4C6BB900E6792C /* UIColor+PUColors.m in Sources */,
 				EE48F6EF1B4DA1CE00E6792C /* LoginViewController.m in Sources */,
 				EE044AF61B4C531F0052CC67 /* main.m in Sources */,
+				EE9481CF1B5453C300E2DD4A /* RequestViewController.m in Sources */,
 				EE48F6CC1B4C6BB900E6792C /* UIImage+PUImageExtensions.m in Sources */,
 				EE48F6C61B4C6B9700E6792C /* PUUtility.m in Sources */,
 				EE48F6F61B4DBB2D00E6792C /* ProfileViewController.m in Sources */,

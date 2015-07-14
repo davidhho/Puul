@@ -11,6 +11,7 @@
 #import "Parse/Parse.h"
 
 @implementation SignUpViewController
+@synthesize registerButton;
 
 UITableView *sTableView;
 
@@ -34,6 +35,12 @@ UITableView *sTableView;
 -(void) viewDidLoad{
     self.title = @"Sign Up";
     self.view.backgroundColor = [UIColor puulRedColor];
+    registerButton.layer.cornerRadius = 4.0f;
+    registerButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    registerButton.layer.borderWidth = 1.0f;
+    registerButton.clipsToBounds = YES;
+
+    
 
 }
 
@@ -62,6 +69,10 @@ UITableView *sTableView;
     if (user.username !=nil){
         [self performSegueWithIdentifier:@"login" sender: self];
     }
+    registerButton.layer.cornerRadius = 4.0f;
+    registerButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    registerButton.layer.borderWidth = 1.0f;
+    registerButton.clipsToBounds = YES;
 }
 
 
@@ -69,8 +80,7 @@ UITableView *sTableView;
     PFUser *newUser = [PFUser user];
     newUser.username = _usernameField.text;
     newUser.email = _emailField.text;
-    newUser.password = _passwordField.text;
- 
+    newUser.password = _passwordField.text; 
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
         if (!error){
             NSLog(@"Registration Complete");

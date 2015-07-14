@@ -21,7 +21,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *Puul;
 @property (weak, nonatomic) IBOutlet UIButton *Register;
 @property (weak, nonatomic) IBOutlet UIButton *Login;
-- (IBAction)SignUp:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
+
 
 
 - (IBAction)registerUser:(id)sender;

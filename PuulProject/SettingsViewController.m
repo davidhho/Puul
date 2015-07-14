@@ -13,7 +13,6 @@
 @implementation SettingsViewController
 
 -(void) viewDidLoad{
-    self.view.backgroundColor = [UIColor puulRedColor];
 
 }
 

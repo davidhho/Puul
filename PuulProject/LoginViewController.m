@@ -18,13 +18,17 @@
     self.title = @"Login";
     self.view.backgroundColor = [UIColor puulRedColor];
 //    loginButton.layer.backgroundColor = [UIColor grayColor];
+    loginButton.layer.cornerRadius = 4.0f;
     loginButton.layer.borderColor = [UIColor whiteColor].CGColor;
     loginButton.layer.borderWidth = 1.0f;
+    loginButton.clipsToBounds = YES;
 
     
     
     
 }
+
+
 - (IBAction)LoginButton:(id)sender {
     [PFUser logInWithUsernameInBackground:_loginUsernameField.text password:_loginPasswordField.text block:^(PFUser *user, NSError *error){
         if (!error) {
