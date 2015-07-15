@@ -25,7 +25,6 @@
     
     [super viewDidAppear:YES];
     
-    
 }
 
 -(void)didLogin{

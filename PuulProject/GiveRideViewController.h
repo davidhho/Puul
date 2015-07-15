@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GiveRideViewController : UIViewController
+@interface GiveRideViewController : UIViewController <UITextFieldDelegate> {
+    IBOutlet UIScrollView *scroller;
+}
+@property (weak, nonatomic) IBOutlet UITextField *startCity;
+@property (weak, nonatomic) IBOutlet UITextField *startAddress;
+@property (weak, nonatomic) IBOutlet UITextField *stops;
+@property (weak, nonatomic) IBOutlet UITextField *endCity;
+@property (weak, nonatomic) IBOutlet UITextField *endAddress;
+@property (weak, nonatomic) IBOutlet UITextField *requestedPay;
+
+- (IBAction)drive:(id)sender;
+
+- (IBAction)backgroundTap:(id)sender;
+
+- (IBAction)backButton:(id)sender;
 
 @end

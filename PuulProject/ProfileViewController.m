@@ -43,7 +43,6 @@ PFFile *imageFile;
     profile.layer.masksToBounds = TRUE;
     profile.image = [UIImage imageWithData:[imageFile getData]];
     
-    
 
 }
 
@@ -72,10 +71,10 @@ PFFile *imageFile;
              imageFile = [objects objectAtIndex:0][@"profilePic"];
              profile.image = [UIImage imageWithData:[imageFile getData]];
              self.profile.image = [UIImage imageWithData:[imageFile getData]];
-            [[objects objectAtIndex:0] save];
+            [[objects objectAtIndex:0] saveInBackground];
          }
          else{
-             
+             //:)
          }
          
      }];

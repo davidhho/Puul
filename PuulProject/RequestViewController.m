@@ -31,8 +31,8 @@
 }
 
 - (void) checkFieldsComplete{
-    if ([_startAddress.text isEqualToString:@""] || [_pickUpTime.text isEqualToString:@""]|| [_endAddress.text isEqualToString:@""] || [_pay.text isEqualToString:@""]){
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops" message:@"You did not fill all the fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    if ([_startAddress.text isEqualToString:@""] || [_pickUpTime.text isEqualToString:@""]|| [_startCity.text isEqualToString:@""] || [_endAddress.text isEqualToString:@""] || [_pay.text isEqualToString:@""] || [_endCity.text isEqualToString:@""]){
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops" message:@"You did not complete all the fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
 }
@@ -58,15 +58,19 @@
         [self checkFieldsComplete];
     NSString *startAddressString = _startAddress.text;
     NSString *pickUpTimeString = _pickUpTime.text;
+    NSString *startCityString = _startCity.text;
     NSString *endAddressString = _endAddress.text;
     NSString *payString = _pay.text;
+    NSString *endCityString = _endCity.text;
     
     
     PFObject *newRide = [PFObject objectWithClassName:@"Ride"];
     newRide[@"startAddress"] = startAddressString;
     newRide[@"pickUpTime"] = pickUpTimeString;
+    newRide[@"startCity"] = startCityString;
     newRide[@"endAddress"] = endAddressString;
     newRide[@"pay"] = payString;
+    newRide[@"endCity"] = endCityString;
     
     [newRide saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded == YES){
@@ -76,6 +80,7 @@
             NSLog(@"Ride Request Success");
 
             UIStoryboard *mainstoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            
             
             UIViewController *loginvc=[mainstoryboard instantiateViewControllerWithIdentifier:@"MainViewController"];
                         [self presentViewController:loginvc animated:NO completion:nil];
@@ -87,4 +92,19 @@
     }];
 
 }
+
+- (IBAction)backButton:(id)sender {
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)backgroundTap:(id)sender {
+    [self.view endEditing:YES];
+}
+
+- (BOOL) textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+
 @end
