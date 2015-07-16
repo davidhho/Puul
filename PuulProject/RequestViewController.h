@@ -21,7 +21,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *findmeARideButton;
 
 - (IBAction)findMeARide:(id)sender;
+
 - (IBAction)backButton:(id)sender;
+
 - (IBAction)backgroundTap:(id)sender;
 
 @end

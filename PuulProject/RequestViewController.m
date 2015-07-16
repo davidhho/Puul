@@ -72,7 +72,6 @@
     newRide[@"endAddress"] = endAddressString;
     newRide[@"pay"] = payString;
     newRide[@"endCity"] = endCityString;
-    newRide[@"driver"] = NO;
     
     [newRide saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded == YES){
