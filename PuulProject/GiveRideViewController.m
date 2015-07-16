@@ -13,6 +13,7 @@
 
 @interface GiveRideViewController ()
 
+
 @end
 
 @implementation GiveRideViewController
@@ -23,6 +24,11 @@
     [scroller setScrollEnabled:YES];
     [scroller setContentSize:CGSizeMake(400, 708)];
     // Do any additional setup after loading the view.
+    _driveButton.layer.cornerRadius = 4.0f;
+    _driveButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    _driveButton.layer.borderWidth = 1.0f;
+    _driveButton.clipsToBounds = YES;
+
     
 
 }
@@ -41,7 +47,7 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+//Sends information about the Drive to Parse
 - (IBAction)drive:(id)sender {
     [self checkFieldsComplete];
     NSString *startCityString = _startCity.text;
@@ -80,6 +86,8 @@
     
 }
 
+//Makes keyboard disappear when clicked away
+
 - (IBAction)backgroundTap:(id)sender {
     [self.view endEditing:YES];
 }
@@ -89,8 +97,9 @@
         [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
+//Makes sure fields are complete
 - (void) checkFieldsComplete{
-    if ([_startAddress.text isEqualToString:@""] || [_stops.text isEqualToString:@""]|| [_startCity.text isEqualToString:@""] || [_endAddress.text isEqualToString:@""] || [_requestedPay.text isEqualToString:@""] || [_endCity.text isEqualToString:@""]){
+    if ([_startAddress.text isEqualToString:@""] || [_startCity.text isEqualToString:@""] || [_endAddress.text isEqualToString:@""] || [_requestedPay.text isEqualToString:@""] || [_endCity.text isEqualToString:@""]){
         
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops" message:@"You did not complete all the fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];

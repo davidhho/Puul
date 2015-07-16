@@ -29,6 +29,11 @@
 }
 
 
+
+- (IBAction)backgroundTap:(id)sender {
+    [self.view endEditing:YES];
+}
+
 - (IBAction)LoginButton:(id)sender {
     [PFUser logInWithUsernameInBackground:_loginUsernameField.text password:_loginPasswordField.text block:^(PFUser *user, NSError *error){
         if (!error) {
@@ -69,5 +74,11 @@
         UIViewController *loginvc=[mainstoryboard instantiateViewControllerWithIdentifier:@"MainViewController"];
         [self presentViewController:loginvc animated:NO completion:nil];
     }
+
+
+}
+- (BOOL) textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
 }
 @end

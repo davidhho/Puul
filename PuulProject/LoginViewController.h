@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *loginUsernameField;
 @property (weak, nonatomic) IBOutlet UITextField *loginPasswordField;
@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *Puul;
 @property (weak, nonatomic) IBOutlet UIButton *Register;
 @property (weak, nonatomic) IBOutlet UIButton *Login;
+
+- (IBAction)backgroundTap:(id)sender;
 
 
 

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SignUpViewController : UIViewController
+@interface SignUpViewController : UIViewController <UITextFieldDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
@@ -26,6 +26,7 @@
 
 
 - (IBAction)registerUser:(id)sender;
+- (IBAction)backgroundTap:(id)sender;
 
 
 @end

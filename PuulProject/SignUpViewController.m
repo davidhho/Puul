@@ -32,6 +32,11 @@ UITableView *sTableView;
     }
 
 }
+
+- (IBAction)backgroundTap:(id)sender {
+
+    [self.view endEditing:YES];
+}
 -(void) viewDidLoad{
     self.title = @"Sign Up";
     self.view.backgroundColor = [UIColor puulRedColor];
@@ -104,7 +109,11 @@ UITableView *sTableView;
             NSLog(@"Registration Unsucccessful");
         }
     }];
-    
+
+}
+- (BOOL) textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

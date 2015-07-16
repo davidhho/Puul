@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *endCity;
 @property (weak, nonatomic) IBOutlet UITextField *endAddress;
 @property (weak, nonatomic) IBOutlet UITextField *requestedPay;
+@property (weak, nonatomic) IBOutlet UIButton *driveButton;
 
 - (IBAction)drive:(id)sender;
 

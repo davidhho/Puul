@@ -30,6 +30,8 @@
     
 }
 
+//Makes sure all fields are completed before
+
 - (void) checkFieldsComplete{
     if ([_startAddress.text isEqualToString:@""] || [_pickUpTime.text isEqualToString:@""]|| [_startCity.text isEqualToString:@""] || [_endAddress.text isEqualToString:@""] || [_pay.text isEqualToString:@""] || [_endCity.text isEqualToString:@""]){
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops" message:@"You did not complete all the fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -51,8 +53,7 @@
     // Pass the selected object to the new view controller.
 }
 */
-- (void) addRide{
-   }
+
 
 - (IBAction)findMeARide:(id)sender {
         [self checkFieldsComplete];
@@ -63,7 +64,7 @@
     NSString *payString = _pay.text;
     NSString *endCityString = _endCity.text;
     
-    
+//Sends information of ride to Parse
     PFObject *newRide = [PFObject objectWithClassName:@"Ride"];
     newRide[@"startAddress"] = startAddressString;
     newRide[@"pickUpTime"] = pickUpTimeString;
@@ -71,6 +72,7 @@
     newRide[@"endAddress"] = endAddressString;
     newRide[@"pay"] = payString;
     newRide[@"endCity"] = endCityString;
+    newRide[@"driver"] = NO;
     
     [newRide saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded == YES){
@@ -97,6 +99,7 @@
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
+//Makes keyboard disappear when clicked away
 - (IBAction)backgroundTap:(id)sender {
     [self.view endEditing:YES];
 }
