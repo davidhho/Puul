@@ -64,6 +64,7 @@
     newRide[@"endAddress"] = endAddressString;
     newRide[@"pay"] = requestedPayString;
     newRide[@"endCity"] = endCityString;
+
     
     [newRide saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
         if (succeeded == YES){
@@ -104,6 +105,10 @@
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops" message:@"You did not complete all the fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
 
+    }
+    if ([_startAddress.text isEqualToString:@"hw"] || [_startAddress.text isEqualToString:@"Hw"] || [_startAddress.text isEqualToString:@"HW"] || [_endAddress.text isEqualToString:@"hw"] ||[_endAddress.text isEqualToString:@"Hw"] || [_endAddress.text isEqualToString:@"HW"]){
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops" message:@"One of the Address's must be 'HW'" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
     }
 }
 

@@ -64,6 +64,7 @@ PFFile *imageFile;
     PFQuery *query = [PFQuery queryWithClassName:@"_User"];
     [query whereKey:@"username" equalTo:self.UsernameLabel.text];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     
      {
          if(!error)
          {

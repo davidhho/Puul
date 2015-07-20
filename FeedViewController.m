@@ -8,12 +8,14 @@
 
 #import "FeedViewController.h"
 #import "LoginViewController.h"
+#import <Parse/Parse.h>
 
-@interface FeedViewController ()
+@interface FeedViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @end
 
 @implementation FeedViewController
+@synthesize givenRidesTableView, requestedViewController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,6 +27,12 @@
     
     [super viewDidAppear:YES];
     
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    self.requestedViewController.hidden = YES;
+
+    [super viewWillAppear:YES];
 }
 
 -(void)didLogin{
@@ -63,4 +71,26 @@
 }
 */
 
+- (void) retrieveFromParse {
+    
+    
+}
+
+- (IBAction)changeRides:(UISegmentedControl *)sender {
+    switch (sender.selectedSegmentIndex) {
+        case 0:
+            self.givenRidesTableView.hidden = NO;
+            self.requestedViewController.hidden = YES;
+            break;
+            
+        case 1:
+            self.givenRidesTableView.hidden = YES;
+            self.requestedViewController.hidden = NO;
+            break;
+            
+        default:
+            break;
+    }
+    
+}
 @end
