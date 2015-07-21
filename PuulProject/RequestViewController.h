@@ -7,22 +7,29 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface RequestViewController : UIViewController <UITextFieldDelegate>
+@interface RequestViewController : UIViewController <UITextFieldDelegate, CLLocationManagerDelegate, MKMapViewDelegate>{
+    CLLocation *currentLocation;
+    CLLocationCoordinate2D currentCenter;
+}
 @property (weak, nonatomic) IBOutlet UITextField *startAddress;
-@property (weak, nonatomic) IBOutlet UITextField *pickUpTime;
-@property (weak, nonatomic) IBOutlet UITextField *startCity;
+
+@property (strong, nonatomic) IBOutlet MKMapView *requestRideMap;
 
 
 @property (weak, nonatomic) IBOutlet UITextField *endAddress;
-@property (weak, nonatomic) IBOutlet UITextField *pay;
-@property (weak, nonatomic) IBOutlet UITextField *endCity;
+
+
+@property (strong, nonatomic) CLLocationManager *locationManager;
+
 
 @property (weak, nonatomic) IBOutlet UIButton *findmeARideButton;
 
 - (IBAction)findMeARide:(id)sender;
 
-- (IBAction)backButton:(id)sender;
 
 - (IBAction)backgroundTap:(id)sender;
 

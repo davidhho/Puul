@@ -12,7 +12,9 @@
 #import "Parse/Parse.h"
 
 @implementation LoginViewController
-@synthesize loginButton;
+@synthesize loginButton, loginPasswordField, loginUsernameField;
+
+
 
 -(void) viewDidLoad{
     self.title = @"Login";
@@ -22,8 +24,10 @@
     loginButton.layer.borderColor = [UIColor whiteColor].CGColor;
     loginButton.layer.borderWidth = 1.0f;
     loginButton.clipsToBounds = YES;
-
-    
+    loginUsernameField.returnKeyType = UIReturnKeyNext;
+    loginPasswordField.returnKeyType = UIReturnKeyGo;
+    loginPasswordField.delegate = self;
+    loginUsernameField.delegate = self;
     
     
 }
@@ -35,7 +39,7 @@
 }
 
 - (IBAction)LoginButton:(id)sender {
-    [PFUser logInWithUsernameInBackground:_loginUsernameField.text password:_loginPasswordField.text block:^(PFUser *user, NSError *error){
+    [PFUser logInWithUsernameInBackground:loginUsernameField.text password:loginPasswordField.text block:^(PFUser *user, NSError *error){
         if (!error) {
             NSLog(@"Login User");
 //            [self performSegueWithIdentifier:@"login" sender:self];
@@ -79,6 +83,14 @@
 }
 - (BOOL) textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
+    if (textField.returnKeyType == UIReturnKeyNext)
+    {
+        [loginPasswordField becomeFirstResponder];
+    }
+    if (textField.returnKeyType == UIReturnKeyGo)
+    {
+    [self LoginButton:self];
+    }
     return YES;
 }
 @end

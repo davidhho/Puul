@@ -17,6 +17,7 @@ UITableView *sTableView;
 
 
 -(IBAction)registerUser:(id)sender{
+    
     [_usernameField resignFirstResponder];
     [_emailField resignFirstResponder];
     [_passwordField resignFirstResponder];
@@ -44,7 +45,13 @@ UITableView *sTableView;
     registerButton.layer.borderColor = [UIColor whiteColor].CGColor;
     registerButton.layer.borderWidth = 1.0f;
     registerButton.clipsToBounds = YES;
-
+    
+    
+    _usernameField.returnKeyType = UIReturnKeyNext;
+    _emailField.returnKeyType = UIReturnKeyNext;
+    _passwordField.returnKeyType = UIReturnKeyNext;
+    _reenterPasswordField.returnKeyType = UIReturnKeyNext;
+    _phoneField.returnKeyType = UIReturnKeyGo;
     
 
 }
@@ -78,6 +85,12 @@ UITableView *sTableView;
     registerButton.layer.borderColor = [UIColor whiteColor].CGColor;
     registerButton.layer.borderWidth = 1.0f;
     registerButton.clipsToBounds = YES;
+    _usernameField.delegate = self;
+    _emailField.delegate = self;
+    _passwordField.delegate = self;
+    _reenterPasswordField.delegate = self;
+    _phoneField.delegate = self;
+    
 }
 
 
@@ -113,6 +126,27 @@ UITableView *sTableView;
 }
 - (BOOL) textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
+    if(textField.returnKeyType == UIReturnKeyNext)
+    {
+        if (textField == _usernameField)
+        {
+            [_emailField becomeFirstResponder];
+        }
+        if (textField == _emailField){
+            [_passwordField becomeFirstResponder];
+        }
+        if (textField == _passwordField){
+            [_reenterPasswordField becomeFirstResponder];
+        }
+        if (textField == _reenterPasswordField){
+            [_phoneField becomeFirstResponder];
+        }
+    }
+    if(textField.returnKeyType == UIReturnKeyGo)
+    {
+        [self registerUser: self];
+    }
+    
     return YES;
 }
 

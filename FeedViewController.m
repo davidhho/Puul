@@ -9,28 +9,110 @@
 #import "FeedViewController.h"
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import "Annotation.h"
 
-@interface FeedViewController () <UITableViewDataSource, UITableViewDelegate>
+#define HW_LONGITUDE -118.412835;
+#define HW_LATITUDE 34.139545;
+#define THE_SPAN 0.01f;
 
-@end
+
 
 @implementation FeedViewController
-@synthesize givenRidesTableView, requestedViewController;
-
+@synthesize requestMap, locationManager;
+bool firstLoad;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    firstLoad = true;
+    //Create Region
+    MKCoordinateRegion myRegion;
+    
+    //Center
+    CLLocationCoordinate2D center;
+    center.latitude = HW_LATITUDE;
+    center.longitude = HW_LONGITUDE;
+    
+    //Span
+    MKCoordinateSpan span;
+    span.latitudeDelta = THE_SPAN;
+    span.longitudeDelta = THE_SPAN;
+    
+    myRegion.center = center;
+    myRegion.span = span;
+    
+    //Annotation stuff
+    CLLocationCoordinate2D hwLocation;
+    hwLocation.longitude = HW_LONGITUDE;
+    hwLocation.latitude = HW_LATITUDE;
+    
+    Annotation * myAnnotation = [Annotation alloc];
+    myAnnotation.coordinate = hwLocation;
+    myAnnotation.title = @"Harvard Westlake";
+    myAnnotation.subtitle = @"3700 Coldwater Canyon, Studio City";
+    [self.requestMap addAnnotation:myAnnotation];
+    
+    
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+//    [self.locationManager setDistanceFilter:kCLDistanceFilterNone];
+//    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+    self.locationManager.delegate = self;
+    
+    if([[[UIDevice currentDevice] systemVersion] floatValue] >=8.0)
+    {
+        NSLog(@" %d", [CLLocationManager locationServicesEnabled]);
+        NSLog(@"ZOOP! %d", [CLLocationManager authorizationStatus]);
+        [self.locationManager requestAlwaysAuthorization];
+    }
     // Do any additional setup after loading the view.
+    
+    [self.locationManager startUpdatingLocation];
+    
 }
 
--(void)viewDidAppear:(BOOL)animated{
+- (MKAnnotationView *)mapView:(MKMapView *)_mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    static NSString *AnnotationViewID = @"annotationViewID";
+    if ([annotation isKindOfClass:[Annotation class]])
+    {
+            MKAnnotationView *annotationView = (MKAnnotationView *)[_mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
+        if (annotationView == nil)
+        {
+            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
+        }
+        else
+        {
+            annotationView.annotation = annotation;
+        }
+        annotationView.image = [UIImage imageNamed:@"HW.png"];
+        annotationView.enabled = true;
+        annotationView.canShowCallout = true;
+            return annotationView;
+    }
+    return nil;
+    
+}
 
-    
+- (void)locationManager:(CLLocationManager * )manager
+didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    NSLog(@"CHANGED STATUS: %d", status);
+}
+
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self.locationManager requestWhenInUseAuthorization];
     [super viewDidAppear:YES];
+    requestMap.showsUserLocation = YES;
     
+}
+
+-(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    self.requestedViewController.hidden = YES;
+//    self.requestedViewController.hidden = YES;
 
     [super viewWillAppear:YES];
 }
@@ -71,26 +153,36 @@
 }
 */
 
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
+    if (firstLoad == true)
+    {
+      
+    [self.requestMap setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
+        firstLoad =false;
+    }
+    
+}
+
 - (void) retrieveFromParse {
     
     
 }
 
-- (IBAction)changeRides:(UISegmentedControl *)sender {
-    switch (sender.selectedSegmentIndex) {
-        case 0:
-            self.givenRidesTableView.hidden = NO;
-            self.requestedViewController.hidden = YES;
-            break;
-            
-        case 1:
-            self.givenRidesTableView.hidden = YES;
-            self.requestedViewController.hidden = NO;
-            break;
-            
-        default:
-            break;
-    }
-    
-}
+//- (IBAction)changeRides:(UISegmentedControl *)sender {
+//    switch (sender.selectedSegmentIndex) {
+//        case 0:
+//            self.givenRidesTableView.hidden = NO;
+//            self.requestedViewController.hidden = YES;
+//            break;
+//            
+//        case 1:
+//            self.givenRidesTableView.hidden = YES;
+//            self.requestedViewController.hidden = NO;
+//            break;
+//            
+//        default:
+//            break;
+//    }
+//    
+//}
 @end

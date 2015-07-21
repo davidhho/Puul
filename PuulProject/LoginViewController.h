@@ -22,8 +22,6 @@
 
 - (IBAction)backgroundTap:(id)sender;
 
-
-
 - (IBAction)LoginButton:(id)sender;
 
 @end

@@ -8,23 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface FeedViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
-    NSMutableArray *startCitiesArray;
-    NSMutableArray *endCitiesArray;
-    NSMutableArray *stopsArray;
-    NSMutableArray *requestedPayArray;
-    NSMutableArray *startAddressArray;
-    NSMutableArray *endAddressArray;
+@interface FeedViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate> {
     
-    NSMutableArray *sectionArray;
-    NSMutableArray *data;
+    CLLocation *currentLocation;
+    CLLocationCoordinate2D currentCenter;
+    
 }
 @property (strong, nonatomic) IBOutlet UISegmentedControl *options;
-@property (strong, nonatomic) IBOutlet UITableView *givenRidesTableView;
-@property (strong, nonatomic) IBOutlet UITableView *requestedViewController;
+@property (strong, nonatomic) IBOutlet MKMapView *requestMap;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
-- (IBAction)changeRides:(id)sender;
 
 
 
