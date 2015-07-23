@@ -15,10 +15,12 @@
     
     CLLocation *currentLocation;
     CLLocationCoordinate2D currentCenter;
+    CLPlacemark *placemark;
 
 
 }
 
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @property (weak, nonatomic) IBOutlet UITextField *startAddress;
 @property (strong, nonatomic) IBOutlet MKMapView *giveRideMap;
@@ -27,10 +29,22 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *driveButton;
 
+@property (weak, nonatomic) IBOutlet UITextField *pay;
+
+@property (strong, nonatomic) NSString *endAddressString;
+
+@property (strong, nonatomic) NSString *startAddressString;
+
+@property (strong) NSString *parsePay;
+
+@property (weak, nonatomic) IBOutlet UIButton *giveARide;
+
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
 - (IBAction)drive:(id)sender;
 
 - (IBAction)backgroundTap:(id)sender;
+
+- (IBAction)giveARideButton:(id)sender;
 
 @end

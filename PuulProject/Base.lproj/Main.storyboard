@@ -26,7 +26,7 @@
                                     <rect key="frame" x="23" y="28" width="53" height="30"/>
                                 </variation>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vuw-fS-qCC">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vuw-fS-qCC">
                                 <rect key="frame" x="71" y="68" width="458" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -158,7 +158,7 @@
                                     <outlet property="delegate" destination="ckX-QO-aZP" id="GFq-f3-lBx"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RLO-az-q9y">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RLO-az-q9y">
                                 <rect key="frame" x="71" y="68" width="458" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -294,31 +294,18 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3gA-8S-JTs">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="384" height="516"/>
+                                    <rect key="frame" x="0.0" y="64" width="384" height="554"/>
                                 </variation>
                                 <connections>
                                     <outlet property="delegate" destination="jo0-KN-lum" id="VcM-Ut-A9l"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EL3-Qj-f1H">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Find Me A Ride!">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="-25" y="478" width="425" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="findMeARide:" destination="jo0-KN-lum" eventType="touchUpInside" id="yeu-d1-It2"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="End Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tkz-dd-9J9">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="9" y="104" width="351" height="30"/>
+                                    <rect key="frame" x="9" y="145" width="351" height="30"/>
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8FJ-lX-lub">
@@ -326,26 +313,62 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="9" y="72" width="351" height="30"/>
+                                    <rect key="frame" x="9" y="145" width="351" height="30"/>
                                 </variation>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999973" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zwn-EO-lov">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="9" y="75" width="352" height="62"/>
+                                </variation>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pay: Free (Tap to Change)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zf9-EL-hyh">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="92" y="183" width="185" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EL3-Qj-f1H">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Find Me A Ride!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="76" y="505" width="219" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="findMeARide:" destination="jo0-KN-lum" eventType="touchUpInside" id="yeu-d1-It2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="3gA-8S-JTs"/>
-                                <exclude reference="EL3-Qj-f1H"/>
                                 <exclude reference="Tkz-dd-9J9"/>
                                 <exclude reference="8FJ-lX-lub"/>
+                                <exclude reference="Zwn-EO-lov"/>
+                                <exclude reference="zf9-EL-hyh"/>
+                                <exclude reference="EL3-Qj-f1H"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="3gA-8S-JTs"/>
-                                <include reference="EL3-Qj-f1H"/>
                                 <include reference="Tkz-dd-9J9"/>
                                 <include reference="8FJ-lX-lub"/>
+                                <include reference="Zwn-EO-lov"/>
+                                <include reference="zf9-EL-hyh"/>
+                                <include reference="EL3-Qj-f1H"/>
                             </mask>
                         </variation>
                         <connections>
@@ -356,6 +379,8 @@
                     <connections>
                         <outlet property="endAddress" destination="Tkz-dd-9J9" id="t56-gv-M6S"/>
                         <outlet property="findmeARideButton" destination="EL3-Qj-f1H" id="Qrb-yy-b5K"/>
+                        <outlet property="label" destination="Zwn-EO-lov" id="hfc-oM-7cb"/>
+                        <outlet property="pay" destination="zf9-EL-hyh" id="cHi-Nc-89K"/>
                         <outlet property="requestRideMap" destination="3gA-8S-JTs" id="1Vt-WV-Svj"/>
                         <outlet property="searchDisplayController" destination="lsG-Y7-c6A" id="H8g-zh-xIi"/>
                         <outlet property="startAddress" destination="8FJ-lX-lub" id="cee-Bf-0xv"/>
@@ -392,7 +417,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1813.5" y="-1111"/>
+            <point key="canvasLocation" x="-2005.5" y="-1095"/>
         </scene>
         <!--Profile-->
         <scene sceneID="LYf-Bg-Rz0">
@@ -504,65 +529,95 @@
                         <viewControllerLayoutGuide type="top" id="5hn-5E-m9K"/>
                         <viewControllerLayoutGuide type="bottom" id="ijK-3M-p2z"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="PCx-vZ-Y0Z">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="700"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <view key="view" contentMode="scaleToFill" id="ijg-0K-ENa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fk1-Q6-YOz">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="r7b-Ro-DLL">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="384" height="574"/>
+                                    <rect key="frame" x="-8" y="64" width="400" height="700"/>
                                 </variation>
                                 <connections>
-                                    <outlet property="delegate" destination="lYe-zs-OVk" id="r7U-6y-61H"/>
+                                    <outlet property="delegate" destination="lYe-zs-OVk" id="Bgj-GN-8f6"/>
                                 </connections>
                             </mapView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LHn-ph-f54">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999973" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFk-HO-Kyc">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="72" width="352" height="63"/>
+                                </variation>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="End Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wHE-xJ-Rjs">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="8" y="72" width="352" height="30"/>
+                                    <rect key="frame" x="16" y="143" width="352" height="30"/>
                                 </variation>
-                                <connections>
-                                    <outlet property="delegate" destination="lYe-zs-OVk" id="L3H-fp-s7f"/>
-                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="End Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Aq-Oh-xdQ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pay: Free (Tap to Change)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zpF-8F-4Ub">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="8" y="102" width="352" height="30"/>
+                                    <rect key="frame" x="100" y="181" width="185" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcb-H8-YpV">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Give A Ride!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="78" y="539" width="219" height="30"/>
                                 </variation>
                                 <connections>
-                                    <outlet property="delegate" destination="lYe-zs-OVk" id="9mj-u0-zs3"/>
+                                    <action selector="giveARideButton:" destination="lYe-zs-OVk" eventType="touchUpInside" id="Jzw-c4-hik"/>
                                 </connections>
-                            </textField>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="fk1-Q6-YOz"/>
-                                <exclude reference="LHn-ph-f54"/>
-                                <exclude reference="8Aq-Oh-xdQ"/>
+                                <exclude reference="r7b-Ro-DLL"/>
+                                <exclude reference="dFk-HO-Kyc"/>
+                                <exclude reference="wHE-xJ-Rjs"/>
+                                <exclude reference="zpF-8F-4Ub"/>
+                                <exclude reference="xcb-H8-YpV"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="fk1-Q6-YOz"/>
-                                <include reference="LHn-ph-f54"/>
-                                <include reference="8Aq-Oh-xdQ"/>
+                                <include reference="r7b-Ro-DLL"/>
+                                <include reference="dFk-HO-Kyc"/>
+                                <include reference="wHE-xJ-Rjs"/>
+                                <include reference="zpF-8F-4Ub"/>
+                                <include reference="xcb-H8-YpV"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="W8S-Ot-qo0" appends="YES" id="gAU-rO-w3z"/>
+                            <outletCollection property="gestureRecognizers" destination="W8S-Ot-qo0" appends="YES" id="ea7-zE-gaU"/>
+                            <outletCollection property="gestureRecognizers" destination="W8S-Ot-qo0" appends="YES" id="CM9-dy-ZRK"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Give A Ride" id="cYn-i9-POI"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="400" height="700"/>
                     <connections>
-                        <outlet property="endAddress" destination="8Aq-Oh-xdQ" id="4i7-9Y-eb6"/>
-                        <outlet property="giveRideMap" destination="fk1-Q6-YOz" id="xS7-Pi-wfv"/>
-                        <outlet property="startAddress" destination="LHn-ph-f54" id="4tf-Jj-aMl"/>
+                        <outlet property="endAddress" destination="wHE-xJ-Rjs" id="61i-yf-jJf"/>
+                        <outlet property="giveARide" destination="xcb-H8-YpV" id="1M8-PI-OYp"/>
+                        <outlet property="giveRideMap" destination="r7b-Ro-DLL" id="aVL-IT-v8z"/>
+                        <outlet property="label" destination="dFk-HO-Kyc" id="sfu-lD-DwC"/>
+                        <outlet property="pay" destination="zpF-8F-4Ub" id="mxd-Ql-SHZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IHe-Ha-FXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -572,7 +627,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1843.5" y="-2205"/>
+            <point key="canvasLocation" x="-1930.5" y="-1841"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ZJk-OP-HpR">
@@ -607,6 +662,15 @@
                     <view key="view" contentMode="scaleToFill" id="7Ia-CL-CtE">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMF-uS-PI1">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="384" height="555"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="GaN-yb-Tvv" id="nls-Cn-QRD"/>
+                                </connections>
+                            </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CoY-zt-gNZ">
                                 <rect key="frame" x="-61" y="-14" width="123" height="29"/>
                                 <segments>
@@ -620,28 +684,19 @@
                                     <action selector="changeRides:" destination="GaN-yb-Tvv" eventType="valueChanged" id="Ij8-Y7-3AJ"/>
                                 </connections>
                             </segmentedControl>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMF-uS-PI1">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="384" height="555"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="delegate" destination="GaN-yb-Tvv" id="nls-Cn-QRD"/>
-                                </connections>
-                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="CoY-zt-gNZ"/>
                                 <exclude reference="bMF-uS-PI1"/>
+                                <exclude reference="CoY-zt-gNZ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="CoY-zt-gNZ"/>
                                 <include reference="bMF-uS-PI1"/>
+                                <include reference="CoY-zt-gNZ"/>
                             </mask>
                         </variation>
                     </view>
@@ -672,7 +727,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1oB-Zd-N0X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6132" y="-1710"/>
+            <point key="canvasLocation" x="-5865" y="-1642"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Td-6P-7EC">
@@ -690,7 +745,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rMu-zl-Ccr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1884" y="-1981"/>
+            <point key="canvasLocation" x="-2796" y="-1885"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OyR-9b-lqx">
@@ -708,7 +763,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGA-cF-k1Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1843.5" y="-1103"/>
+            <point key="canvasLocation" x="-2815.5" y="-1103"/>
         </scene>
         <!--Profile-->
         <scene sceneID="T3U-Qk-4dr">

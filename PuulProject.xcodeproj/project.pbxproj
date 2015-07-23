@@ -32,6 +32,8 @@
 		EE4C70241B5D7216001C50B9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4C70231B5D7216001C50B9 /* CoreLocation.framework */; };
 		EE4C70271B5D9477001C50B9 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4C70261B5D9477001C50B9 /* Annotation.m */; };
 		EE4C702B1B5D99D5001C50B9 /* HW.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4C702A1B5D99D5001C50B9 /* HW.png */; };
+		EE4C702E1B614FAA001C50B9 /* RideAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4C702D1B614FAA001C50B9 /* RideAnnotations.m */; };
+		EE4C70321B615420001C50B9 /* home153.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4C70311B615420001C50B9 /* home153.png */; };
 		EE9481CF1B5453C300E2DD4A /* RequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9481CE1B5453C300E2DD4A /* RequestViewController.m */; };
 		EE9481D21B5453DE00E2DD4A /* GiveRideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9481D11B5453DE00E2DD4A /* GiveRideViewController.m */; };
 /* End PBXBuildFile section */
@@ -91,6 +93,9 @@
 		EE4C70251B5D9477001C50B9 /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
 		EE4C70261B5D9477001C50B9 /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
 		EE4C702A1B5D99D5001C50B9 /* HW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HW.png; path = ../../../Downloads/HW.png; sourceTree = "<group>"; };
+		EE4C702C1B614FAA001C50B9 /* RideAnnotations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RideAnnotations.h; sourceTree = "<group>"; };
+		EE4C702D1B614FAA001C50B9 /* RideAnnotations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RideAnnotations.m; sourceTree = "<group>"; };
+		EE4C70311B615420001C50B9 /* home153.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home153.png; path = ../../../Downloads/home153.png; sourceTree = "<group>"; };
 		EE9481CD1B5453C300E2DD4A /* RequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestViewController.h; sourceTree = "<group>"; };
 		EE9481CE1B5453C300E2DD4A /* RequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestViewController.m; sourceTree = "<group>"; };
 		EE9481D01B5453DE00E2DD4A /* GiveRideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiveRideViewController.h; sourceTree = "<group>"; };
@@ -263,6 +268,8 @@
 				EE48F7041B4EF19B00E6792C /* FeedViewController.m */,
 				EE4C70251B5D9477001C50B9 /* Annotation.h */,
 				EE4C70261B5D9477001C50B9 /* Annotation.m */,
+				EE4C702C1B614FAA001C50B9 /* RideAnnotations.h */,
+				EE4C702D1B614FAA001C50B9 /* RideAnnotations.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -270,6 +277,7 @@
 		EE48F70E1B4EFA0E00E6792C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EE4C70311B615420001C50B9 /* home153.png */,
 				EE48F7061B4EFA0400E6792C /* createRoute@2x.png */,
 				EE48F7071B4EFA0400E6792C /* feed@2x.png */,
 				EE48F7081B4EFA0400E6792C /* profile@2x.png */,
@@ -381,6 +389,7 @@
 				EE48F70D1B4EFA0400E6792C /* settings@2x.png in Resources */,
 				EE48F70C1B4EFA0400E6792C /* profile@2x.png in Resources */,
 				EE48F70B1B4EFA0400E6792C /* feed@2x.png in Resources */,
+				EE4C70321B615420001C50B9 /* home153.png in Resources */,
 				EE48F70A1B4EFA0400E6792C /* createRoute@2x.png in Resources */,
 				EE044B011B4C531F0052CC67 /* Images.xcassets in Resources */,
 			);
@@ -447,6 +456,7 @@
 				EE48F6C61B4C6B9700E6792C /* PUUtility.m in Sources */,
 				EE48F6F61B4DBB2D00E6792C /* ProfileViewController.m in Sources */,
 				EE48F7051B4EF19B00E6792C /* FeedViewController.m in Sources */,
+				EE4C702E1B614FAA001C50B9 /* RideAnnotations.m in Sources */,
 				EE48F6E91B4D8AEF00E6792C /* SignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

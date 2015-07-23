@@ -1,4 +1,3 @@
-
 //
 //  RequestViewController.m
 //  PuulProject
@@ -11,19 +10,23 @@
 #import "UIColor+PUColors.h"
 #import "Parse/Parse.h"
 #import "Annotation.h"
-#define HW_LONGITUDE -118.412835;
-#define HW_LATITUDE 34.139545;
-#define THE_SPAN 0.01f;
+#import "RideAnnotations.h"
+#define HW_LONGITUDE (-118.412835)
+#define HW_LATITUDE (34.139545)
+#define THE_SPAN (0.01f)
 
 @interface RequestViewController ()
 
 @end
 @implementation RequestViewController
-@synthesize findmeARideButton, requestRideMap, locationManager, startAddress, endAddress;
+@synthesize findmeARideButton, requestRideMap, locationManager, startAddress, label, endAddress, pay, endAddressString, startAddressString;
 bool firstLoad;
 
+
+
 - (void)viewDidLoad {
-    firstLoad = true;
+    
+        firstLoad = true;
     [super viewDidLoad];
     //Create Region
     MKCoordinateRegion myRegion;
@@ -79,32 +82,99 @@ bool firstLoad;
 }
 
 -(void) findAddress{
-    [self.startAddress resignFirstResponder];
+    [self.endAddress resignFirstResponder];
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder geocodeAddressString:self.startAddress.text completionHandler:^(NSArray *placemarks, NSError *error){
+    NSLog(@"Label: %@", self.endAddress.text);
+    [geocoder geocodeAddressString:self.endAddress.text completionHandler:^(NSArray *placemarks, NSError *error){
       
+        if (error) {
+            NSLog(@"error! %@", error);
+        }
+        
+        NSLog(@"location count: %d", (int)placemarks.count);
+        
         CLPlacemark *placemark = [placemarks objectAtIndex:0];
+        NSLog(@"first location: %@", placemark);
         MKCoordinateRegion region;
         CLLocationCoordinate2D newLocation = [placemark.location coordinate];
         region.center = [(CLCircularRegion *)placemark.region center];
         
-        MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
+        RideAnnotations *annotation = [RideAnnotations alloc];
         [annotation setCoordinate:newLocation];
-        [annotation setTitle:self.startAddress.text];
+        [annotation setTitle:self.endAddress.text];
         [self.requestRideMap addAnnotation:annotation];
         
         MKMapRect mr = [self.requestRideMap visibleMapRect];
         MKMapPoint pt = MKMapPointForCoordinate([annotation coordinate]);
         mr.origin.x = pt.x - mr.size.width * 0.5;
-        mr.origin.y = pt.y - mr.size.height * 0.25;
+        mr.origin.y = pt.y - mr.size.height * 0.6;
         [self.requestRideMap setVisibleMapRect:mr animated:YES];
-                            
+        endAddressString = endAddress.text;
+
+        
     }];
 }
+
+-(void) youAtSchool{
+    CLLocation *loc = [[CLLocation alloc] initWithLatitude:HW_LATITUDE longitude:HW_LONGITUDE];
+    CLLocation *loc2 = [[CLLocation alloc] initWithLatitude:self.requestRideMap.userLocation.coordinate.latitude longitude:self.requestRideMap.userLocation.coordinate.longitude];
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder reverseGeocodeLocation:loc2 completionHandler:^(NSArray *placemarks, NSError *error){
+        if (error == nil && [placemarks count] > 0){
+            placemark = [placemarks lastObject];
+        }
+        else
+        {
+            
+        }
+    }];
+    CLLocationDistance dist = [loc distanceFromLocation:loc2];
+    
+    NSLog(@"locations: %@ %@", loc, loc2);
+    
+    int distance = dist;
+    if (distance < 835){
+        label.numberOfLines = 2;
+        NSLog(@"%lf", dist);
+        label.text = @"You are at School. Please pick your End Address.";
+        startAddressString = @"Harvard Westlake High School";
+        
+    }
+    else{
+        label.numberOfLines = 2;
+        endAddress.hidden=true;
+        startAddress.hidden=true;
+        label.text = @"You are giving a ride from your current location to school";
+        endAddressString = @"Harvard Westlake High School";
+        pay.hidden = false;
+        findmeARideButton.hidden = false;
+        startAddressString = [NSString stringWithFormat:@"%@ %@",placemark.subThoroughfare, placemark.thoroughfare];
+        
+        
+    }
+}
+
 - (MKAnnotationView *)mapView:(MKMapView *)_mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
+    static NSString *AnnotationViewHWID = @"annotationViewHWID";
     static NSString *AnnotationViewID = @"annotationViewID";
     if ([annotation isKindOfClass:[Annotation class]])
+    {
+        MKAnnotationView *annotationViewHW = (MKAnnotationView *)[_mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationViewHWID];
+        if (annotationViewHW == nil)
+        {
+            annotationViewHW = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
+        }
+        else
+        {
+            annotationViewHW.annotation = annotation;
+        }
+        annotationViewHW.image = [UIImage imageNamed:@"HW.png"];
+        annotationViewHW.enabled = true;
+        annotationViewHW.canShowCallout = true;
+        return annotationViewHW;
+    }
+    else if ([annotation isKindOfClass:[RideAnnotations class]])
     {
         MKAnnotationView *annotationView = (MKAnnotationView *)[_mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
         if (annotationView == nil)
@@ -115,9 +185,10 @@ bool firstLoad;
         {
             annotationView.annotation = annotation;
         }
-        annotationView.image = [UIImage imageNamed:@"HW.png"];
+        annotationView.image = [UIImage imageNamed:@"home153.png"];
         annotationView.enabled = true;
         annotationView.canShowCallout = true;
+        annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         return annotationView;
     }
     return nil;
@@ -127,10 +198,19 @@ bool firstLoad;
     [self.locationManager requestWhenInUseAuthorization];
     [super viewDidAppear:YES];
     requestRideMap.showsUserLocation = YES;
-    
 }
+
+-(void) viewWillAppear:(BOOL)animated{
+    pay.hidden = true;
+    findmeARideButton.hidden = true;
+    startAddress.hidden = TRUE;
+
+}
+
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
     [self.requestRideMap setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
+    
+    [self youAtSchool];
 }
 -(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
@@ -162,20 +242,24 @@ bool firstLoad;
 
 
 - (IBAction)findMeARide:(id)sender {
-        [self checkFieldsComplete];
-    NSString *startAddressString = startAddress.text;
-
-    NSString *endAddressString = endAddress.text;
-
     
-//Sends information of ride to Parse
+    //
+    
     PFObject *newRide = [PFObject objectWithClassName:@"Ride"];
     newRide[@"startAddress"] = startAddressString;
-
+    
     newRide[@"endAddress"] = endAddressString;
+    if ([pay.text isEqualToString:@""]){
+        _parsePay = @"Free";
+    }
+    else{
+        _parsePay = pay.text;
+    }
+    newRide[@"pay"] = _parsePay;
 
     
-    [newRide saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    
+    [newRide saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
         if (succeeded == YES){
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ride" message:@"Your Ride has been Requested" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
             [alert show];
@@ -210,6 +294,8 @@ bool firstLoad;
         if (textField.returnKeyType == UIReturnKeyGo)
         {
             [self findAddress];
+            pay.hidden = false;
+            findmeARideButton.hidden = false;
         }
     return YES;
 }

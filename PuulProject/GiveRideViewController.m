@@ -1,4 +1,4 @@
-
+ 
 //
 //  GiveRideViewController.m
 //  PuulProject
@@ -13,14 +13,15 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "Annotation.h"
+#import "RideAnnotations.h"
 
-#define HW_LONGITUDE -118.412835;
-#define HW_LATITUDE 34.139545;
-#define THE_SPAN 0.01f;
+#define HW_LONGITUDE (-118.412835)
+#define HW_LATITUDE (34.139545)
+#define THE_SPAN (0.01f)
 
 
 @implementation GiveRideViewController
-@synthesize giveRideMap, locationManager, startAddress, endAddress;
+@synthesize giveRideMap, locationManager, startAddress, endAddress, label, endAddressString, startAddressString;
 bool firstLoad;
 
 
@@ -74,40 +75,104 @@ bool firstLoad;
     _driveButton.layer.borderColor = [UIColor whiteColor].CGColor;
     _driveButton.layer.borderWidth = 1.0f;
     _driveButton.clipsToBounds = YES;
+    endAddress.delegate = self;
 
     startAddress.returnKeyType = UIReturnKeyGo;
     endAddress.returnKeyType = UIReturnKeyGo;
     
 
 }
-
--(void) findAddress{
-    [self.startAddress resignFirstResponder];
+-(void) youAtSchool{
+    CLLocation *loc = [[CLLocation alloc] initWithLatitude:HW_LATITUDE longitude:HW_LONGITUDE];
+    CLLocation *loc2 = [[CLLocation alloc] initWithLatitude:self.giveRideMap.userLocation.coordinate.latitude longitude:self.giveRideMap.userLocation.coordinate.longitude];
+    
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder geocodeAddressString:self.startAddress.text completionHandler:^(NSArray *placemarks, NSError *error){
+    [geocoder reverseGeocodeLocation:loc2 completionHandler:^(NSArray *placemarks, NSError *error){
+        if (error == nil && [placemarks count] > 0){
+            placemark = [placemarks lastObject];
+        }
+        else
+        {
+            
+        }
+    }];
+    CLLocationDistance dist = [loc distanceFromLocation:loc2];
+    
+    NSLog(@"locations: %@ %@", loc, loc2);
+    
+    int distance = dist;
+    if (distance < 835){
+        label.numberOfLines = 2;
+        NSLog(@"%lf", dist);
+        label.text = @"You are at School. Please pick your End Address.";
+                startAddressString = @"Harvard Westlake High School";
+        
+    }
+    else{
+        label.numberOfLines = 2;
+        endAddress.hidden=true;
+        label.text = @"You are giving a ride from your current location to school";
+        endAddressString = @"Harvard Westlake High School";
+        startAddressString = [NSString stringWithFormat:@"%@ %@",placemark.subThoroughfare, placemark.thoroughfare];
+        _pay.hidden = false;
+        _giveARide.hidden = false;
+    }
+}
+-(void) findAddress{
+    [self.endAddress resignFirstResponder];
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    NSLog(@"Label: %@", self.endAddress.text);
+    [geocoder geocodeAddressString:self.endAddress.text completionHandler:^(NSArray *placemarks, NSError *error){
+        
+        if (error) {
+            NSLog(@"error! %@", error);
+        }
+        
+        NSLog(@"location count: %d", (int)placemarks.count);
         
         CLPlacemark *placemark = [placemarks objectAtIndex:0];
+        NSLog(@"first location: %@", placemark);
         MKCoordinateRegion region;
         CLLocationCoordinate2D newLocation = [placemark.location coordinate];
         region.center = [(CLCircularRegion *)placemark.region center];
         
-        MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
+        RideAnnotations *annotation = [RideAnnotations alloc];
         [annotation setCoordinate:newLocation];
-        [annotation setTitle:self.startAddress.text];
+        [annotation setTitle:self.endAddress.text];
         [self.giveRideMap addAnnotation:annotation];
         
         MKMapRect mr = [self.giveRideMap visibleMapRect];
         MKMapPoint pt = MKMapPointForCoordinate([annotation coordinate]);
         mr.origin.x = pt.x - mr.size.width * 0.5;
-        mr.origin.y = pt.y - mr.size.height * 0.25;
+        mr.origin.y = pt.y - mr.size.height * 0.6;
         [self.giveRideMap setVisibleMapRect:mr animated:YES];
+        endAddressString = endAddress.text;
+        
+        
     }];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)_mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
+    static NSString *AnnotationViewHWID = @"annotationViewHWID";
     static NSString *AnnotationViewID = @"annotationViewID";
     if ([annotation isKindOfClass:[Annotation class]])
+    {
+        MKAnnotationView *annotationViewHW = (MKAnnotationView *)[_mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationViewHWID];
+        if (annotationViewHW == nil)
+        {
+            annotationViewHW = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
+        }
+        else
+        {
+            annotationViewHW.annotation = annotation;
+        }
+        annotationViewHW.image = [UIImage imageNamed:@"HW.png"];
+        annotationViewHW.enabled = true;
+        annotationViewHW.canShowCallout = true;
+        return annotationViewHW;
+    }
+    else if ([annotation isKindOfClass:[RideAnnotations class]])
     {
         MKAnnotationView *annotationView = (MKAnnotationView *)[_mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
         if (annotationView == nil)
@@ -118,13 +183,18 @@ bool firstLoad;
         {
             annotationView.annotation = annotation;
         }
-        annotationView.image = [UIImage imageNamed:@"HW.png"];
+        annotationView.image = [UIImage imageNamed:@"home153.png"];
         annotationView.enabled = true;
         annotationView.canShowCallout = true;
+        annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         return annotationView;
     }
     return nil;
     
+}
+
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
+    UIStoryboard *mainstoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 }
 
 - (void)locationManager:(CLLocationManager * )manager
@@ -144,6 +214,7 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
         
         [self.giveRideMap setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
         firstLoad =false;
+        [self youAtSchool];
     }
     
 }
@@ -153,6 +224,10 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
 
 -(void)viewWillAppear:(BOOL)animated{
     //    self.requestedViewController.hidden = YES;
+    _pay.hidden = true;
+    _giveARide.hidden = true;
+    startAddress.hidden = TRUE;
+
     
     [super viewWillAppear:YES];
 }
@@ -173,23 +248,25 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
 }
 */
 //Sends information about the Drive to Parse
-- (IBAction)drive:(id)sender {
-    [self checkFieldsComplete];
-    NSString *startAddressString = startAddress.text;
-    NSString *endAddressString = endAddress.text;
-
-    
+- (IBAction)giveARideButton:(id)sender {
     PFObject *newRide = [PFObject objectWithClassName:@"Ride"];
     newRide[@"startAddress"] = startAddressString;
     newRide[@"endAddress"] = endAddressString;
-
+    if ([_pay.text isEqualToString:@""]){
+        _parsePay = @"Free";
+    }
+    else{
+        _parsePay = _pay.text;
+    }
+    newRide[@"pay"] = _parsePay;
+    
     
     [newRide saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
         if (succeeded == YES){
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ride" message:@"Your Drive has been Posted" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ride" message:@"Your Ride has been Requested" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
             [alert show];
             
-            NSLog(@"Drive Post Success");
+            NSLog(@"Ride Request Success");
             
             UIStoryboard *mainstoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             
@@ -197,14 +274,13 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
             UIViewController *loginvc=[mainstoryboard instantiateViewControllerWithIdentifier:@"MainViewController"];
             [self presentViewController:loginvc animated:NO completion:nil];
         }
-        else{
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops" message:@"Your Drive wasn't Posted" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        else {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops" message:@"Your Ride wasn't Requested" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
             [alert show];
         }
     }];
     
 }
-
 
 
 
@@ -232,6 +308,8 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     if (textField.returnKeyType == UIReturnKeyGo)
     {
         [self findAddress];
+        _pay.hidden = false;
+        _giveARide.hidden = false;
     }
     return YES;
 }

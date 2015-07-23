@@ -24,6 +24,7 @@
 bool firstLoad;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _options.backgroundColor = [UIColor whiteColor];
     firstLoad = true;
     //Create Region
     MKCoordinateRegion myRegion;
