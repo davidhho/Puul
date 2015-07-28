@@ -530,7 +530,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ijK-3M-p2z"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ijg-0K-ENa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="700"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="r7b-Ro-DLL">
@@ -653,13 +653,13 @@
         <!--Feed-->
         <scene sceneID="iA7-fV-3dH">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="48a-Km-AHF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="FeedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GaN-yb-Tvv" customClass="FeedViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hSi-1U-GSn"/>
                         <viewControllerLayoutGuide type="bottom" id="Fsu-tf-mHd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7Ia-CL-CtE">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMF-uS-PI1">
@@ -708,6 +708,7 @@
                         <outlet property="requestMap" destination="bMF-uS-PI1" id="1k9-Ka-lia"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="48a-Km-AHF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4144.5" y="-2497"/>
         </scene>

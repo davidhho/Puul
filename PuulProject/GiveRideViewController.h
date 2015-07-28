@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "FeedViewController.h"
 
 @interface GiveRideViewController : UIViewController <UITextFieldDelegate, CLLocationManagerDelegate, MKMapViewDelegate> {
     

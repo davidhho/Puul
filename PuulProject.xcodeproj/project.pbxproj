@@ -34,6 +34,8 @@
 		EE4C702B1B5D99D5001C50B9 /* HW.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4C702A1B5D99D5001C50B9 /* HW.png */; };
 		EE4C702E1B614FAA001C50B9 /* RideAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4C702D1B614FAA001C50B9 /* RideAnnotations.m */; };
 		EE4C70321B615420001C50B9 /* home153.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4C70311B615420001C50B9 /* home153.png */; };
+		EE4C70341B619956001C50B9 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4C70331B619956001C50B9 /* Icon-60@3x.png */; };
+		EE4C70371B6698A0001C50B9 /* global.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4C70361B6698A0001C50B9 /* global.m */; };
 		EE9481CF1B5453C300E2DD4A /* RequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9481CE1B5453C300E2DD4A /* RequestViewController.m */; };
 		EE9481D21B5453DE00E2DD4A /* GiveRideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9481D11B5453DE00E2DD4A /* GiveRideViewController.m */; };
 /* End PBXBuildFile section */
@@ -96,6 +98,9 @@
 		EE4C702C1B614FAA001C50B9 /* RideAnnotations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RideAnnotations.h; sourceTree = "<group>"; };
 		EE4C702D1B614FAA001C50B9 /* RideAnnotations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RideAnnotations.m; sourceTree = "<group>"; };
 		EE4C70311B615420001C50B9 /* home153.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home153.png; path = ../../../Downloads/home153.png; sourceTree = "<group>"; };
+		EE4C70331B619956001C50B9 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@3x.png"; path = "../../../Downloads/icon/ios/AppIcon.appiconset/Icon-60@3x.png"; sourceTree = "<group>"; };
+		EE4C70351B6698A0001C50B9 /* global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = global.h; sourceTree = "<group>"; };
+		EE4C70361B6698A0001C50B9 /* global.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = global.m; sourceTree = "<group>"; };
 		EE9481CD1B5453C300E2DD4A /* RequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestViewController.h; sourceTree = "<group>"; };
 		EE9481CE1B5453C300E2DD4A /* RequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestViewController.m; sourceTree = "<group>"; };
 		EE9481D01B5453DE00E2DD4A /* GiveRideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiveRideViewController.h; sourceTree = "<group>"; };
@@ -212,6 +217,8 @@
 				EE48F6C31B4C6B9700E6792C /* PUConstants.h */,
 				EE48F6C41B4C6B9700E6792C /* PUUtility.h */,
 				EE48F6C51B4C6B9700E6792C /* PUUtility.m */,
+				EE4C70351B6698A0001C50B9 /* global.h */,
+				EE4C70361B6698A0001C50B9 /* global.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -282,6 +289,7 @@
 				EE48F7071B4EFA0400E6792C /* feed@2x.png */,
 				EE48F7081B4EFA0400E6792C /* profile@2x.png */,
 				EE48F7091B4EFA0400E6792C /* settings@2x.png */,
+				EE4C70331B619956001C50B9 /* Icon-60@3x.png */,
 				EE4C702A1B5D99D5001C50B9 /* HW.png */,
 			);
 			name = Resources;
@@ -389,6 +397,7 @@
 				EE48F70D1B4EFA0400E6792C /* settings@2x.png in Resources */,
 				EE48F70C1B4EFA0400E6792C /* profile@2x.png in Resources */,
 				EE48F70B1B4EFA0400E6792C /* feed@2x.png in Resources */,
+				EE4C70341B619956001C50B9 /* Icon-60@3x.png in Resources */,
 				EE4C70321B615420001C50B9 /* home153.png in Resources */,
 				EE48F70A1B4EFA0400E6792C /* createRoute@2x.png in Resources */,
 				EE044B011B4C531F0052CC67 /* Images.xcassets in Resources */,
@@ -452,6 +461,7 @@
 				EE48F6EF1B4DA1CE00E6792C /* LoginViewController.m in Sources */,
 				EE044AF61B4C531F0052CC67 /* main.m in Sources */,
 				EE9481CF1B5453C300E2DD4A /* RequestViewController.m in Sources */,
+				EE4C70371B6698A0001C50B9 /* global.m in Sources */,
 				EE48F6CC1B4C6BB900E6792C /* UIImage+PUImageExtensions.m in Sources */,
 				EE48F6C61B4C6B9700E6792C /* PUUtility.m in Sources */,
 				EE48F6F61B4DBB2D00E6792C /* ProfileViewController.m in Sources */,
@@ -581,7 +591,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B15D10C13AD0B5DC7FC15D40 /* Pods.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -600,7 +610,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ADDDDB20B89C0A6758C8AB21 /* Pods.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (

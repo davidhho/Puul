@@ -13,14 +13,13 @@
 
 @interface FeedViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate> {
     
-    CLLocation *currentLocation;
     CLLocationCoordinate2D currentCenter;
     
 }
 @property (strong, nonatomic) IBOutlet UISegmentedControl *options;
 @property (strong, nonatomic) IBOutlet MKMapView *requestMap;
 @property (strong, nonatomic) CLLocationManager *locationManager;
-
++ (CLLocation*) getLocation;
 
 
 

@@ -11,6 +11,10 @@
 #import "Parse/Parse.h"
 #import "Annotation.h"
 #import "RideAnnotations.h"
+#import "FeedViewController.h"
+#import "global.h"
+#import <SVProgressHUD.h>
+
 #define HW_LONGITUDE (-118.412835)
 #define HW_LATITUDE (34.139545)
 #define THE_SPAN (0.01f)
@@ -55,15 +59,8 @@ bool firstLoad;
     myAnnotation.subtitle = @"3700 Coldwater Canyon, Studio City";
     [self.requestRideMap addAnnotation:myAnnotation];
     
-    self.locationManager = [[CLLocationManager alloc]init];
-    self.locationManager.delegate = self;
+        
     
-    if ([[[UIDevice currentDevice]systemVersion] floatValue] >= 8.0){
-        NSLog(@" %d", [CLLocationManager locationServicesEnabled]);
-        NSLog(@" ZOOP! %d", [CLLocationManager authorizationStatus]);
-        [self.locationManager requestAlwaysAuthorization];
-    }
-    [self.locationManager startUpdatingLocation];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor puulRedColor];
     findmeARideButton.layer.cornerRadius = 4.0f;
@@ -78,7 +75,20 @@ bool firstLoad;
     startAddress.returnKeyType = UIReturnKeyGo;
     endAddress.returnKeyType = UIReturnKeyGo;
 
+    [global sharedInstance];
     
+    
+    if ([global sharedInstance].currentLocation == nil)
+    {
+        [SVProgressHUD show];
+        [SVProgressHUD showWithStatus:@"Getting Current Location"];
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(removeSV) name:@"kGotLocationNotification" object:nil];
+        
+    }
+}
+
+-(void) removeSV{
+    [SVProgressHUD dismiss];
 }
 
 -(void) findAddress{
@@ -117,17 +127,7 @@ bool firstLoad;
 
 -(void) youAtSchool{
     CLLocation *loc = [[CLLocation alloc] initWithLatitude:HW_LATITUDE longitude:HW_LONGITUDE];
-    CLLocation *loc2 = [[CLLocation alloc] initWithLatitude:self.requestRideMap.userLocation.coordinate.latitude longitude:self.requestRideMap.userLocation.coordinate.longitude];
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder reverseGeocodeLocation:loc2 completionHandler:^(NSArray *placemarks, NSError *error){
-        if (error == nil && [placemarks count] > 0){
-            placemark = [placemarks lastObject];
-        }
-        else
-        {
-            
-        }
-    }];
+    CLLocation *loc2 = [[CLLocation alloc] initWithLatitude:[global sharedInstance].currentLocation.coordinate.latitude longitude:[global sharedInstance].currentLocation.coordinate.longitude];
     CLLocationDistance dist = [loc distanceFromLocation:loc2];
     
     NSLog(@"locations: %@ %@", loc, loc2);
@@ -145,10 +145,11 @@ bool firstLoad;
         endAddress.hidden=true;
         startAddress.hidden=true;
         label.text = @"You are giving a ride from your current location to school";
+        startAddressString = [global sharedInstance].address;
         endAddressString = @"Harvard Westlake High School";
         pay.hidden = false;
         findmeARideButton.hidden = false;
-        startAddressString = [NSString stringWithFormat:@"%@ %@",placemark.subThoroughfare, placemark.thoroughfare];
+        
         
         
     }
@@ -204,19 +205,26 @@ bool firstLoad;
     pay.hidden = true;
     findmeARideButton.hidden = true;
     startAddress.hidden = TRUE;
+    [self youAtSchool];
+    CLLocationCoordinate2D startCoord = CLLocationCoordinate2DMake(49, -123);
+    MKCoordinateRegion adjustedRegion = [requestRideMap regionThatFits:MKCoordinateRegionMakeWithDistance(startCoord, 200, 200)];
+    [requestRideMap setRegion:adjustedRegion animated:YES];
+    [super viewWillAppear:animated];
+
 
 }
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
     [self.requestRideMap setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
     
-    [self youAtSchool];
 }
 -(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
 }
 
 //Makes sure all fields are completed before
+
+
 
 - (void) checkFieldsComplete{
     if ([startAddress.text isEqualToString:@""] || [endAddress.text isEqualToString:@""]){
@@ -247,8 +255,14 @@ bool firstLoad;
     
     PFObject *newRide = [PFObject objectWithClassName:@"Ride"];
     newRide[@"startAddress"] = startAddressString;
-    
     newRide[@"endAddress"] = endAddressString;
+    PFGeoPoint *currentLocationgeo =  [PFGeoPoint geoPointWithLocation:[global sharedInstance].currentLocation];
+    newRide[@"location"] = currentLocationgeo;
+    newRide[@"Requestor"] = PFUser.currentUser;
+    newRide[@"giver"] = [NSNumber numberWithBool:false];
+    
+
+    
     if ([pay.text isEqualToString:@""]){
         _parsePay = @"Free";
     }

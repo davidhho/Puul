@@ -12,6 +12,8 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "Annotation.h"
+#import "global.h"
+#import <SVProgressHUD.h>
 
 #define HW_LONGITUDE -118.412835;
 #define HW_LATITUDE 34.139545;
@@ -21,14 +23,15 @@
 
 @implementation FeedViewController
 @synthesize requestMap, locationManager;
+CLLocation *currentLocation;
 bool firstLoad;
 - (void)viewDidLoad {
     [super viewDidLoad];
     _options.backgroundColor = [UIColor whiteColor];
     firstLoad = true;
     //Create Region
-    MKCoordinateRegion myRegion;
     
+    MKCoordinateRegion myRegion;
     //Center
     CLLocationCoordinate2D center;
     center.latitude = HW_LATITUDE;
@@ -52,24 +55,25 @@ bool firstLoad;
     myAnnotation.title = @"Harvard Westlake";
     myAnnotation.subtitle = @"3700 Coldwater Canyon, Studio City";
     [self.requestMap addAnnotation:myAnnotation];
+    [[global sharedInstance].locationManager requestAlwaysAuthorization];
+    [global sharedInstance];
     
     
-    
-    self.locationManager = [[CLLocationManager alloc] init];
-//    [self.locationManager setDistanceFilter:kCLDistanceFilterNone];
-//    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
-    self.locationManager.delegate = self;
-    
-    if([[[UIDevice currentDevice] systemVersion] floatValue] >=8.0)
+    if ([global sharedInstance].currentLocation == nil)
     {
-        NSLog(@" %d", [CLLocationManager locationServicesEnabled]);
-        NSLog(@"ZOOP! %d", [CLLocationManager authorizationStatus]);
-        [self.locationManager requestAlwaysAuthorization];
+        [SVProgressHUD show];
+        [SVProgressHUD showWithStatus:@"Getting Current Location"];
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(removeSV) name:@"kGotLocationNotification" object:nil];
+
     }
-    // Do any additional setup after loading the view.
-    
-    [self.locationManager startUpdatingLocation];
-    
+}
+
+-(void) removeSV{
+    [SVProgressHUD dismiss];
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"kGotLocationNotification" object:nil];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)_mapView viewForAnnotation:(id <MKAnnotation>)annotation
@@ -107,15 +111,15 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     requestMap.showsUserLocation = YES;
     
 }
-
--(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+-(void) locationManager:(CLLocationManager*) manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
+    currentLocation = newLocation;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
 //    self.requestedViewController.hidden = YES;
 
-    [super viewWillAppear:YES];
+    [super viewWillAppear:animated];
 }
 
 -(void)didLogin{
@@ -169,21 +173,40 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     
 }
 
-//- (IBAction)changeRides:(UISegmentedControl *)sender {
-//    switch (sender.selectedSegmentIndex) {
-//        case 0:
-//            self.givenRidesTableView.hidden = NO;
-//            self.requestedViewController.hidden = YES;
-//            break;
-//            
-//        case 1:
-//            self.givenRidesTableView.hidden = YES;
-//            self.requestedViewController.hidden = NO;
-//            break;
-//            
-//        default:
-//            break;
-//    }
-//    
+- (IBAction)changeRides:(UISegmentedControl *)sender {
+    switch (sender.selectedSegmentIndex) {
+        case 0: {
+            PFQuery *query = [PFQuery queryWithClassName:@"Ride"];
+            [query whereKey:@"giver" equalTo:[NSNumber numberWithBool:YES]];;
+            
+
+        } break;
+        case 1:{
+            PFQuery *query = [PFQuery queryWithClassName:@"Ride"];
+            [query whereKey:@"giver" equalTo:[NSNumber numberWithBool:false]];;
+        }break;
+            
+            
+        default:
+            break;
+    }
+    [ FeedViewController getLocation];
+}
+//
+//
+//if (annotationView == nil)
+//{
+//    annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
 //}
+//else
+//{
+//    annotationView.annotation = annotation;
+//}
+//annotationView.tintColor = MKPinAnnotationColorRed;
+//annotationView.enabled = true;
+//annotationView.canShowCallout = true;
+//annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+//return annotationView;
+//}
+
 @end

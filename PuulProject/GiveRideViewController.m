@@ -14,6 +14,9 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Annotation.h"
 #import "RideAnnotations.h"
+#import "FeedViewController.h"
+#import "global.h"
+#import <SVProgressHUD.h>
 
 #define HW_LONGITUDE (-118.412835)
 #define HW_LATITUDE (34.139545)
@@ -24,6 +27,18 @@
 @synthesize giveRideMap, locationManager, startAddress, endAddress, label, endAddressString, startAddressString;
 bool firstLoad;
 
+-(void)viewWillAppear:(BOOL)animated{
+    //    self.requestedViewController.hidden = YES;
+    _pay.hidden = true;
+    _giveARide.hidden = true;
+    startAddress.hidden = TRUE;
+    [self youAtSchool];
+    CLLocationCoordinate2D startCoord = CLLocationCoordinate2DMake(49, -123);
+    MKCoordinateRegion adjustedRegion = [giveRideMap regionThatFits:MKCoordinateRegionMakeWithDistance(startCoord, 200, 200)];
+    [giveRideMap setRegion:adjustedRegion animated:YES];
+    [super viewWillAppear:animated];
+    
+}
 
 - (void)viewDidLoad {
     firstLoad =true;
@@ -56,16 +71,16 @@ bool firstLoad;
     myAnnotation.subtitle = @"3700 Coldwater Canyon, Studio City";
     [self.giveRideMap addAnnotation:myAnnotation];
     
-    self.locationManager = [[CLLocationManager alloc]init];
-    self.locationManager.delegate = self;
+    [global sharedInstance];
     
-    if ([[[UIDevice currentDevice]systemVersion] floatValue] >= 8.0){
-        NSLog(@" %d", [CLLocationManager locationServicesEnabled]);
-        NSLog(@" ZOOP! %d", [CLLocationManager authorizationStatus]);
-        [self.locationManager requestAlwaysAuthorization];
+    
+    if ([global sharedInstance].currentLocation == nil)
+    {
+        [SVProgressHUD show];
+        [SVProgressHUD showWithStatus:@"Getting Current Location"];
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(removeSV) name:@"kGotLocationNotification" object:nil];
+        
     }
-        [self.locationManager startUpdatingLocation];
-
     
     
 
@@ -79,23 +94,15 @@ bool firstLoad;
 
     startAddress.returnKeyType = UIReturnKeyGo;
     endAddress.returnKeyType = UIReturnKeyGo;
-    
+}
 
+-(void) removeSV{
+    [SVProgressHUD dismiss];
 }
 -(void) youAtSchool{
+
     CLLocation *loc = [[CLLocation alloc] initWithLatitude:HW_LATITUDE longitude:HW_LONGITUDE];
-    CLLocation *loc2 = [[CLLocation alloc] initWithLatitude:self.giveRideMap.userLocation.coordinate.latitude longitude:self.giveRideMap.userLocation.coordinate.longitude];
-    
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder reverseGeocodeLocation:loc2 completionHandler:^(NSArray *placemarks, NSError *error){
-        if (error == nil && [placemarks count] > 0){
-            placemark = [placemarks lastObject];
-        }
-        else
-        {
-            
-        }
-    }];
+    CLLocation *loc2 = [[CLLocation alloc] initWithLatitude:[global sharedInstance].currentLocation.coordinate.latitude longitude:[global sharedInstance].currentLocation.coordinate.longitude];
     CLLocationDistance dist = [loc distanceFromLocation:loc2];
     
     NSLog(@"locations: %@ %@", loc, loc2);
@@ -113,9 +120,12 @@ bool firstLoad;
         endAddress.hidden=true;
         label.text = @"You are giving a ride from your current location to school";
         endAddressString = @"Harvard Westlake High School";
-        startAddressString = [NSString stringWithFormat:@"%@ %@",placemark.subThoroughfare, placemark.thoroughfare];
+        startAddressString = [global sharedInstance].address;
         _pay.hidden = false;
         _giveARide.hidden = false;
+        
+        
+
     }
 }
 -(void) findAddress{
@@ -183,7 +193,7 @@ bool firstLoad;
         {
             annotationView.annotation = annotation;
         }
-        annotationView.image = [UIImage imageNamed:@"home153.png"];
+        annotationView.tintColor = MKPinAnnotationColorRed;
         annotationView.enabled = true;
         annotationView.canShowCallout = true;
         annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
@@ -214,7 +224,7 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
         
         [self.giveRideMap setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
         firstLoad =false;
-        [self youAtSchool];
+        //[self youAtSchool];
     }
     
 }
@@ -222,15 +232,7 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
 {
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    //    self.requestedViewController.hidden = YES;
-    _pay.hidden = true;
-    _giveARide.hidden = true;
-    startAddress.hidden = TRUE;
 
-    
-    [super viewWillAppear:YES];
-}
 
 
 - (void)didReceiveMemoryWarning {
@@ -248,10 +250,28 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
 }
 */
 //Sends information about the Drive to Parse
+
+
 - (IBAction)giveARideButton:(id)sender {
+    
+    CLLocation *loc = [[CLLocation alloc] initWithLatitude:HW_LATITUDE longitude:HW_LONGITUDE];
+    CLLocation *loc2 = [[CLLocation alloc] initWithLatitude:[global sharedInstance].currentLocation.coordinate.latitude longitude:[global sharedInstance].currentLocation.coordinate.longitude];
+    CLLocationDistance dist = [loc distanceFromLocation:loc2];
+    
+    int distance = dist;
+    if (distance < 835){
+        startAddressString = @"Harvard Westlake High School";
+    }
+    
     PFObject *newRide = [PFObject objectWithClassName:@"Ride"];
     newRide[@"startAddress"] = startAddressString;
     newRide[@"endAddress"] = endAddressString;
+    PFGeoPoint *currentLocationgeo =  [PFGeoPoint geoPointWithLocation:[global sharedInstance].currentLocation];
+    newRide[@"location"] = currentLocationgeo;
+    newRide[@"Requestor"] = PFUser.currentUser;
+    newRide[@"giver"] = [NSNumber numberWithBool:true];
+    
+
     if ([_pay.text isEqualToString:@""]){
         _parsePay = @"Free";
     }
