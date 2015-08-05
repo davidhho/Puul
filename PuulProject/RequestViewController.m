@@ -23,7 +23,7 @@
 
 @end
 @implementation RequestViewController
-@synthesize findmeARideButton, requestRideMap, locationManager, startAddress, label, endAddress, pay, endAddressString, startAddressString;
+@synthesize findmeARideButton, requestRideMap, locationManager, startAddress, label, endAddress, pay, endAddressString, startAddressString, time;
 bool firstLoad;
 
 
@@ -52,6 +52,9 @@ bool firstLoad;
     CLLocationCoordinate2D hwLocation;
     hwLocation.longitude = HW_LONGITUDE;
     hwLocation.latitude = HW_LATITUDE;
+    
+
+
     
     Annotation * myAnnotation = [Annotation alloc];
     myAnnotation.coordinate = hwLocation;
@@ -120,6 +123,7 @@ bool firstLoad;
         mr.origin.y = pt.y - mr.size.height * 0.6;
         [self.requestRideMap setVisibleMapRect:mr animated:YES];
         endAddressString = endAddress.text;
+        currentLocationgeo =  [PFGeoPoint geoPointWithLocation: placemark.location];
 
         
     }];
@@ -139,6 +143,7 @@ bool firstLoad;
         label.text = @"You are at School. Please pick your End Address.";
         startAddressString = @"Harvard Westlake High School";
         
+        
     }
     else{
         label.numberOfLines = 2;
@@ -147,6 +152,8 @@ bool firstLoad;
         label.text = @"You are giving a ride from your current location to school";
         startAddressString = [global sharedInstance].address;
         endAddressString = @"Harvard Westlake High School";
+        currentLocationgeo =  [PFGeoPoint geoPointWithLocation:[global sharedInstance].currentLocation];
+        time.hidden = false;
         pay.hidden = false;
         findmeARideButton.hidden = false;
         
@@ -177,16 +184,15 @@ bool firstLoad;
     }
     else if ([annotation isKindOfClass:[RideAnnotations class]])
     {
-        MKAnnotationView *annotationView = (MKAnnotationView *)[_mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
+        MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[_mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
         if (annotationView == nil)
         {
-            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
+            annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
         }
         else
         {
             annotationView.annotation = annotation;
         }
-        annotationView.image = [UIImage imageNamed:@"home153.png"];
         annotationView.enabled = true;
         annotationView.canShowCallout = true;
         annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
@@ -203,6 +209,7 @@ bool firstLoad;
 
 -(void) viewWillAppear:(BOOL)animated{
     pay.hidden = true;
+    time.hidden = true;
     findmeARideButton.hidden = true;
     startAddress.hidden = TRUE;
     [self youAtSchool];
@@ -256,9 +263,9 @@ bool firstLoad;
     PFObject *newRide = [PFObject objectWithClassName:@"Ride"];
     newRide[@"startAddress"] = startAddressString;
     newRide[@"endAddress"] = endAddressString;
-    PFGeoPoint *currentLocationgeo =  [PFGeoPoint geoPointWithLocation:[global sharedInstance].currentLocation];
     newRide[@"location"] = currentLocationgeo;
     newRide[@"Requestor"] = PFUser.currentUser;
+    newRide[@"time"] = time.text;
     newRide[@"giver"] = [NSNumber numberWithBool:false];
     
 
@@ -308,6 +315,7 @@ bool firstLoad;
         if (textField.returnKeyType == UIReturnKeyGo)
         {
             [self findAddress];
+            time.hidden = false;
             pay.hidden = false;
             findmeARideButton.hidden = false;
         }

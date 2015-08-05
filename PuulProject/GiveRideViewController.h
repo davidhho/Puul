@@ -17,18 +17,21 @@
     CLLocation *currentLocation;
     CLLocationCoordinate2D currentCenter;
     CLPlacemark *placemark;
-
+    PFGeoPoint *currentLocationgeo;
 
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *label;
 
 @property (weak, nonatomic) IBOutlet UITextField *startAddress;
-@property (strong, nonatomic) IBOutlet MKMapView *giveRideMap;
+@property
+(strong, nonatomic) IBOutlet MKMapView *giveRideMap;
 
 @property (weak, nonatomic) IBOutlet UITextField *endAddress;
 
 @property (weak, nonatomic) IBOutlet UIButton *driveButton;
+
+@property (weak, nonatomic) IBOutlet UITextField *time;
 
 @property (weak, nonatomic) IBOutlet UITextField *pay;
 

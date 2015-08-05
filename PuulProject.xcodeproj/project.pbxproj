@@ -14,6 +14,7 @@
 		EE044B011B4C531F0052CC67 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE044B001B4C531F0052CC67 /* Images.xcassets */; };
 		EE044B041B4C531F0052CC67 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE044B021B4C531F0052CC67 /* LaunchScreen.xib */; };
 		EE044B101B4C53200052CC67 /* PuulProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE044B0F1B4C53200052CC67 /* PuulProjectTests.m */; };
+		EE29B9531B711E3300F0C790 /* GreenAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = EE29B9521B711E3300F0C790 /* GreenAnnotation.m */; };
 		EE48F6C61B4C6B9700E6792C /* PUUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48F6C51B4C6B9700E6792C /* PUUtility.m */; };
 		EE48F6CC1B4C6BB900E6792C /* UIImage+PUImageExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48F6C91B4C6BB900E6792C /* UIImage+PUImageExtensions.m */; };
 		EE48F6CD1B4C6BB900E6792C /* UIColor+PUColors.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48F6CB1B4C6BB900E6792C /* UIColor+PUColors.m */; };
@@ -65,6 +66,8 @@
 		EE044B091B4C53200052CC67 /* PuulProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PuulProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE044B0E1B4C53200052CC67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE044B0F1B4C53200052CC67 /* PuulProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PuulProjectTests.m; sourceTree = "<group>"; };
+		EE29B9511B711E3300F0C790 /* GreenAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreenAnnotation.h; sourceTree = "<group>"; };
+		EE29B9521B711E3300F0C790 /* GreenAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreenAnnotation.m; sourceTree = "<group>"; };
 		EE48F6C31B4C6B9700E6792C /* PUConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PUConstants.h; path = ../../Puul/Puul/Puul/PUConstants.h; sourceTree = "<group>"; };
 		EE48F6C41B4C6B9700E6792C /* PUUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PUUtility.h; path = ../../Puul/Puul/Puul/PUUtility.h; sourceTree = "<group>"; };
 		EE48F6C51B4C6B9700E6792C /* PUUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PUUtility.m; path = ../../Puul/Puul/Puul/PUUtility.m; sourceTree = "<group>"; };
@@ -277,6 +280,8 @@
 				EE4C70261B5D9477001C50B9 /* Annotation.m */,
 				EE4C702C1B614FAA001C50B9 /* RideAnnotations.h */,
 				EE4C702D1B614FAA001C50B9 /* RideAnnotations.m */,
+				EE29B9511B711E3300F0C790 /* GreenAnnotation.h */,
+				EE29B9521B711E3300F0C790 /* GreenAnnotation.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -453,6 +458,7 @@
 			files = (
 				EE4C70271B5D9477001C50B9 /* Annotation.m in Sources */,
 				EE48F6D71B4C807100E6792C /* PURoute.m in Sources */,
+				EE29B9531B711E3300F0C790 /* GreenAnnotation.m in Sources */,
 				EE9481D21B5453DE00E2DD4A /* GiveRideViewController.m in Sources */,
 				EE044AF91B4C531F0052CC67 /* AppDelegate.m in Sources */,
 				EE48F6F91B4DBC4E00E6792C /* SettingsViewController.m in Sources */,

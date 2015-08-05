@@ -10,7 +10,8 @@
 #import <Parse/Parse.h>
 
 
-@interface SettingsViewController : UIViewController
+@interface SettingsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
 - (IBAction)logoutButton:(id)sender;
 
 @end

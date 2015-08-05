@@ -17,6 +17,10 @@
 @property(nonatomic, copy) NSString * endAddress;
 @property(nonatomic, copy) NSString * pay;
 @property(nonatomic, copy) NSString * subtitle;
+@property(nonatomic, copy) UIImage * profilePic;
+@property(nonatomic, copy) NSString * showInfo;
+
+
 
 
 @end

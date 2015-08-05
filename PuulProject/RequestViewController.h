@@ -15,6 +15,8 @@
     CLLocation *currentLocation;
     CLLocationCoordinate2D currentCenter;
     CLPlacemark *placemark;
+    PFGeoPoint *currentLocationgeo;
+    CLLocation *hw;
 }
 @property (weak, nonatomic) IBOutlet UITextField *startAddress;
 
@@ -33,6 +35,8 @@
 @property (strong, nonatomic) NSString *startAddressString;
 
 @property (strong, nonatomic) NSString *parsePay;
+
+@property (weak, nonatomic) IBOutlet UITextField *time;
 
 @property (weak, nonatomic) IBOutlet UIButton *findmeARideButton;
 

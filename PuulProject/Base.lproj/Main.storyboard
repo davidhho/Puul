@@ -252,22 +252,35 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="45" y="492" width="310" height="30"/>
+                                    <rect key="frame" x="45" y="551" width="310" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="logoutButton:" destination="b1t-tP-Ydl" eventType="touchUpInside" id="m2q-UC-4ty"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7je-Rk-kQ1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="384" height="492"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="b1t-tP-Ydl" id="jN7-aJ-eeZ"/>
+                                    <outlet property="delegate" destination="b1t-tP-Ydl" id="4Z8-Y5-WaM"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="086-eZ-Bg1"/>
+                                <exclude reference="7je-Rk-kQ1"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="086-eZ-Bg1"/>
+                                <include reference="7je-Rk-kQ1"/>
                             </mask>
                         </variation>
                     </view>
@@ -277,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggk-Ed-eep" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4117.5" y="-913"/>
+            <point key="canvasLocation" x="-4312.5" y="-919"/>
         </scene>
         <!--Request a Ride-->
         <scene sceneID="hl8-Ig-bSO">
@@ -326,14 +339,6 @@
                                     <rect key="frame" x="9" y="75" width="352" height="62"/>
                                 </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pay: Free (Tap to Change)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zf9-EL-hyh">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="92" y="183" width="185" height="30"/>
-                                </variation>
-                            </textField>
                             <button opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EL3-Qj-f1H">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -348,6 +353,22 @@
                                     <action selector="findMeARide:" destination="jo0-KN-lum" eventType="touchUpInside" id="yeu-d1-It2"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time of Departure" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T67-9e-lDD">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="9" y="178" width="351" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pay: Free (Tap to Change)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zf9-EL-hyh">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="92" y="211" width="185" height="30"/>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -357,8 +378,9 @@
                                 <exclude reference="Tkz-dd-9J9"/>
                                 <exclude reference="8FJ-lX-lub"/>
                                 <exclude reference="Zwn-EO-lov"/>
-                                <exclude reference="zf9-EL-hyh"/>
                                 <exclude reference="EL3-Qj-f1H"/>
+                                <exclude reference="T67-9e-lDD"/>
+                                <exclude reference="zf9-EL-hyh"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -367,8 +389,9 @@
                                 <include reference="Tkz-dd-9J9"/>
                                 <include reference="8FJ-lX-lub"/>
                                 <include reference="Zwn-EO-lov"/>
-                                <include reference="zf9-EL-hyh"/>
                                 <include reference="EL3-Qj-f1H"/>
+                                <include reference="T67-9e-lDD"/>
+                                <include reference="zf9-EL-hyh"/>
                             </mask>
                         </variation>
                         <connections>
@@ -384,6 +407,7 @@
                         <outlet property="requestRideMap" destination="3gA-8S-JTs" id="1Vt-WV-Svj"/>
                         <outlet property="searchDisplayController" destination="lsG-Y7-c6A" id="H8g-zh-xIi"/>
                         <outlet property="startAddress" destination="8FJ-lX-lub" id="cee-Bf-0xv"/>
+                        <outlet property="time" destination="T67-9e-lDD" id="Qfd-ty-O4Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Gw-6U-2qE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -560,14 +584,6 @@
                                     <rect key="frame" x="16" y="143" width="352" height="30"/>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pay: Free (Tap to Change)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zpF-8F-4Ub">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="100" y="181" width="185" height="30"/>
-                                </variation>
-                            </textField>
                             <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcb-H8-YpV">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -582,6 +598,22 @@
                                     <action selector="giveARideButton:" destination="lYe-zs-OVk" eventType="touchUpInside" id="Jzw-c4-hik"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time of Departure" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UMV-0l-rOP">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="176" width="352" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pay: Free (Tap to Change)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zpF-8F-4Ub">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="100" y="209" width="185" height="30"/>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -590,8 +622,9 @@
                                 <exclude reference="r7b-Ro-DLL"/>
                                 <exclude reference="dFk-HO-Kyc"/>
                                 <exclude reference="wHE-xJ-Rjs"/>
-                                <exclude reference="zpF-8F-4Ub"/>
                                 <exclude reference="xcb-H8-YpV"/>
+                                <exclude reference="UMV-0l-rOP"/>
+                                <exclude reference="zpF-8F-4Ub"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -599,8 +632,9 @@
                                 <include reference="r7b-Ro-DLL"/>
                                 <include reference="dFk-HO-Kyc"/>
                                 <include reference="wHE-xJ-Rjs"/>
-                                <include reference="zpF-8F-4Ub"/>
                                 <include reference="xcb-H8-YpV"/>
+                                <include reference="UMV-0l-rOP"/>
+                                <include reference="zpF-8F-4Ub"/>
                             </mask>
                         </variation>
                         <connections>
@@ -618,6 +652,7 @@
                         <outlet property="giveRideMap" destination="r7b-Ro-DLL" id="aVL-IT-v8z"/>
                         <outlet property="label" destination="dFk-HO-Kyc" id="sfu-lD-DwC"/>
                         <outlet property="pay" destination="zpF-8F-4Ub" id="mxd-Ql-SHZ"/>
+                        <outlet property="time" destination="UMV-0l-rOP" id="t9l-lA-XgZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IHe-Ha-FXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -802,7 +837,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4El-aD-3pw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4117.5" y="-943"/>
+            <point key="canvasLocation" x="-3793.5" y="-943"/>
         </scene>
         <!--Feed-->
         <scene sceneID="eUf-dm-fG7">

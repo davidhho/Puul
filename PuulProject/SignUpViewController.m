@@ -98,7 +98,10 @@ UITableView *sTableView;
     PFUser *newUser = [PFUser user];
     newUser.username = _usernameField.text;
     newUser.email = _emailField.text;
-    newUser.password = _passwordField.text; 
+    newUser.password = _passwordField.text;
+    newUser[@"phone"] = _phoneField.text;
+
+    
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
         if (!error){
             NSLog(@"Registration Complete");

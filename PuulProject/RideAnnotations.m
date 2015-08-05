@@ -10,5 +10,16 @@
 #import "RideAnnotations.h"
 
 @implementation RideAnnotations
-@synthesize coordinate, title, subtitle, begAddress, endAddress, pay;
+@synthesize coordinate, title, subtitle, begAddress, endAddress, pay, profilePic, showInfo;
+
+
+- (id) init {
+    if ((self = [super init])) {
+        title = @"fuck";
+    }
+    return self;
+}
+
+
 @end
+

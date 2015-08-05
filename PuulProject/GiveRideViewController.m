@@ -24,11 +24,12 @@
 
 
 @implementation GiveRideViewController
-@synthesize giveRideMap, locationManager, startAddress, endAddress, label, endAddressString, startAddressString;
+@synthesize giveRideMap, locationManager, startAddress, endAddress, label, endAddressString, startAddressString, time;
 bool firstLoad;
 
 -(void)viewWillAppear:(BOOL)animated{
     //    self.requestedViewController.hidden = YES;
+    time.hidden = true;
     _pay.hidden = true;
     _giveARide.hidden = true;
     startAddress.hidden = TRUE;
@@ -121,6 +122,8 @@ bool firstLoad;
         label.text = @"You are giving a ride from your current location to school";
         endAddressString = @"Harvard Westlake High School";
         startAddressString = [global sharedInstance].address;
+        currentLocationgeo =  [PFGeoPoint geoPointWithLocation:[global sharedInstance].currentLocation];
+        time.hidden = false;
         _pay.hidden = false;
         _giveARide.hidden = false;
         
@@ -157,7 +160,7 @@ bool firstLoad;
         mr.origin.y = pt.y - mr.size.height * 0.6;
         [self.giveRideMap setVisibleMapRect:mr animated:YES];
         endAddressString = endAddress.text;
-        
+        currentLocationgeo =  [PFGeoPoint geoPointWithLocation: placemark.location];
         
     }];
 }
@@ -184,10 +187,10 @@ bool firstLoad;
     }
     else if ([annotation isKindOfClass:[RideAnnotations class]])
     {
-        MKAnnotationView *annotationView = (MKAnnotationView *)[_mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
+        MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[_mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
         if (annotationView == nil)
         {
-            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
+            annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
         }
         else
         {
@@ -266,8 +269,8 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     PFObject *newRide = [PFObject objectWithClassName:@"Ride"];
     newRide[@"startAddress"] = startAddressString;
     newRide[@"endAddress"] = endAddressString;
-    PFGeoPoint *currentLocationgeo =  [PFGeoPoint geoPointWithLocation:[global sharedInstance].currentLocation];
     newRide[@"location"] = currentLocationgeo;
+    newRide[@"time"] = time.text;
     newRide[@"Requestor"] = PFUser.currentUser;
     newRide[@"giver"] = [NSNumber numberWithBool:true];
     
@@ -328,6 +331,7 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     if (textField.returnKeyType == UIReturnKeyGo)
     {
         [self findAddress];
+        time.hidden = false;
         _pay.hidden = false;
         _giveARide.hidden = false;
     }

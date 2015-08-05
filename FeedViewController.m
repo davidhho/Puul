@@ -12,8 +12,10 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "Annotation.h"
+#import "RideAnnotations.h"
 #import "global.h"
 #import <SVProgressHUD.h>
+#import "GreenAnnotation.h"
 
 #define HW_LONGITUDE -118.412835;
 #define HW_LATITUDE 34.139545;
@@ -24,6 +26,7 @@
 @implementation FeedViewController
 @synthesize requestMap, locationManager;
 CLLocation *currentLocation;
+NSString *showInfo;
 bool firstLoad;
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -66,7 +69,52 @@ bool firstLoad;
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(removeSV) name:@"kGotLocationNotification" object:nil];
 
     }
+    PFQuery *query = [PFQuery queryWithClassName:@"Ride"];
+    [query includeKey:@"Requestor"];
+    [query whereKey:@"giver" equalTo:[NSNumber numberWithBool:YES]];;
+    [query findObjectsInBackgroundWithBlock:^(NSArray *points, NSError *error)
+     {
+         if(!error)
+         {
+             [self plotPositionsRed:points];
+        }
+
+        else{
+         }
+         
+    }];
+
+    
 }
+
+-(void)plotPositionsRed: (NSArray *) points
+{
+    for (PFObject *point in points)
+    {
+        RideAnnotations *annotation = [[RideAnnotations alloc] init];
+        PFObject *username = point[@"Requestor"];
+        annotation.title = username[@"username"];
+        PFFile* pic = username[@"profilePic"];
+        annotation.profilePic = [UIImage imageWithData:[pic getData]];
+        if ([point[@"startAddress"] isEqualToString:@"Harvard Westlake High School"]){
+            annotation.subtitle = point[@"endAddress"];
+            annotation.showInfo = [NSString stringWithFormat:@" %@ \n %@ \n %@ \n %@ %@ \n %@ %@",username[@"username"],point[@"endAddress"], point[@"time"], @"Cost:", point[@"pay"], @"Phone Number:", username[@"phone"]];
+
+        }
+        else{
+            annotation.subtitle = point[@"startAddress"];
+            annotation.showInfo = [NSString stringWithFormat:@" %@ \n %@ \n %@ \n %@ %@",username[@"username"],point[@"startAddress"], point[@"time"], @"Cost:", point[@"pay"]];
+        }
+        
+        PFGeoPoint *geoPoint = point[@"location"];
+        annotation.coordinate = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
+        
+        
+        [self.requestMap addAnnotation:annotation];
+    }
+}
+
+
 
 -(void) removeSV{
     [SVProgressHUD dismiss];
@@ -95,9 +143,40 @@ bool firstLoad;
         annotationView.canShowCallout = true;
             return annotationView;
     }
+    if ([annotation isKindOfClass:[RideAnnotations class]]){
+        MKPinAnnotationView *pinView = (MKPinAnnotationView*)[_mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+        UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0,0,50,50)];
+        view.backgroundColor = [UIColor blueColor];
+        
+        RideAnnotations* anno = annotation;
+        UIImageView *imgView = [[UIImageView alloc]initWithImage:anno.profilePic];
+        imgView.frame = CGRectMake(0,0,50,50);
+        //[view addSubview:imgView];
+        if (!pinView)
+        {
+            pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
+            pinView.canShowCallout = YES;
+        } else {
+            //pinView.annotation = annotation;
+        }
+        pinView.annotation = annotation;
+        pinView.leftCalloutAccessoryView = imgView;
+        pinView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        return pinView;
+    }
+    
     return nil;
     
 }
+
+
+-(void) mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    RideAnnotations* annotation = view.annotation;
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Information" message:annotation.showInfo delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: @"Confirm", nil];
+    [alert show];
+}
+
 
 - (void)locationManager:(CLLocationManager * )manager
 didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
@@ -168,29 +247,87 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     
 }
 
-- (void) retrieveFromParse {
-    
-    
-}
 
 - (IBAction)changeRides:(UISegmentedControl *)sender {
     switch (sender.selectedSegmentIndex) {
         case 0: {
+            NSMutableArray * annotationsToRemove = [ requestMap.annotations mutableCopy ] ;
+            [ annotationsToRemove removeObject:requestMap.userLocation ] ;
+            [ requestMap removeAnnotations:annotationsToRemove ] ;
+            
+            CLLocationCoordinate2D hwLocation;
+            hwLocation.longitude = HW_LONGITUDE;
+            hwLocation.latitude = HW_LATITUDE;
+            
+            
+            Annotation * myAnnotation = [Annotation alloc];
+            myAnnotation.coordinate = hwLocation;
+            myAnnotation.title = @"Harvard Westlake";
+            myAnnotation.subtitle = @"3700 Coldwater Canyon, Studio City";
+            
+            
+            [self.requestMap addAnnotation:myAnnotation];
+            [[global sharedInstance].locationManager requestAlwaysAuthorization];
+            [global sharedInstance];
             PFQuery *query = [PFQuery queryWithClassName:@"Ride"];
-            [query whereKey:@"giver" equalTo:[NSNumber numberWithBool:YES]];;
+            [query includeKey:@"Requestor"];
+
+            [query whereKey:@"giver" equalTo:[NSNumber numberWithBool:YES]];
+            [query findObjectsInBackgroundWithBlock:^(NSArray *points, NSError *error)
+             {
+                 if(!error)
+                 {
+                        [self plotPositionsRed:points];
+                 }
+                 else{
+                     
+                 }
+                 
+             }];
             
 
         } break;
         case 1:{
+            NSMutableArray * annotationsToRemove = [ requestMap.annotations mutableCopy ] ;
+            [ annotationsToRemove removeObject:requestMap.userLocation ] ;
+            [ requestMap removeAnnotations:annotationsToRemove ] ;
+            
+            CLLocationCoordinate2D hwLocation;
+            hwLocation.longitude = HW_LONGITUDE;
+            hwLocation.latitude = HW_LATITUDE;
+            
+            
+            Annotation * myAnnotation = [Annotation alloc];
+            myAnnotation.coordinate = hwLocation;
+            myAnnotation.title = @"Harvard Westlake";
+            myAnnotation.subtitle = @"3700 Coldwater Canyon, Studio City";
+            
+            
+            [self.requestMap addAnnotation:myAnnotation];
+            [[global sharedInstance].locationManager requestAlwaysAuthorization];
+            [global sharedInstance];
             PFQuery *query = [PFQuery queryWithClassName:@"Ride"];
+            [query includeKey:@"Requestor"];
+
             [query whereKey:@"giver" equalTo:[NSNumber numberWithBool:false]];;
+            [query findObjectsInBackgroundWithBlock:^(NSArray *points, NSError *error)
+             {
+                 if(!error)
+                 {
+                     [self plotPositionsRed:points];
+                 }
+                 else{
+                     
+                 }
+                 
+             }];
+            
         }break;
             
             
         default:
             break;
     }
-    [ FeedViewController getLocation];
 }
 //
 //
