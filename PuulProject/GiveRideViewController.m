@@ -283,6 +283,7 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     }
     newRide[@"pay"] = _parsePay;
     
+    [newRide pinInBackground];
     
     [newRide saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
         if (succeeded == YES){

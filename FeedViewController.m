@@ -94,6 +94,7 @@ bool firstLoad;
         RideAnnotations *annotation = [[RideAnnotations alloc] init];
         PFObject *username = point[@"Requestor"];
         annotation.title = username[@"username"];
+        annotation.begAddress = point[@"startAddress"];
         PFFile* pic = username[@"profilePic"];
         annotation.profilePic = [UIImage imageWithData:[pic getData]];
         if ([point[@"startAddress"] isEqualToString:@"Harvard Westlake High School"]){
@@ -103,7 +104,7 @@ bool firstLoad;
         }
         else{
             annotation.subtitle = point[@"startAddress"];
-            annotation.showInfo = [NSString stringWithFormat:@" %@ \n %@ \n %@ \n %@ %@",username[@"username"],point[@"startAddress"], point[@"time"], @"Cost:", point[@"pay"]];
+            annotation.showInfo = [NSString stringWithFormat:@" %@ \n %@ \n %@ \n %@ %@ \n %@ %@",username[@"username"],point[@"startAddress"], point[@"time"], @"Cost:", point[@"pay"], @"Phone Number:", username[@"phone"]];
         }
         
         PFGeoPoint *geoPoint = point[@"location"];
@@ -142,9 +143,11 @@ bool firstLoad;
         annotationView.enabled = true;
         annotationView.canShowCallout = true;
             return annotationView;
-    }
-    if ([annotation isKindOfClass:[RideAnnotations class]]){
-        MKPinAnnotationView *pinView = (MKPinAnnotationView*)[_mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+    
+        }
+    if ([annotation isKindOfClass:[RideAnnotations class]])
+    {
+        MKPinAnnotationView *pinView=(MKPinAnnotationView*)[_mapView dequeueReusableAnnotationViewWithIdentifier:@"pin"];
         UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0,0,50,50)];
         view.backgroundColor = [UIColor blueColor];
         
@@ -162,9 +165,12 @@ bool firstLoad;
         pinView.annotation = annotation;
         pinView.leftCalloutAccessoryView = imgView;
         pinView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        
+        if ([anno.begAddress isEqualToString:@"Harvard Westlake High School"]){
+            pinView.pinColor = MKPinAnnotationColorGreen;
+        }
         return pinView;
     }
-    
     return nil;
     
 }
@@ -173,8 +179,9 @@ bool firstLoad;
 -(void) mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     RideAnnotations* annotation = view.annotation;
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Information" message:annotation.showInfo delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: @"Confirm", nil];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Information" message:annotation.showInfo delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: @"Accept Ride", nil];
     [alert show];
+    [alert setDelegate:self];
 }
 
 
@@ -187,6 +194,7 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
 -(void)viewDidAppear:(BOOL)animated{
     [self.locationManager requestWhenInUseAuthorization];
     [super viewDidAppear:YES];
+    _label.numberOfLines = 2;
     requestMap.showsUserLocation = YES;
     
 }
@@ -327,6 +335,11 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
             
         default:
             break;
+    }
+}
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 1){
+        NSLog(@"Ride Accepted");
     }
 }
 //

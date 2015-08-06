@@ -37,6 +37,14 @@
 		EE4C70321B615420001C50B9 /* home153.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4C70311B615420001C50B9 /* home153.png */; };
 		EE4C70341B619956001C50B9 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4C70331B619956001C50B9 /* Icon-60@3x.png */; };
 		EE4C70371B6698A0001C50B9 /* global.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4C70361B6698A0001C50B9 /* global.m */; };
+		EE5CA88A1B728392009B3270 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5CA8891B728392009B3270 /* AboutViewController.m */; };
+		EE5CA88D1B7283AC009B3270 /* TermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5CA88C1B7283AC009B3270 /* TermsViewController.m */; };
+		EE5CA8901B7283B6009B3270 /* LicensesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5CA88F1B7283B6009B3270 /* LicensesViewController.m */; };
+		EE5CA8931B7283CF009B3270 /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5CA8921B7283CF009B3270 /* NameViewController.m */; };
+		EE5CA8961B7283D7009B3270 /* PhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5CA8951B7283D7009B3270 /* PhoneViewController.m */; };
+		EE5CA8991B7283DF009B3270 /* PasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5CA8981B7283DF009B3270 /* PasswordViewController.m */; };
+		EE5CA89C1B7283E8009B3270 /* EmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5CA89B1B7283E8009B3270 /* EmailViewController.m */; };
+		EE5CA89F1B73BC61009B3270 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5CA89E1B73BC61009B3270 /* CustomCell.m */; };
 		EE9481CF1B5453C300E2DD4A /* RequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9481CE1B5453C300E2DD4A /* RequestViewController.m */; };
 		EE9481D21B5453DE00E2DD4A /* GiveRideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9481D11B5453DE00E2DD4A /* GiveRideViewController.m */; };
 /* End PBXBuildFile section */
@@ -104,6 +112,22 @@
 		EE4C70331B619956001C50B9 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@3x.png"; path = "../../../Downloads/icon/ios/AppIcon.appiconset/Icon-60@3x.png"; sourceTree = "<group>"; };
 		EE4C70351B6698A0001C50B9 /* global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = global.h; sourceTree = "<group>"; };
 		EE4C70361B6698A0001C50B9 /* global.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = global.m; sourceTree = "<group>"; };
+		EE5CA8881B728392009B3270 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		EE5CA8891B728392009B3270 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		EE5CA88B1B7283AC009B3270 /* TermsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermsViewController.h; sourceTree = "<group>"; };
+		EE5CA88C1B7283AC009B3270 /* TermsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermsViewController.m; sourceTree = "<group>"; };
+		EE5CA88E1B7283B6009B3270 /* LicensesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LicensesViewController.h; sourceTree = "<group>"; };
+		EE5CA88F1B7283B6009B3270 /* LicensesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LicensesViewController.m; sourceTree = "<group>"; };
+		EE5CA8911B7283CF009B3270 /* NameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameViewController.h; sourceTree = "<group>"; };
+		EE5CA8921B7283CF009B3270 /* NameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameViewController.m; sourceTree = "<group>"; };
+		EE5CA8941B7283D7009B3270 /* PhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneViewController.h; sourceTree = "<group>"; };
+		EE5CA8951B7283D7009B3270 /* PhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneViewController.m; sourceTree = "<group>"; };
+		EE5CA8971B7283DF009B3270 /* PasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordViewController.h; sourceTree = "<group>"; };
+		EE5CA8981B7283DF009B3270 /* PasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordViewController.m; sourceTree = "<group>"; };
+		EE5CA89A1B7283E8009B3270 /* EmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailViewController.h; sourceTree = "<group>"; };
+		EE5CA89B1B7283E8009B3270 /* EmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailViewController.m; sourceTree = "<group>"; };
+		EE5CA89D1B73BC61009B3270 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		EE5CA89E1B73BC61009B3270 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		EE9481CD1B5453C300E2DD4A /* RequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestViewController.h; sourceTree = "<group>"; };
 		EE9481CE1B5453C300E2DD4A /* RequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestViewController.m; sourceTree = "<group>"; };
 		EE9481D01B5453DE00E2DD4A /* GiveRideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiveRideViewController.h; sourceTree = "<group>"; };
@@ -269,6 +293,7 @@
 		EE48F6F31B4DB82100E6792C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EE5CA8871B727DE5009B3270 /* Settings View Controllers */,
 				EE48F70F1B4F24B600E6792C /* ProfileViewControllers */,
 				EE48F6F71B4DBC4E00E6792C /* SettingsViewController.h */,
 				EE48F6F81B4DBC4E00E6792C /* SettingsViewController.m */,
@@ -305,12 +330,35 @@
 			children = (
 				EE48F6F41B4DBB2D00E6792C /* ProfileViewController.h */,
 				EE48F6F51B4DBB2D00E6792C /* ProfileViewController.m */,
+				EE5CA89D1B73BC61009B3270 /* CustomCell.h */,
+				EE5CA89E1B73BC61009B3270 /* CustomCell.m */,
 				EE9481CD1B5453C300E2DD4A /* RequestViewController.h */,
 				EE9481CE1B5453C300E2DD4A /* RequestViewController.m */,
 				EE9481D01B5453DE00E2DD4A /* GiveRideViewController.h */,
 				EE9481D11B5453DE00E2DD4A /* GiveRideViewController.m */,
 			);
 			name = ProfileViewControllers;
+			sourceTree = "<group>";
+		};
+		EE5CA8871B727DE5009B3270 /* Settings View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EE5CA8881B728392009B3270 /* AboutViewController.h */,
+				EE5CA8891B728392009B3270 /* AboutViewController.m */,
+				EE5CA88B1B7283AC009B3270 /* TermsViewController.h */,
+				EE5CA88C1B7283AC009B3270 /* TermsViewController.m */,
+				EE5CA88E1B7283B6009B3270 /* LicensesViewController.h */,
+				EE5CA88F1B7283B6009B3270 /* LicensesViewController.m */,
+				EE5CA8911B7283CF009B3270 /* NameViewController.h */,
+				EE5CA8921B7283CF009B3270 /* NameViewController.m */,
+				EE5CA8941B7283D7009B3270 /* PhoneViewController.h */,
+				EE5CA8951B7283D7009B3270 /* PhoneViewController.m */,
+				EE5CA8971B7283DF009B3270 /* PasswordViewController.h */,
+				EE5CA8981B7283DF009B3270 /* PasswordViewController.m */,
+				EE5CA89A1B7283E8009B3270 /* EmailViewController.h */,
+				EE5CA89B1B7283E8009B3270 /* EmailViewController.m */,
+			);
+			name = "Settings View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,21 +504,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE5CA89C1B7283E8009B3270 /* EmailViewController.m in Sources */,
 				EE4C70271B5D9477001C50B9 /* Annotation.m in Sources */,
 				EE48F6D71B4C807100E6792C /* PURoute.m in Sources */,
+				EE5CA8901B7283B6009B3270 /* LicensesViewController.m in Sources */,
 				EE29B9531B711E3300F0C790 /* GreenAnnotation.m in Sources */,
 				EE9481D21B5453DE00E2DD4A /* GiveRideViewController.m in Sources */,
+				EE5CA8991B7283DF009B3270 /* PasswordViewController.m in Sources */,
 				EE044AF91B4C531F0052CC67 /* AppDelegate.m in Sources */,
 				EE48F6F91B4DBC4E00E6792C /* SettingsViewController.m in Sources */,
 				EE48F6FC1B4EE97C00E6792C /* MainViewController.m in Sources */,
 				EE48F6CD1B4C6BB900E6792C /* UIColor+PUColors.m in Sources */,
 				EE48F6EF1B4DA1CE00E6792C /* LoginViewController.m in Sources */,
+				EE5CA89F1B73BC61009B3270 /* CustomCell.m in Sources */,
 				EE044AF61B4C531F0052CC67 /* main.m in Sources */,
+				EE5CA88D1B7283AC009B3270 /* TermsViewController.m in Sources */,
 				EE9481CF1B5453C300E2DD4A /* RequestViewController.m in Sources */,
 				EE4C70371B6698A0001C50B9 /* global.m in Sources */,
 				EE48F6CC1B4C6BB900E6792C /* UIImage+PUImageExtensions.m in Sources */,
+				EE5CA88A1B728392009B3270 /* AboutViewController.m in Sources */,
 				EE48F6C61B4C6B9700E6792C /* PUUtility.m in Sources */,
+				EE5CA8931B7283CF009B3270 /* NameViewController.m in Sources */,
 				EE48F6F61B4DBB2D00E6792C /* ProfileViewController.m in Sources */,
+				EE5CA8961B7283D7009B3270 /* PhoneViewController.m in Sources */,
 				EE48F7051B4EF19B00E6792C /* FeedViewController.m in Sources */,
 				EE4C702E1B614FAA001C50B9 /* RideAnnotations.m in Sources */,
 				EE48F6E91B4D8AEF00E6792C /* SignUpViewController.m in Sources */,
@@ -597,7 +653,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B15D10C13AD0B5DC7FC15D40 /* Pods.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-3";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -616,7 +672,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ADDDDB20B89C0A6758C8AB21 /* Pods.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-3";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (

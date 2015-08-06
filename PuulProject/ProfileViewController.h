@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface ProfileViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface ProfileViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *GiveRideButton;
 @property (weak, nonatomic) IBOutlet UIButton *RequestRideButton;
 @property (weak, nonatomic) IBOutlet UILabel *UsernameLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *profile;
 @property (strong, nonatomic) UIImageView *chosenImage;

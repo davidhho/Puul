@@ -9,10 +9,19 @@
 
 #import "SettingsViewController.h"
 #import "UIColor+PUColors.h"
+#import "AboutViewController.h"
+#import "TermsViewController.h"
+#import "LicensesViewController.h"
+#import "NameViewController.h"
+#import "PhoneViewController.h"
+#import "PasswordViewController.h"
+#import "EmailViewController.h"
 
 @implementation SettingsViewController
 
 -(void) viewDidLoad{
+    
+    self.title = @"Settings";
 
 }
 
@@ -82,5 +91,44 @@
         return @"Account Actions";
     }
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 
+    if(indexPath.section==0 && indexPath.row == 1){
+        UIViewController *terms  = [[TermsViewController alloc] init];
+        [self.navigationController pushViewController:terms animated:YES];
+        }
+    else if (indexPath.section == 0 && indexPath.row == 0){
+        UIViewController *about = [[AboutViewController alloc]init];
+        [self.navigationController pushViewController:about animated:YES];
+    }
+    else if (indexPath.section == 0 && indexPath.row == 2){
+        UIViewController *license = [[LicensesViewController alloc]init];
+        [self.navigationController pushViewController:license animated:YES];
+    }
+    
+    else if (indexPath.section == 1 && indexPath.row == 0){
+        UIViewController *about = [[NameViewController alloc]init];
+        [self.navigationController pushViewController:about animated:YES];
+    }
+    else if (indexPath.section == 1 && indexPath.row == 1){
+        UIViewController *about = [[PhoneViewController alloc]init];
+        [self.navigationController pushViewController:about animated:YES];
+    }
+    
+    else if (indexPath.section == 1 && indexPath.row == 2){
+        UIViewController *about = [[PasswordViewController alloc]init];
+        [self.navigationController pushViewController:about animated:YES];
+    }
+    else if (indexPath.section ==1 && indexPath.row == 3){
+        UIViewController *about = [[EmailViewController alloc]init];
+        [self.navigationController pushViewController:about animated:YES];
+    }
+    
+    else{
+        [PFUser logOut];
+        [self dismissViewControllerAnimated:YES completion:nil];
+
+    }
+}
 @end

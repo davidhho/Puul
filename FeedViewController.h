@@ -11,12 +11,13 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface FeedViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate> {
+@interface FeedViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, UIAlertViewDelegate> {
     
     CLLocationCoordinate2D currentCenter;
     
 }
 @property (strong, nonatomic) IBOutlet UISegmentedControl *options;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 @property (strong, nonatomic) IBOutlet MKMapView *requestMap;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 + (CLLocation*) getLocation;

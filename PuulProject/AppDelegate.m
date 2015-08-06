@@ -23,10 +23,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [PURoute registerSubclass];
-    
+    [Parse enableLocalDatastore];
     [Parse setApplicationId:@"ivGqdOBrW4N9wEy16QeOoYm4IXDKnPkfmsNKUwoZ"
                   clientKey:@"oL6VguODNoKrG1uyLxiWRgh0lMt2VjBxKJ7ZC9pr"];
-    
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     NSDictionary *textTitleOptions = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil];

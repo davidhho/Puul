@@ -259,11 +259,12 @@ bool firstLoad;
 - (IBAction)findMeARide:(id)sender {
     
     //
-    
+
     PFObject *newRide = [PFObject objectWithClassName:@"Ride"];
     newRide[@"startAddress"] = startAddressString;
     newRide[@"endAddress"] = endAddressString;
     newRide[@"location"] = currentLocationgeo;
+    newRide[@"YourRides"] =
     newRide[@"Requestor"] = PFUser.currentUser;
     newRide[@"time"] = time.text;
     newRide[@"giver"] = [NSNumber numberWithBool:false];
@@ -278,7 +279,7 @@ bool firstLoad;
     }
     newRide[@"pay"] = _parsePay;
 
-    
+    [newRide pinInBackground];
     
     [newRide saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
         if (succeeded == YES){
