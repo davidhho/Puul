@@ -18,7 +18,13 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"Terms";
+    
+    
+
     // Do any additional setup after loading the view.
+}
+-(void) viewWillAppear:(BOOL)animated{
+        _label.numberOfLines = 10;
 }
 
 - (void)didReceiveMemoryWarning {

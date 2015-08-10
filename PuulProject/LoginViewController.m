@@ -41,7 +41,6 @@
 - (IBAction)LoginButton:(id)sender {
     [PFUser logInWithUsernameInBackground:loginUsernameField.text password:loginPasswordField.text block:^(PFUser *user, NSError *error){
         if (!error) {
-            NSLog(@"Login User");
 //            [self performSegueWithIdentifier:@"login" sender:self];
 //            
             //UIWindow *mywindow = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];

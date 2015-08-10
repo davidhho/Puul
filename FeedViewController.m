@@ -27,6 +27,7 @@
 @synthesize requestMap, locationManager;
 CLLocation *currentLocation;
 NSString *showInfo;
+PFObject *profileUser;
 bool firstLoad;
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -100,11 +101,13 @@ bool firstLoad;
         if ([point[@"startAddress"] isEqualToString:@"Harvard Westlake High School"]){
             annotation.subtitle = point[@"endAddress"];
             annotation.showInfo = [NSString stringWithFormat:@" %@ \n %@ \n %@ \n %@ %@ \n %@ %@",username[@"username"],point[@"endAddress"], point[@"time"], @"Cost:", point[@"pay"], @"Phone Number:", username[@"phone"]];
+            profileUser = username[@"installation"];
 
         }
         else{
             annotation.subtitle = point[@"startAddress"];
             annotation.showInfo = [NSString stringWithFormat:@" %@ \n %@ \n %@ \n %@ %@ \n %@ %@",username[@"username"],point[@"startAddress"], point[@"time"], @"Cost:", point[@"pay"], @"Phone Number:", username[@"phone"]];
+            profileUser = username[@"installation"];
         }
         
         PFGeoPoint *geoPoint = point[@"location"];
@@ -187,7 +190,6 @@ bool firstLoad;
 
 - (void)locationManager:(CLLocationManager * )manager
 didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    NSLog(@"CHANGED STATUS: %d", status);
 }
 
 
@@ -339,7 +341,21 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
 }
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 1){
-        NSLog(@"Ride Accepted");
+
+        
+        PFQuery *pushQuery = [PFInstallation query];
+        [pushQuery whereKey:@"objectId" equalTo: profileUser.objectId];
+        
+        
+        PFPush *push = [[PFPush alloc] init];
+        [push setQuery:pushQuery]; // Set our Installation query
+        [push setMessage:[NSString stringWithFormat:@"%@ %@", PFUser.currentUser[@"username"], @"has accepted your ride!"]];
+        //[push setData:]
+        PFInstallation *installation = [PFInstallation currentInstallation];
+        installation[@"user"] = [PFUser currentUser];
+        [installation saveInBackground];
+        [push sendPushInBackground];
+
     }
 }
 //

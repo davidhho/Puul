@@ -16,6 +16,7 @@
 #import "PhoneViewController.h"
 #import "PasswordViewController.h"
 #import "EmailViewController.h"
+#import "LoginViewController.h"
 
 @implementation SettingsViewController
 
@@ -92,7 +93,6 @@
     }
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 
     if(indexPath.section==0 && indexPath.row == 1){
         UIViewController *terms  = [[TermsViewController alloc] init];
@@ -128,7 +128,6 @@
     else{
         [PFUser logOut];
         [self dismissViewControllerAnimated:YES completion:nil];
-
     }
 }
 @end

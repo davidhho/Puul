@@ -51,20 +51,15 @@
 
 - (void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     if (locations.count == 0) return;
-    NSLog(@"got location update: %@", locations[0]);
+
     _currentLocation = locations[0];
     [[[CLGeocoder alloc] init] reverseGeocodeLocation:_currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
         
         if (error == nil && [placemarks count] > 0) {
             CLPlacemark *placemark = [placemarks lastObject];
-            
-            //            NSLog(@"Country: %@", placemark.country);
-            //            NSLog(@"Area: %@", placemark.administrativeArea);
-            //            NSLog(@"City: %@", placemark.locality);
-            //            NSLog(@"Code: %@", placemark.postalCode);
+
             _address = [NSString stringWithFormat:@"%@ %@",placemark.subThoroughfare, placemark.thoroughfare];
-            NSLog(@"Road: %@", placemark.thoroughfare);
-            NSLog(@"Number: %@", placemark.subThoroughfare);
+
             
             // Stop Location Manager
             

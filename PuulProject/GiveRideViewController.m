@@ -106,12 +106,10 @@ bool firstLoad;
     CLLocation *loc2 = [[CLLocation alloc] initWithLatitude:[global sharedInstance].currentLocation.coordinate.latitude longitude:[global sharedInstance].currentLocation.coordinate.longitude];
     CLLocationDistance dist = [loc distanceFromLocation:loc2];
     
-    NSLog(@"locations: %@ %@", loc, loc2);
     
     int distance = dist;
     if (distance < 835){
         label.numberOfLines = 2;
-        NSLog(@"%lf", dist);
         label.text = @"You are at School. Please pick your End Address.";
                 startAddressString = @"Harvard Westlake High School";
         
@@ -134,17 +132,13 @@ bool firstLoad;
 -(void) findAddress{
     [self.endAddress resignFirstResponder];
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    NSLog(@"Label: %@", self.endAddress.text);
     [geocoder geocodeAddressString:self.endAddress.text completionHandler:^(NSArray *placemarks, NSError *error){
         
         if (error) {
-            NSLog(@"error! %@", error);
         }
         
-        NSLog(@"location count: %d", (int)placemarks.count);
         
         CLPlacemark *placemark = [placemarks objectAtIndex:0];
-        NSLog(@"first location: %@", placemark);
         MKCoordinateRegion region;
         CLLocationCoordinate2D newLocation = [placemark.location coordinate];
         region.center = [(CLCircularRegion *)placemark.region center];
@@ -212,7 +206,6 @@ bool firstLoad;
 
 - (void)locationManager:(CLLocationManager * )manager
 didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    NSLog(@"CHANGED STATUS: %d", status);
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -289,9 +282,7 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
         if (succeeded == YES){
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ride" message:@"Your Ride has been Requested" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
             [alert show];
-            
-            NSLog(@"Ride Request Success");
-            
+
             UIStoryboard *mainstoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             
             
@@ -341,8 +332,7 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
 
 #pragma mark CLLocationManagerDelegate Methods
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
-    NSLog(@"Error: %@", error);
-    NSLog(@"Failed to get Location");
+
 }
 
 -(void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{

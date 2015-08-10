@@ -36,9 +36,39 @@
     [[UITabBar appearance] setTintColor:[UIColor puulRedColor]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor puulBarTint]];
     
+    UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound);
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes  categories:nil];
+    [application registerUserNotificationSettings:settings];
+    [application registerForRemoteNotifications];
+    
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // Store the deviceToken in the current Installation and save it to Parse
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+    
+    if (PFUser.currentUser) {
+        PFUser.currentUser[@"installation"] = currentInstallation;
+        [PFUser.currentUser saveInBackground];
+    }
+}
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+        
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Ride Accepted"
+                                                         message:[NSString stringWithFormat:@"%@ %@ \n %@ ", @"", @"has accepted your ride!", @"user"]
+                                                        delegate:self
+                                               cancelButtonTitle:@"Okay"
+                                               otherButtonTitles: nil];
+        [alert show];
+    
+            // Puul is an 
+            // app was just brought from background to foreground
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

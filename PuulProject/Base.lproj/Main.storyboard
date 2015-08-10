@@ -262,8 +262,42 @@
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YAw-x8-dLC">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lvp-mm-elM">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <string key="text">Privacy Policy of Puul
+This Application collects some Personal Data from its Users.
+Policy summary
+Personal Data collected for the following purposes and using the following services:
+Contacting the User
+Contact form
+Personal Data: Address, Email address, First Name, Last Name and Phone number
+Location-based interactions
+Geolocation and Non-continuous geolocation
+Personal Data: Geographic position</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+                                </variation>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Lvp-mm-elM"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Lvp-mm-elM"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="Lvp-mm-elM" id="2Ox-vc-j5h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EN4-xo-TG8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1121,6 +1155,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OvX-UX-gb9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-6213" y="-55"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fkb-fi-jQk">
+            <objects>
+                <viewController id="xzH-xZ-6y5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mv8-C0-7HB"/>
+                        <viewControllerLayoutGuide type="bottom" id="u7T-1X-tM8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cZf-5J-Yeh">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jjc-oX-OZt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
