@@ -351,7 +351,9 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
         [push setQuery:pushQuery]; // Set our Installation query
         NSDictionary *data = @{
                                @"alert" : [NSString stringWithFormat:@"%@ %@", PFUser.currentUser[@"username"], @"has accepted your ride!"],
-                               @"sound" : @"chime"
+                               @"sound" : @"chime",
+                               @"user" : PFUser.currentUser[@"username"],
+                               @"phone" : PFUser.currentUser[@"phone"]
                                };
         [push setData:data];
         PFInstallation *installation = [PFInstallation currentInstallation];

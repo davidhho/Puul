@@ -41,6 +41,18 @@
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
     
+    NSDictionary *remoteNotif = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    
+    if(remoteNotif)
+    {
+
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Ride Accepted"
+                                                         message:[NSString stringWithFormat:@"%@ %@ \n %@ %@", [remoteNotif objectForKey:@"user"], @"has accepted your ride!", @"Phone:", [remoteNotif objectForKey:@"phone"]]
+                                                        delegate:self
+                                               cancelButtonTitle:@"Okay"
+                                               otherButtonTitles: nil];
+        [alert show];
+    }
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -59,9 +71,12 @@
 }
 
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-        
+    
+    
+        NSLog(@"dict is %@", userInfo);
+
         UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Ride Accepted"
-                                                         message:[NSString stringWithFormat:@"%@ %@ \n %@ ", @"", @"has accepted your ride!", @"user"]
+                                                         message:[NSString stringWithFormat:@"%@ %@ \n %@ %@", [userInfo objectForKey:@"user"], @"has accepted your ride!", @"Phone:", [userInfo objectForKey:@"phone"]]
                                                         delegate:self
                                                cancelButtonTitle:@"Okay"
                                                otherButtonTitles: nil];
@@ -70,6 +85,7 @@
             // Puul is an 
             // app was just brought from background to foreground
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
