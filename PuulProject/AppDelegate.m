@@ -80,9 +80,9 @@
                                                         delegate:self
                                                cancelButtonTitle:@"Okay"
                                                otherButtonTitles: nil];
+    
         [alert show];
     
-            // Puul is an 
             // app was just brought from background to foreground
 }
 

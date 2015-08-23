@@ -120,7 +120,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-6132" y="-1710"/>
+            <point key="canvasLocation" x="-5865" y="-1642"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="1no-ze-agy">
@@ -243,6 +243,7 @@
                         <viewControllerLayoutGuide type="bottom" id="O83-B0-33E"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ahH-BN-c2n">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -261,6 +262,7 @@
                         <viewControllerLayoutGuide type="bottom" id="52z-O5-OJY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YAw-x8-dLC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lvp-mm-elM">
@@ -312,6 +314,7 @@ Personal Data: Geographic position</string>
                         <viewControllerLayoutGuide type="bottom" id="B8c-gt-Xre"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QJr-Ms-91z">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -329,6 +332,7 @@ Personal Data: Geographic position</string>
                         <viewControllerLayoutGuide type="bottom" id="Gdz-jv-a20"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="h4w-hZ-1Nn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -346,6 +350,7 @@ Personal Data: Geographic position</string>
                         <viewControllerLayoutGuide type="bottom" id="f8R-fE-oZ6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OVV-g1-UdU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -363,6 +368,7 @@ Personal Data: Geographic position</string>
                         <viewControllerLayoutGuide type="bottom" id="R5f-67-uVX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EwK-W7-s3k">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -380,6 +386,7 @@ Personal Data: Geographic position</string>
                         <viewControllerLayoutGuide type="bottom" id="0fv-GI-7W7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FaT-em-rng">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -501,7 +508,7 @@ Personal Data: Geographic position</string>
                                     <rect key="frame" x="9" y="178" width="351" height="30"/>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pay: Free (Tap to Change)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zf9-EL-hyh">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pay: Free (Tap to Change)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zf9-EL-hyh">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -873,7 +880,7 @@ Personal Data: Geographic position</string>
                                     <rect key="frame" x="16" y="176" width="352" height="30"/>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pay: Free (Tap to Change)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zpF-8F-4Ub">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pay: Free (Tap to Change)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zpF-8F-4Ub">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1165,6 +1172,7 @@ Personal Data: Geographic position</string>
                         <viewControllerLayoutGuide type="bottom" id="u7T-1X-tM8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cZf-5J-Yeh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

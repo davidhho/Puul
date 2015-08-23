@@ -165,8 +165,12 @@ NSMutableArray *myRides;
         PFObject *ride = [myRides objectAtIndex:indexPath.row];
         [myRides removeObjectAtIndex:indexPath.row];
         [ride unpinInBackground];
+        //Deletes pin from the correct map
         [ride deleteInBackground];
+        //Deletes the cell in the tableView
         [self.tableView reloadData]; // tell table to refresh now
+    
+        
         
     }
 }

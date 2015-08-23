@@ -219,7 +219,11 @@ bool firstLoad;
 }
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
-    [self.requestRideMap setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
+    if (firstLoad == true)
+    {
+        [self.requestRideMap setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.2f, 0.2f)) animated:YES];
+        firstLoad = false;
+    }
     
 }
 -(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
@@ -231,8 +235,8 @@ bool firstLoad;
 
 
 - (void) checkFieldsComplete{
-    if ([startAddress.text isEqualToString:@""] || [endAddress.text isEqualToString:@""]){
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops" message:@"You did not complete all the fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    if ([time.text isEqualToString:@""]){
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops" message:@"Please fill in a Time of Departure" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
 }
@@ -255,7 +259,7 @@ bool firstLoad;
 
 - (IBAction)findMeARide:(id)sender {
     
-    //
+    [self checkFieldsComplete];
 
     PFObject *newRide = [PFObject objectWithClassName:@"Ride"];
     newRide[@"startAddress"] = startAddressString;

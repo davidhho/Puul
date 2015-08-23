@@ -176,7 +176,7 @@ bool firstLoad;
     }
     return nil;
     
-}
+} 
 
 
 -(void) mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
@@ -251,7 +251,7 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     if (firstLoad == true)
     {
       
-    [self.requestMap setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
+    [self.requestMap setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.2f, 0.2f)) animated:YES];
         firstLoad =false;
     }
     

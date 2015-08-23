@@ -218,18 +218,12 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     if (firstLoad == true)
     {
         
-        [self.giveRideMap setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
+        [self.giveRideMap setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.2f, 0.2f)) animated:YES];
         firstLoad =false;
         //[self youAtSchool];
     }
     
 }
--(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
-{
-}
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -249,6 +243,8 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
 
 
 - (IBAction)giveARideButton:(id)sender {
+    
+    [self checkFieldsComplete];
     
     CLLocation *loc = [[CLLocation alloc] initWithLatitude:HW_LATITUDE longitude:HW_LONGITUDE];
     CLLocation *loc2 = [[CLLocation alloc] initWithLatitude:[global sharedInstance].currentLocation.coordinate.latitude longitude:[global sharedInstance].currentLocation.coordinate.longitude];
@@ -312,8 +308,8 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
 
 //Makes sure fields are complete
 - (void) checkFieldsComplete{
-    if ([startAddress.text isEqualToString:@"hw"] || [startAddress.text isEqualToString:@"Hw"] || [startAddress.text isEqualToString:@"HW"] || [endAddress.text isEqualToString:@"hw"] ||[endAddress.text isEqualToString:@"Hw"] || [endAddress.text isEqualToString:@"HW"]){
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops" message:@"One of the Address's must be 'HW'" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    if ([time.text isEqualToString:@""]){
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops" message:@"Please enter a Time of Departure" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         [alert show];
     }
 }

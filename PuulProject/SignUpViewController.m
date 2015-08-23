@@ -24,6 +24,7 @@ UITableView *sTableView;
     [_reenterPasswordField resignFirstResponder];
     [_phoneField resignFirstResponder];
     [self checkFieldsComplete];
+    [self checkValidEmail];
     if (![_passwordField.text isEqualToString:_reenterPasswordField.text]) {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Oops" message:@"Your passwords did not match" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
@@ -75,6 +76,15 @@ UITableView *sTableView;
         
     }
 }
+
+- (void) checkValidEmail{
+    if (![_emailField.text containsString:@"@hwemail.com"]){
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops" message:@"Your email is not a Harvard Westlake email" delegate:nil cancelButtonTitle: @"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+}
+
+
 
 -(void) viewDidAppear:(BOOL)animated{
     PFUser *user = [PFUser currentUser];
