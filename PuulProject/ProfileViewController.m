@@ -35,7 +35,7 @@ NSMutableArray *myRides;
     [query whereKey:@"username" equalTo:self.UsernameLabel.text];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
-         if(!error)
+         if(!error) 
          {
              imageFile = [objects objectAtIndex:0][@"profilePic"];
              profile.image = [UIImage imageWithData:[imageFile getData]];

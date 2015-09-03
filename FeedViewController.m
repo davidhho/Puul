@@ -122,6 +122,7 @@ bool firstLoad;
 
 -(void) removeSV{
     [SVProgressHUD dismiss];
+    //Removes SVProgressHUD when finished finding location
 }
 
 -(void)dealloc{
@@ -188,9 +189,6 @@ bool firstLoad;
 }
 
 
-- (void)locationManager:(CLLocationManager * )manager
-didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-}
 
 
 -(void)viewDidAppear:(BOOL)animated{

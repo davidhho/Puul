@@ -178,6 +178,7 @@ bool firstLoad;
         annotationViewHW.enabled = true;
         annotationViewHW.canShowCallout = true;
         return annotationViewHW;
+        //shows the annotations on the Map. This one shows the HW photo
     }
     else if ([annotation isKindOfClass:[RideAnnotations class]])
     {

@@ -14,7 +14,7 @@
 @synthesize registerButton;
 
 UITableView *sTableView;
-
+bool good = false;
 
 -(IBAction)registerUser:(id)sender{
     
@@ -73,7 +73,7 @@ UITableView *sTableView;
         [alert show];
     }
     else{
-        
+        good = true;
     }
 }
 
@@ -157,7 +157,9 @@ UITableView *sTableView;
     }
     if(textField.returnKeyType == UIReturnKeyGo)
     {
-        [self registerUser: self];
+        if ((good = true)){
+            [self registerUser: self];
+        }
     }
     
     return YES;

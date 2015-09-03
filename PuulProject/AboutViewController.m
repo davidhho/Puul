@@ -7,6 +7,7 @@
 //
 
 #import "AboutViewController.h"
+#import "UIColor+PUColors.h"
 
 @interface AboutViewController ()
 
@@ -17,6 +18,27 @@
 - (void)viewDidLoad {
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"About";
+    
+    
+    UILabel *policyLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 40, 300, 300)];
+    [policyLabel setTextColor:[UIColor blackColor]];
+    [policyLabel setTextAlignment:NSTextAlignmentCenter];
+    [policyLabel setBackgroundColor:[UIColor clearColor]];
+    [policyLabel setText:@"Privacy Policy of Puul \n This Application collects some Personal Data from its Users."];
+//     Policy summary
+//     Personal Data collected for the following purposes and using the following services:
+//     Contacting the User
+//     Contact form
+//     Personal Data: Address, Email address, First Name, Last Name and Phone number
+//     Location-based interactions
+//     Geolocation and Non-continuous geolocation
+//     Personal Data: Geographic position"];
+    
+    
+    //Policy summary,
+    [self.view addSubview: policyLabel];
+
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
