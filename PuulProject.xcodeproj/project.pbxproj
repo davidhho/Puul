@@ -107,7 +107,7 @@
 		EE4C702A1B5D99D5001C50B9 /* HW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HW.png; path = ../oldPuul/HW.png; sourceTree = "<group>"; };
 		EE4C702C1B614FAA001C50B9 /* RideAnnotations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RideAnnotations.h; sourceTree = "<group>"; };
 		EE4C702D1B614FAA001C50B9 /* RideAnnotations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RideAnnotations.m; sourceTree = "<group>"; };
-		EE4C70311B615420001C50B9 /* home153.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home153.png; path = ../../../Downloads/home153.png; sourceTree = "<group>"; };
+		EE4C70311B615420001C50B9 /* home153.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home153.png; path = ../oldPuul/home153.png; sourceTree = "<group>"; };
 		EE4C70331B619956001C50B9 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@3x.png"; path = "../../../Downloads/icon/ios/AppIcon.appiconset/Icon-60@3x.png"; sourceTree = "<group>"; };
 		EE4C70351B6698A0001C50B9 /* global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = global.h; sourceTree = "<group>"; };
 		EE4C70361B6698A0001C50B9 /* global.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = global.m; sourceTree = "<group>"; };
