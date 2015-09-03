@@ -16,7 +16,6 @@
 		EE044B101B4C53200052CC67 /* PuulProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE044B0F1B4C53200052CC67 /* PuulProjectTests.m */; };
 		EE29B9531B711E3300F0C790 /* GreenAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = EE29B9521B711E3300F0C790 /* GreenAnnotation.m */; };
 		EE48F6C61B4C6B9700E6792C /* PUUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48F6C51B4C6B9700E6792C /* PUUtility.m */; };
-		EE48F6CC1B4C6BB900E6792C /* UIImage+PUImageExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48F6C91B4C6BB900E6792C /* UIImage+PUImageExtensions.m */; };
 		EE48F6CD1B4C6BB900E6792C /* UIColor+PUColors.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48F6CB1B4C6BB900E6792C /* UIColor+PUColors.m */; };
 		EE48F6D71B4C807100E6792C /* PURoute.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48F6D61B4C807100E6792C /* PURoute.m */; };
 		EE48F6E91B4D8AEF00E6792C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48F6E81B4D8AEF00E6792C /* SignUpViewController.m */; };
@@ -47,6 +46,7 @@
 		EE5CA89F1B73BC61009B3270 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5CA89E1B73BC61009B3270 /* CustomCell.m */; };
 		EE9481CF1B5453C300E2DD4A /* RequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9481CE1B5453C300E2DD4A /* RequestViewController.m */; };
 		EE9481D21B5453DE00E2DD4A /* GiveRideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9481D11B5453DE00E2DD4A /* GiveRideViewController.m */; };
+		EEEEAAE81B9808630049E733 /* UIImage+PUImageExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = EEEEAAE71B9808630049E733 /* UIImage+PUImageExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,15 +76,14 @@
 		EE044B0F1B4C53200052CC67 /* PuulProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PuulProjectTests.m; sourceTree = "<group>"; };
 		EE29B9511B711E3300F0C790 /* GreenAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreenAnnotation.h; sourceTree = "<group>"; };
 		EE29B9521B711E3300F0C790 /* GreenAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreenAnnotation.m; sourceTree = "<group>"; };
-		EE48F6C31B4C6B9700E6792C /* PUConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PUConstants.h; path = ../../Puul/Puul/Puul/PUConstants.h; sourceTree = "<group>"; };
-		EE48F6C41B4C6B9700E6792C /* PUUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PUUtility.h; path = ../../Puul/Puul/Puul/PUUtility.h; sourceTree = "<group>"; };
-		EE48F6C51B4C6B9700E6792C /* PUUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PUUtility.m; path = ../../Puul/Puul/Puul/PUUtility.m; sourceTree = "<group>"; };
-		EE48F6C81B4C6BB900E6792C /* UIImage+PUImageExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+PUImageExtensions.h"; path = "../../Puul/Puul/Puul/UIImage+PUImageExtensions.h"; sourceTree = "<group>"; };
-		EE48F6C91B4C6BB900E6792C /* UIImage+PUImageExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PUImageExtensions.m"; path = "../../Puul/Puul/Puul/UIImage+PUImageExtensions.m"; sourceTree = "<group>"; };
-		EE48F6CA1B4C6BB900E6792C /* UIColor+PUColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+PUColors.h"; path = "../../Puul/Puul/Puul/UIColor+PUColors.h"; sourceTree = "<group>"; };
-		EE48F6CB1B4C6BB900E6792C /* UIColor+PUColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PUColors.m"; path = "../../Puul/Puul/Puul/UIColor+PUColors.m"; sourceTree = "<group>"; };
-		EE48F6D51B4C807100E6792C /* PURoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PURoute.h; path = ../../Puul/Puul/Puul/PURoute.h; sourceTree = "<group>"; };
-		EE48F6D61B4C807100E6792C /* PURoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PURoute.m; path = ../../Puul/Puul/Puul/PURoute.m; sourceTree = "<group>"; };
+		EE48F6C31B4C6B9700E6792C /* PUConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PUConstants.h; path = ../oldPuul/Puul/Puul/Puul/PUConstants.h; sourceTree = "<group>"; };
+		EE48F6C41B4C6B9700E6792C /* PUUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PUUtility.h; path = /Users/davidho/Documents/PuulProject/oldPuul/Puul/Puul/Puul/PUUtility.h; sourceTree = "<absolute>"; };
+		EE48F6C51B4C6B9700E6792C /* PUUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PUUtility.m; path = ../oldPuul/Puul/Puul/Puul/PUUtility.m; sourceTree = "<group>"; };
+		EE48F6C81B4C6BB900E6792C /* UIImage+PUImageExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+PUImageExtensions.h"; path = "../oldPuul/Puul/Puul/Puul/UIImage+PUImageExtensions.h"; sourceTree = "<group>"; };
+		EE48F6CA1B4C6BB900E6792C /* UIColor+PUColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+PUColors.h"; path = "../oldPuul/Puul/Puul/Puul/UIColor+PUColors.h"; sourceTree = "<group>"; };
+		EE48F6CB1B4C6BB900E6792C /* UIColor+PUColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PUColors.m"; path = "../oldPuul/Puul/Puul/Puul/UIColor+PUColors.m"; sourceTree = "<group>"; };
+		EE48F6D51B4C807100E6792C /* PURoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PURoute.h; path = ../oldPuul/Puul/Puul/Puul/PURoute.h; sourceTree = "<group>"; };
+		EE48F6D61B4C807100E6792C /* PURoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PURoute.m; path = ../oldPuul/Puul/Puul/Puul/PURoute.m; sourceTree = "<group>"; };
 		EE48F6E71B4D8AEF00E6792C /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		EE48F6E81B4D8AEF00E6792C /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		EE48F6ED1B4DA1CE00E6792C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -97,10 +96,10 @@
 		EE48F6FB1B4EE97C00E6792C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		EE48F7031B4EF19B00E6792C /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedViewController.h; path = ../FeedViewController.h; sourceTree = "<group>"; };
 		EE48F7041B4EF19B00E6792C /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedViewController.m; path = ../FeedViewController.m; sourceTree = "<group>"; };
-		EE48F7061B4EFA0400E6792C /* createRoute@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "createRoute@2x.png"; path = "../../Puul/Puul/createRoute@2x.png"; sourceTree = "<group>"; };
-		EE48F7071B4EFA0400E6792C /* feed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "feed@2x.png"; path = "../../Puul/Puul/feed@2x.png"; sourceTree = "<group>"; };
-		EE48F7081B4EFA0400E6792C /* profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "profile@2x.png"; path = "../../Puul/Puul/profile@2x.png"; sourceTree = "<group>"; };
-		EE48F7091B4EFA0400E6792C /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings@2x.png"; path = "../../Puul/Puul/settings@2x.png"; sourceTree = "<group>"; };
+		EE48F7061B4EFA0400E6792C /* createRoute@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "createRoute@2x.png"; path = "../oldPuul/Puul/Puul/createRoute@2x.png"; sourceTree = "<group>"; };
+		EE48F7071B4EFA0400E6792C /* feed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "feed@2x.png"; path = "../oldPuul/Puul/Puul/feed@2x.png"; sourceTree = "<group>"; };
+		EE48F7081B4EFA0400E6792C /* profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "profile@2x.png"; path = "../oldPuul/Puul/Puul/profile@2x.png"; sourceTree = "<group>"; };
+		EE48F7091B4EFA0400E6792C /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings@2x.png"; path = "../oldPuul/Puul/Puul/settings@2x.png"; sourceTree = "<group>"; };
 		EE4C70211B5D6F7E001C50B9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		EE4C70231B5D7216001C50B9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		EE4C70251B5D9477001C50B9 /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
@@ -132,6 +131,7 @@
 		EE9481CE1B5453C300E2DD4A /* RequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestViewController.m; sourceTree = "<group>"; };
 		EE9481D01B5453DE00E2DD4A /* GiveRideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiveRideViewController.h; sourceTree = "<group>"; };
 		EE9481D11B5453DE00E2DD4A /* GiveRideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiveRideViewController.m; sourceTree = "<group>"; };
+		EEEEAAE71B9808630049E733 /* UIImage+PUImageExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PUImageExtensions.m"; path = "oldPuul/Puul/Puul/UIImage+PUImageExtensions.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,7 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				EE48F6C81B4C6BB900E6792C /* UIImage+PUImageExtensions.h */,
-				EE48F6C91B4C6BB900E6792C /* UIImage+PUImageExtensions.m */,
+				EEEEAAE71B9808630049E733 /* UIImage+PUImageExtensions.m */,
 				EE48F6CA1B4C6BB900E6792C /* UIColor+PUColors.h */,
 				EE48F6CB1B4C6BB900E6792C /* UIColor+PUColors.m */,
 			);
@@ -510,6 +510,7 @@
 				EE5CA8901B7283B6009B3270 /* LicensesViewController.m in Sources */,
 				EE29B9531B711E3300F0C790 /* GreenAnnotation.m in Sources */,
 				EE9481D21B5453DE00E2DD4A /* GiveRideViewController.m in Sources */,
+				EEEEAAE81B9808630049E733 /* UIImage+PUImageExtensions.m in Sources */,
 				EE5CA8991B7283DF009B3270 /* PasswordViewController.m in Sources */,
 				EE044AF91B4C531F0052CC67 /* AppDelegate.m in Sources */,
 				EE48F6F91B4DBC4E00E6792C /* SettingsViewController.m in Sources */,
@@ -521,7 +522,6 @@
 				EE5CA88D1B7283AC009B3270 /* TermsViewController.m in Sources */,
 				EE9481CF1B5453C300E2DD4A /* RequestViewController.m in Sources */,
 				EE4C70371B6698A0001C50B9 /* global.m in Sources */,
-				EE48F6CC1B4C6BB900E6792C /* UIImage+PUImageExtensions.m in Sources */,
 				EE5CA88A1B728392009B3270 /* AboutViewController.m in Sources */,
 				EE48F6C61B4C6B9700E6792C /* PUUtility.m in Sources */,
 				EE5CA8931B7283CF009B3270 /* NameViewController.m in Sources */,
