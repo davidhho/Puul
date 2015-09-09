@@ -20,11 +20,11 @@
     self.title = @"About";
     
     
-    UILabel *policyLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 40, 300, 300)];
-    [policyLabel setTextColor:[UIColor blackColor]];
-    [policyLabel setTextAlignment:NSTextAlignmentCenter];
-    [policyLabel setBackgroundColor:[UIColor clearColor]];
-    [policyLabel setText:@"Privacy Policy of Puul \n This Application collects some Personal Data from its Users."];
+    UILabel *aboutLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 40, 300, 300)];
+    [aboutLabel setTextColor:[UIColor blackColor]];
+    [aboutLabel setTextAlignment:NSTextAlignmentCenter];
+    [aboutLabel setBackgroundColor:[UIColor clearColor]];
+    [aboutLabel setText:@"App by David Ho"];
 //     Policy summary
 //     Personal Data collected for the following purposes and using the following services:
 //     Contacting the User
@@ -36,7 +36,7 @@
     
     
     //Policy summary,
-    [self.view addSubview: policyLabel];
+    [self.view addSubview: aboutLabel];
 
     
     [super viewDidLoad];

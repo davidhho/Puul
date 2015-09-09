@@ -4,6 +4,7 @@
 //
 //  Created by David Ho on 7/9/15.
 //  Copyright (c) 2015 David Ho. All rights reserved.
+
 //
 
 #import "FeedViewController.h"
@@ -123,6 +124,10 @@ bool firstLoad;
 -(void) removeSV{
     [SVProgressHUD dismiss];
     //Removes SVProgressHUD when finished finding location
+}
+
+-(void)suggestPay{
+    
 }
 
 -(void)dealloc{
@@ -337,10 +342,9 @@ bool firstLoad;
             break;
     }
 }
+
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 1){
-
-        
         PFQuery *pushQuery = [PFInstallation query];
         [pushQuery whereKey:@"objectId" equalTo: profileUser.objectId];
         
@@ -358,24 +362,9 @@ bool firstLoad;
         installation[@"user"] = [PFUser currentUser];
         [installation saveInBackground];
         [push sendPushInBackground];
-
+        
     }
 }
-//
-//
-//if (annotationView == nil)
-//{
-//    annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
-//}
-//else
-//{
-//    annotationView.annotation = annotation;
-//}
-//annotationView.tintColor = MKPinAnnotationColorRed;
-//annotationView.enabled = true;
-//annotationView.canShowCallout = true;
-//annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-//return annotationView;
-//}
+ //01001000 01101111
 
 @end

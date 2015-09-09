@@ -20,7 +20,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (strong, nonatomic) IBOutlet MKMapView *requestMap;
 @property (strong, nonatomic) CLLocationManager *locationManager;
-+ (CLLocation*) getLocation;
 
 
 

@@ -14,6 +14,8 @@
 #import "FeedViewController.h"
 #import "global.h"
 #import <SVProgressHUD.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 #define HW_LONGITUDE (-118.412835)
 #define HW_LATITUDE (34.139545)
@@ -25,7 +27,7 @@
 @implementation RequestViewController
 @synthesize findmeARideButton, requestRideMap, locationManager, startAddress, label, endAddress, pay, endAddressString, startAddressString, time;
 bool firstLoad;
-
+PFObject *profileUser;
 
 
 - (void)viewDidLoad {
@@ -157,6 +159,9 @@ bool firstLoad;
         
         
     }
+}
+-(void) suggestPrice{
+     
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)_mapView viewForAnnotation:(id <MKAnnotation>)annotation
@@ -295,6 +300,25 @@ bool firstLoad;
             
             UIViewController *loginvc=[mainstoryboard instantiateViewControllerWithIdentifier:@"MainViewController"];
                         [self presentViewController:loginvc animated:NO completion:nil];
+            
+            
+            PFQuery *pushQuery = [PFInstallation query];
+            [pushQuery whereKey:@"deviceType" equalTo: @"ios"];
+            
+            
+            PFPush *push = [[PFPush alloc] init];
+            [push setQuery:pushQuery]; // Set our Installation query
+            NSDictionary *data = @{
+                                   @"alert" : [NSString stringWithFormat:@"%@ %@", PFUser.currentUser[@"username"], @"has requested a ride! Please see if you can accept."],
+                                   @"sound" : @"chime",
+                                   @"user" : PFUser.currentUser[@"username"],
+                                   @"phone" : PFUser.currentUser[@"phone"]
+                                   };
+            [push setData:data];
+            PFInstallation *installation = [PFInstallation currentInstallation];
+            installation[@"user"] = [PFUser currentUser];
+            [installation saveInBackground];
+            [push sendPushInBackground];
         }
         else {
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops" message:@"Your Ride wasn't Requested" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
@@ -325,6 +349,27 @@ bool firstLoad;
     return YES;
 }
 
+
+//- (CLLocationCoordinate2D) geoCodeUsingAddress:(NSString *)address
+//{
+//    double latitude = 0, longitude = 0;
+//    NSString *address =  [address stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    NSString *req = [NSString stringWithFormat:@"http://maps.google.com/maps/api/geocode/json?sensor=false&address=%@", address];
+//    NSString *result = [NSString stringWithContentsOfURL:[NSURL URLWithString:req] encoding:NSUTF8StringEncoding error:NULL];
+//    if (result) {
+//        NSScanner *scanner = [NSScanner scannerWithString:result];
+//        if ([scanner scanUpToString:@"\"lat\" :" intoString:nil] && [scanner scanString:@"\"lat\" :" intoString:nil]) {
+//            [scanner scanDouble:&latitude];
+//            if ([scanner scanUpToString:@"\"lng\" :" intoString:nil] && [scanner scanString:@"\"lng\" :" intoString:nil]) {
+//                [scanner scanDouble:&longitude];
+//            }
+//        }
+//    }
+//    CLLocationCoordinate2D center;
+//    center.latitude = latitude;
+//    center.longitude = longitude;
+//    return center;
+//}
 #pragma mark CLLocationManagerDelegate Methods
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
 
