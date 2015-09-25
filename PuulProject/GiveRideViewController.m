@@ -200,6 +200,7 @@ bool firstLoad;
     
 }
 
+
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
     UIStoryboard *mainstoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 }
@@ -212,7 +213,6 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     [self.locationManager requestWhenInUseAuthorization];
     [super viewDidAppear:YES];
     giveRideMap.showsUserLocation = YES;
-    
 }
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
     if (firstLoad == true)
@@ -281,16 +281,15 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
 
             UIStoryboard *mainstoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             
-            
             UIViewController *loginvc=[mainstoryboard instantiateViewControllerWithIdentifier:@"MainViewController"];
             [self presentViewController:loginvc animated:NO completion:nil];
         }
         else {
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops" message:@"Your Ride wasn't Requested" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
             [alert show];
+            
         }
     }];
-    
 }
 
 
@@ -312,6 +311,9 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops" message:@"Please enter a Time of Departure" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         [alert show];
     }
+//    if (_pay.text > 25){
+//        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops" message:@"The Maximum payment is $25" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+//    }
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField{

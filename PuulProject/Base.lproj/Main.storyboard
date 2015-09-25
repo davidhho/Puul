@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ckX-QO-aZP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ckX-QO-aZP">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -24,7 +25,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vuw-fS-qCC">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vuw-fS-qCC">
                                 <rect key="frame" x="71" y="68" width="458" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="rc5-7Z-u3H"/>
@@ -42,7 +43,7 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="HW Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T8e-ug-zwc">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="HW Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T8e-ug-zwc">
                                 <rect key="frame" x="71" y="119" width="458" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="MtV-hh-WQb"/>
@@ -60,7 +61,7 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Re-enter Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pK9-lb-QTv">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Re-enter Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pK9-lb-QTv">
                                 <rect key="frame" x="71" y="226" width="458" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="l5O-Ac-QUy"/>
@@ -78,7 +79,7 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="33T-Tl-1B7">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="33T-Tl-1B7">
                                 <rect key="frame" x="71" y="279" width="458" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="7xi-4F-5fY"/>
@@ -96,7 +97,7 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UFY-Me-jsy">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UFY-Me-jsy">
                                 <rect key="frame" x="71" y="175" width="458" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="IWb-lW-1s0"/>
@@ -114,7 +115,7 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hT1-fQ-PeU">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hT1-fQ-PeU">
                                 <rect key="frame" x="277" y="343" width="57" height="30"/>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -248,33 +249,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HnT-fp-eaW">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="JeT-EP-T0G"/>
-                                </constraints>
-                                <state key="normal" title="Login">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="JeT-EP-T0G"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="JeT-EP-T0G"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="LoginButton:" destination="ckX-QO-aZP" eventType="touchUpInside" id="sp2-Pd-RYi"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fju-LR-53f">
                                 <rect key="frame" x="71" y="175" width="458" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="26" y="351" width="348" height="30"/>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="ckX-QO-aZP" id="GFq-f3-lBx"/>
                                 </connections>
@@ -283,6 +264,9 @@
                                 <rect key="frame" x="71" y="68" width="458" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="26" y="304" width="348" height="30"/>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="ckX-QO-aZP" id="9mH-ZC-1rW"/>
                                 </connections>
@@ -293,6 +277,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="-7" y="463" width="414" height="30"/>
+                                </variation>
                                 <connections>
                                     <segue destination="REV-RH-oUq" kind="show" id="R2u-b4-Nm4"/>
                                 </connections>
@@ -322,6 +309,30 @@
                                     <rect key="frame" x="121" y="107" width="142" height="70"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HnT-fp-eaW">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="JeT-EP-T0G"/>
+                                </constraints>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="JeT-EP-T0G"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="-21" y="395" width="443" height="48"/>
+                                    <mask key="constraints">
+                                        <include reference="JeT-EP-T0G"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="LoginButton:" destination="ckX-QO-aZP" eventType="touchUpInside" id="sp2-Pd-RYi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93333333330000001" green="0.31764705879999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -343,19 +354,15 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="HnT-fp-eaW"/>
                                 <exclude reference="fju-LR-53f"/>
                                 <exclude reference="RLO-az-q9y"/>
                                 <exclude reference="zXR-32-XDO"/>
                                 <exclude reference="QEu-xF-5KY"/>
+                                <exclude reference="HnT-fp-eaW"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="A97-td-qNG"/>
-                                <exclude reference="jlI-Iv-Q7g"/>
-                                <exclude reference="y67-GN-WM6"/>
-                                <exclude reference="87N-jw-Jcb"/>
-                                <exclude reference="dUB-ir-mR6"/>
-                                <exclude reference="iy0-Vl-h2M"/>
+                                <exclude reference="OF6-Nr-NtV"/>
                                 <exclude reference="uqO-en-hVR"/>
                                 <exclude reference="v8X-eT-FIj"/>
                                 <exclude reference="Dwh-o3-daD"/>
@@ -363,24 +370,24 @@
                                 <exclude reference="URW-gb-3Q1"/>
                                 <exclude reference="jz3-Nw-fEg"/>
                                 <exclude reference="pN8-SY-a1R"/>
-                                <exclude reference="OF6-Nr-NtV"/>
+                                <exclude reference="jlI-Iv-Q7g"/>
+                                <exclude reference="y67-GN-WM6"/>
+                                <exclude reference="87N-jw-Jcb"/>
+                                <exclude reference="dUB-ir-mR6"/>
+                                <exclude reference="iy0-Vl-h2M"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="HnT-fp-eaW"/>
                                 <include reference="fju-LR-53f"/>
                                 <include reference="RLO-az-q9y"/>
                                 <include reference="zXR-32-XDO"/>
                                 <include reference="QEu-xF-5KY"/>
+                                <include reference="HnT-fp-eaW"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="A97-td-qNG"/>
-                                <include reference="jlI-Iv-Q7g"/>
-                                <include reference="y67-GN-WM6"/>
-                                <include reference="87N-jw-Jcb"/>
-                                <include reference="dUB-ir-mR6"/>
-                                <include reference="iy0-Vl-h2M"/>
+                                <include reference="OF6-Nr-NtV"/>
                                 <include reference="uqO-en-hVR"/>
                                 <include reference="v8X-eT-FIj"/>
                                 <include reference="Dwh-o3-daD"/>
@@ -388,7 +395,11 @@
                                 <include reference="URW-gb-3Q1"/>
                                 <include reference="jz3-Nw-fEg"/>
                                 <include reference="pN8-SY-a1R"/>
-                                <include reference="OF6-Nr-NtV"/>
+                                <include reference="jlI-Iv-Q7g"/>
+                                <include reference="y67-GN-WM6"/>
+                                <include reference="87N-jw-Jcb"/>
+                                <include reference="dUB-ir-mR6"/>
+                                <include reference="iy0-Vl-h2M"/>
                             </mask>
                         </variation>
                         <connections>
@@ -722,28 +733,28 @@ Personal Data: Geographic position</string>
                                 <exclude reference="zf9-EL-hyh"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="20M-Dd-hh5"/>
-                                <exclude reference="ANi-ez-cdi"/>
-                                <exclude reference="bED-lf-Nyj"/>
-                                <exclude reference="hoM-1s-0If"/>
-                                <exclude reference="zJy-8H-keV"/>
-                                <exclude reference="5oc-ls-gTr"/>
-                                <exclude reference="P5u-4S-OsK"/>
-                                <exclude reference="S48-Cq-Mdm"/>
-                                <exclude reference="XCW-cH-M0K"/>
+                                <exclude reference="O2J-jE-zl3"/>
+                                <exclude reference="zGV-xo-AeZ"/>
+                                <exclude reference="QwN-Zt-OGi"/>
+                                <exclude reference="SoZ-oz-BYs"/>
                                 <exclude reference="OkM-m5-lqn"/>
                                 <exclude reference="Uh8-Hh-uUM"/>
                                 <exclude reference="uHM-wB-E37"/>
                                 <exclude reference="urh-9N-zXZ"/>
-                                <exclude reference="O2J-jE-zl3"/>
-                                <exclude reference="zGV-xo-AeZ"/>
-                                <exclude reference="SoZ-oz-BYs"/>
+                                <exclude reference="5oc-ls-gTr"/>
+                                <exclude reference="P5u-4S-OsK"/>
+                                <exclude reference="S48-Cq-Mdm"/>
+                                <exclude reference="XCW-cH-M0K"/>
                                 <exclude reference="a5o-yZ-KHF"/>
                                 <exclude reference="mon-x1-mhf"/>
                                 <exclude reference="F8u-m1-8wa"/>
                                 <exclude reference="YWD-6n-blq"/>
                                 <exclude reference="edg-Gb-87W"/>
-                                <exclude reference="QwN-Zt-OGi"/>
+                                <exclude reference="20M-Dd-hh5"/>
+                                <exclude reference="ANi-ez-cdi"/>
+                                <exclude reference="bED-lf-Nyj"/>
+                                <exclude reference="hoM-1s-0If"/>
+                                <exclude reference="zJy-8H-keV"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -757,28 +768,28 @@ Personal Data: Geographic position</string>
                                 <include reference="zf9-EL-hyh"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="20M-Dd-hh5"/>
-                                <include reference="ANi-ez-cdi"/>
-                                <include reference="bED-lf-Nyj"/>
-                                <include reference="hoM-1s-0If"/>
-                                <include reference="zJy-8H-keV"/>
-                                <include reference="5oc-ls-gTr"/>
-                                <include reference="P5u-4S-OsK"/>
-                                <include reference="S48-Cq-Mdm"/>
-                                <include reference="XCW-cH-M0K"/>
+                                <include reference="O2J-jE-zl3"/>
+                                <include reference="zGV-xo-AeZ"/>
+                                <include reference="QwN-Zt-OGi"/>
+                                <include reference="SoZ-oz-BYs"/>
                                 <include reference="OkM-m5-lqn"/>
                                 <include reference="Uh8-Hh-uUM"/>
                                 <include reference="uHM-wB-E37"/>
                                 <include reference="urh-9N-zXZ"/>
-                                <include reference="O2J-jE-zl3"/>
-                                <include reference="zGV-xo-AeZ"/>
-                                <include reference="SoZ-oz-BYs"/>
+                                <include reference="5oc-ls-gTr"/>
+                                <include reference="P5u-4S-OsK"/>
+                                <include reference="S48-Cq-Mdm"/>
+                                <include reference="XCW-cH-M0K"/>
                                 <include reference="a5o-yZ-KHF"/>
                                 <include reference="mon-x1-mhf"/>
                                 <include reference="F8u-m1-8wa"/>
                                 <include reference="YWD-6n-blq"/>
                                 <include reference="edg-Gb-87W"/>
-                                <include reference="QwN-Zt-OGi"/>
+                                <include reference="20M-Dd-hh5"/>
+                                <include reference="ANi-ez-cdi"/>
+                                <include reference="bED-lf-Nyj"/>
+                                <include reference="hoM-1s-0If"/>
+                                <include reference="zJy-8H-keV"/>
                             </mask>
                         </variation>
                         <connections>
@@ -1046,7 +1057,13 @@ Personal Data: Geographic position</string>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="jxZ-K4-zO2"/>
+                    <navigationItem key="navigationItem" title="Profile" id="jxZ-K4-zO2">
+                        <barButtonItem key="rightBarButtonItem" image="alarm.png" id="xex-R3-e8M">
+                            <connections>
+                                <segue destination="tlC-7o-Omt" kind="presentation" id="BF3-aH-29v"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="GiveRideButton" destination="JvP-FY-nQa" id="mVe-Od-7CW"/>
                         <outlet property="RequestRideButton" destination="IOT-18-Vrt" id="MsX-No-MnX"/>
@@ -1057,7 +1074,7 @@ Personal Data: Geographic position</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YrF-Sv-ByS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4597.5" y="-1758"/>
+            <point key="canvasLocation" x="-4587" y="-1856"/>
         </scene>
         <!--Give A Ride-->
         <scene sceneID="4ab-bm-djM">
@@ -1157,25 +1174,25 @@ Personal Data: Geographic position</string>
                                 <exclude reference="zpF-8F-4Ub"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="1oI-Ps-kgg"/>
-                                <exclude reference="HgH-hR-5ni"/>
-                                <exclude reference="P4f-Ie-YqD"/>
-                                <exclude reference="jlu-9T-4DT"/>
+                                <exclude reference="T5K-AE-d7Q"/>
+                                <exclude reference="TuE-k2-IXu"/>
                                 <exclude reference="78u-0B-8f4"/>
                                 <exclude reference="9BJ-sf-unn"/>
                                 <exclude reference="RrP-pT-th0"/>
+                                <exclude reference="Iei-O7-NxV"/>
                                 <exclude reference="1jH-eE-hhv"/>
                                 <exclude reference="6kW-5V-s0N"/>
                                 <exclude reference="9x9-kf-OEO"/>
-                                <exclude reference="T5K-AE-d7Q"/>
-                                <exclude reference="TuE-k2-IXu"/>
                                 <exclude reference="5iA-H6-Ont"/>
                                 <exclude reference="6LN-oO-RxS"/>
                                 <exclude reference="7JV-LN-daB"/>
                                 <exclude reference="ptr-nj-TvF"/>
                                 <exclude reference="CQO-z5-zC0"/>
                                 <exclude reference="na1-TM-yF4"/>
-                                <exclude reference="Iei-O7-NxV"/>
+                                <exclude reference="1oI-Ps-kgg"/>
+                                <exclude reference="HgH-hR-5ni"/>
+                                <exclude reference="P4f-Ie-YqD"/>
+                                <exclude reference="jlu-9T-4DT"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1188,25 +1205,25 @@ Personal Data: Geographic position</string>
                                 <include reference="zpF-8F-4Ub"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="1oI-Ps-kgg"/>
-                                <include reference="HgH-hR-5ni"/>
-                                <include reference="P4f-Ie-YqD"/>
-                                <include reference="jlu-9T-4DT"/>
+                                <include reference="T5K-AE-d7Q"/>
+                                <include reference="TuE-k2-IXu"/>
                                 <include reference="78u-0B-8f4"/>
                                 <include reference="9BJ-sf-unn"/>
                                 <include reference="RrP-pT-th0"/>
+                                <include reference="Iei-O7-NxV"/>
                                 <include reference="1jH-eE-hhv"/>
                                 <include reference="6kW-5V-s0N"/>
                                 <include reference="9x9-kf-OEO"/>
-                                <include reference="T5K-AE-d7Q"/>
-                                <include reference="TuE-k2-IXu"/>
                                 <include reference="5iA-H6-Ont"/>
                                 <include reference="6LN-oO-RxS"/>
                                 <include reference="7JV-LN-daB"/>
                                 <include reference="ptr-nj-TvF"/>
                                 <include reference="CQO-z5-zC0"/>
                                 <include reference="na1-TM-yF4"/>
-                                <include reference="Iei-O7-NxV"/>
+                                <include reference="1oI-Ps-kgg"/>
+                                <include reference="HgH-hR-5ni"/>
+                                <include reference="P4f-Ie-YqD"/>
+                                <include reference="jlu-9T-4DT"/>
                             </mask>
                         </variation>
                         <connections>
@@ -1234,7 +1251,7 @@ Personal Data: Geographic position</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-2194.5" y="-2161"/>
+            <point key="canvasLocation" x="-1276.5" y="-2161"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ZJk-OP-HpR">
@@ -1278,8 +1295,8 @@ Personal Data: Geographic position</string>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CoY-zt-gNZ">
                                 <rect key="frame" x="-61" y="-14" width="123" height="29"/>
                                 <segments>
-                                    <segment title="Offered Rides"/>
-                                    <segment title="Requested Rides"/>
+                                    <segment title="Offered"/>
+                                    <segment title="Requested"/>
                                 </segments>
                                 <connections>
                                     <action selector="changeRides:" destination="GaN-yb-Tvv" eventType="valueChanged" id="Ij8-Y7-3AJ"/>
@@ -1329,15 +1346,15 @@ Personal Data: Geographic position</string>
                                 <exclude reference="KAJ-tW-2pL"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="WmP-Sc-UX6"/>
+                                <exclude reference="2b4-JM-vHH"/>
+                                <exclude reference="Rrg-Id-fat"/>
+                                <exclude reference="V2c-jq-w0Z"/>
+                                <exclude reference="hJf-0d-irF"/>
                                 <exclude reference="4zS-vl-PTP"/>
                                 <exclude reference="Fuw-lO-gjd"/>
                                 <exclude reference="dhB-af-Mar"/>
                                 <exclude reference="ige-dR-5GS"/>
-                                <exclude reference="Rrg-Id-fat"/>
-                                <exclude reference="V2c-jq-w0Z"/>
-                                <exclude reference="hJf-0d-irF"/>
-                                <exclude reference="2b4-JM-vHH"/>
-                                <exclude reference="WmP-Sc-UX6"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1347,15 +1364,15 @@ Personal Data: Geographic position</string>
                                 <include reference="KAJ-tW-2pL"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="WmP-Sc-UX6"/>
+                                <include reference="2b4-JM-vHH"/>
+                                <include reference="Rrg-Id-fat"/>
+                                <include reference="V2c-jq-w0Z"/>
+                                <include reference="hJf-0d-irF"/>
                                 <include reference="4zS-vl-PTP"/>
                                 <include reference="Fuw-lO-gjd"/>
                                 <include reference="dhB-af-Mar"/>
                                 <include reference="ige-dR-5GS"/>
-                                <include reference="Rrg-Id-fat"/>
-                                <include reference="V2c-jq-w0Z"/>
-                                <include reference="hJf-0d-irF"/>
-                                <include reference="2b4-JM-vHH"/>
-                                <include reference="WmP-Sc-UX6"/>
                             </mask>
                         </variation>
                     </view>
@@ -1370,7 +1387,7 @@ Personal Data: Geographic position</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="48a-Km-AHF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4288.5" y="-3033"/>
+            <point key="canvasLocation" x="-4966.5" y="-3668"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gjd-uW-bUt">
@@ -1390,6 +1407,32 @@ Personal Data: Geographic position</string>
             </objects>
             <point key="canvasLocation" x="-7221" y="-1074"/>
         </scene>
+        <!--Notifications-->
+        <scene sceneID="tD8-en-Zqz">
+            <objects>
+                <tableViewController storyboardIdentifier="NotificationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fUl-Vd-sqU" customClass="NotificationViewController" customModule="NotificationViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="gl4-W3-SAV">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="vRS-TG-HM0">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vRS-TG-HM0" id="mpf-OV-dj8">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fUl-Vd-sqU" id="AZ1-gJ-Bpu"/>
+                            <outlet property="delegate" destination="fUl-Vd-sqU" id="9Sv-n5-slw"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Notifications" id="lA2-ha-4M7"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X3E-Xg-LVI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3349.5" y="-2758"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Td-6P-7EC">
             <objects>
@@ -1406,7 +1449,7 @@ Personal Data: Geographic position</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rMu-zl-Ccr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3408" y="-2133"/>
+            <point key="canvasLocation" x="-2490" y="-2133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OyR-9b-lqx">
@@ -1481,7 +1524,7 @@ Personal Data: Geographic position</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w4a-t3-PcW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5430" y="-3044"/>
+            <point key="canvasLocation" x="-5682" y="-3668"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zdv-jI-VUS">
@@ -1518,8 +1561,45 @@ Personal Data: Geographic position</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jjc-oX-OZt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="T9N-gy-eej">
+            <objects>
+                <viewController id="rFH-pu-oOc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wn1-tF-vMV"/>
+                        <viewControllerLayoutGuide type="bottom" id="bYZ-Dd-Gqx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hsW-ay-Cav">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q1E-4d-g5o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4134" y="-3990"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bqy-Db-f3V">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tlC-7o-Omt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="znZ-zC-SFd"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2nD-2c-lPD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fUl-Vd-sqU" kind="relationship" relationship="rootViewController" id="FJJ-IE-CZM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pKO-lj-mtn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4267.5" y="-2758"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="alarm.png" width="24" height="24"/>
         <image name="feed.png" width="32" height="32"/>
         <image name="profile.png" width="32" height="32"/>
         <image name="settings.png" width="32" height="32"/>

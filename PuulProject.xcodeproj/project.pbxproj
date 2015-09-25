@@ -47,6 +47,8 @@
 		EE9481CF1B5453C300E2DD4A /* RequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9481CE1B5453C300E2DD4A /* RequestViewController.m */; };
 		EE9481D21B5453DE00E2DD4A /* GiveRideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9481D11B5453DE00E2DD4A /* GiveRideViewController.m */; };
 		EEEEAAE81B9808630049E733 /* UIImage+PUImageExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = EEEEAAE71B9808630049E733 /* UIImage+PUImageExtensions.m */; };
+		EEF69AF91BB45076007503CD /* alarm.png in Resources */ = {isa = PBXBuildFile; fileRef = EEF69AF81BB45076007503CD /* alarm.png */; };
+		EEF69AFC1BB478E0007503CD /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF69AFB1BB478E0007503CD /* NotificationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,9 @@
 		EE9481D01B5453DE00E2DD4A /* GiveRideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiveRideViewController.h; sourceTree = "<group>"; };
 		EE9481D11B5453DE00E2DD4A /* GiveRideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiveRideViewController.m; sourceTree = "<group>"; };
 		EEEEAAE71B9808630049E733 /* UIImage+PUImageExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PUImageExtensions.m"; path = "oldPuul/Puul/Puul/UIImage+PUImageExtensions.m"; sourceTree = SOURCE_ROOT; };
+		EEF69AF81BB45076007503CD /* alarm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = alarm.png; path = oldPuul/alarm.png; sourceTree = SOURCE_ROOT; };
+		EEF69AFA1BB478E0007503CD /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		EEF69AFB1BB478E0007503CD /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				EE4C70311B615420001C50B9 /* home153.png */,
+				EEF69AF81BB45076007503CD /* alarm.png */,
 				EE48F7061B4EFA0400E6792C /* createRoute@2x.png */,
 				EE48F7071B4EFA0400E6792C /* feed@2x.png */,
 				EE48F7081B4EFA0400E6792C /* profile@2x.png */,
@@ -336,6 +342,8 @@
 				EE9481CE1B5453C300E2DD4A /* RequestViewController.m */,
 				EE9481D01B5453DE00E2DD4A /* GiveRideViewController.h */,
 				EE9481D11B5453DE00E2DD4A /* GiveRideViewController.m */,
+				EEF69AFA1BB478E0007503CD /* NotificationViewController.h */,
+				EEF69AFB1BB478E0007503CD /* NotificationViewController.m */,
 			);
 			name = ProfileViewControllers;
 			sourceTree = "<group>";
@@ -448,6 +456,7 @@
 				EE044AFF1B4C531F0052CC67 /* Main.storyboard in Resources */,
 				EE044B041B4C531F0052CC67 /* LaunchScreen.xib in Resources */,
 				EE48F70D1B4EFA0400E6792C /* settings@2x.png in Resources */,
+				EEF69AF91BB45076007503CD /* alarm.png in Resources */,
 				EE48F70C1B4EFA0400E6792C /* profile@2x.png in Resources */,
 				EE48F70B1B4EFA0400E6792C /* feed@2x.png in Resources */,
 				EE4C70341B619956001C50B9 /* Icon-60@3x.png in Resources */,
@@ -509,6 +518,7 @@
 				EE48F6D71B4C807100E6792C /* PURoute.m in Sources */,
 				EE5CA8901B7283B6009B3270 /* LicensesViewController.m in Sources */,
 				EE29B9531B711E3300F0C790 /* GreenAnnotation.m in Sources */,
+				EEF69AFC1BB478E0007503CD /* NotificationViewController.m in Sources */,
 				EE9481D21B5453DE00E2DD4A /* GiveRideViewController.m in Sources */,
 				EEEEAAE81B9808630049E733 /* UIImage+PUImageExtensions.m in Sources */,
 				EE5CA8991B7283DF009B3270 /* PasswordViewController.m in Sources */,

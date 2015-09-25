@@ -26,8 +26,9 @@
 @end
 @implementation RequestViewController
 @synthesize findmeARideButton, requestRideMap, locationManager, startAddress, label, endAddress, pay, endAddressString, startAddressString, time;
-bool firstLoad;
+bool firstLoad, youAtSchoolTrue;
 PFObject *profileUser;
+int suggestedPay = 0;
 
 
 - (void)viewDidLoad {
@@ -141,6 +142,7 @@ PFObject *profileUser;
         label.numberOfLines = 2;
         label.text = @"You are at School. Please pick your End Address.";
         startAddressString = @"Harvard Westlake High School";
+        youAtSchoolTrue = TRUE;
         
         
     }
@@ -155,12 +157,38 @@ PFObject *profileUser;
         time.hidden = false;
         pay.hidden = false;
         findmeARideButton.hidden = false;
-        
-        
-        
+        youAtSchoolTrue = false;
     }
 }
+
+
+//Suggests price in Pay TextField. Can be overrided, just a placeholder. (Based on distance)
 -(void) suggestPrice{
+    if (youAtSchoolTrue){
+        
+    }
+    if (!youAtSchoolTrue){
+        
+        CLLocation *loc = [[CLLocation alloc] initWithLatitude:HW_LATITUDE longitude:HW_LONGITUDE];
+        CLLocation *loc2 = [[CLLocation alloc] initWithLatitude:[global sharedInstance].currentLocation.coordinate.latitude longitude:[global sharedInstance].currentLocation.coordinate.longitude];
+        CLLocationDistance dist = [loc distanceFromLocation:loc2];
+        if (dist < 6000){
+            suggestedPay = 0;
+        }
+        else if (dist >= 6000 && dist <= 10000){
+            suggestedPay = 5;
+        }
+        else if (dist > 10000 && dist <= 18000){
+            suggestedPay = 10;
+        }
+        else if (dist > 18000 && dist <= 60000){
+            
+        }
+        else if (dist > 60000){
+            
+        }
+            
+    }
      
 }
 
