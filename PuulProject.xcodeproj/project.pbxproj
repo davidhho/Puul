@@ -34,7 +34,6 @@
 		EE4C702B1B5D99D5001C50B9 /* HW.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4C702A1B5D99D5001C50B9 /* HW.png */; };
 		EE4C702E1B614FAA001C50B9 /* RideAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4C702D1B614FAA001C50B9 /* RideAnnotations.m */; };
 		EE4C70321B615420001C50B9 /* home153.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4C70311B615420001C50B9 /* home153.png */; };
-		EE4C70341B619956001C50B9 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4C70331B619956001C50B9 /* Icon-60@3x.png */; };
 		EE4C70371B6698A0001C50B9 /* global.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4C70361B6698A0001C50B9 /* global.m */; };
 		EE5CA88A1B728392009B3270 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5CA8891B728392009B3270 /* AboutViewController.m */; };
 		EE5CA88D1B7283AC009B3270 /* TermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5CA88C1B7283AC009B3270 /* TermsViewController.m */; };
@@ -459,7 +458,6 @@
 				EEF69AF91BB45076007503CD /* alarm.png in Resources */,
 				EE48F70C1B4EFA0400E6792C /* profile@2x.png in Resources */,
 				EE48F70B1B4EFA0400E6792C /* feed@2x.png in Resources */,
-				EE4C70341B619956001C50B9 /* Icon-60@3x.png in Resources */,
 				EE4C70321B615420001C50B9 /* home153.png in Resources */,
 				EE48F70A1B4EFA0400E6792C /* createRoute@2x.png in Resources */,
 				EE044B011B4C531F0052CC67 /* Images.xcassets in Resources */,
