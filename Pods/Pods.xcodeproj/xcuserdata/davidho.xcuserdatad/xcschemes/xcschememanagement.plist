@@ -14,6 +14,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-DownPicker-DownPicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-DownPicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>165D2698B4B51674BD7EA2BC</key>
+		<key>35EC17F4B4672B7FCD7A54F3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>283781253BDFADBD25C8B546</key>
+		<key>603831C5014781F0B9BC267D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6CA8CF92B3CEFC4EA3444F2A</key>
+		<key>755084291721D636248D0D80</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6D025E3B5FB82E551818BEC0</key>
+		<key>858869DFFA7B4BF3966553D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B78190A1FE137DBAFB4BBDFB</key>
+		<key>876115FE54F3289F0DB4226D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D0CC89DA77BC548B4F4E7B57</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E59D7A7FBE5E1EAB5727D30D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

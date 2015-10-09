@@ -229,6 +229,8 @@
             continueAfterRunningActions = "No"
             symbolName = "warnBlockingOperationOnMainThread"
             moduleName = "">
+            <Locations>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
