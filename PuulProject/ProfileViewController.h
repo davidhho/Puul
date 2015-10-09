@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *RequestRideButton;
 @property (weak, nonatomic) IBOutlet UILabel *UsernameLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *seeAccepted;
 
 @property (weak, nonatomic) IBOutlet UIImageView *profile;
 @property (strong, nonatomic) UIImageView *chosenImage;

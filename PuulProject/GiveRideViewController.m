@@ -24,7 +24,7 @@
 
 
 @implementation GiveRideViewController
-@synthesize giveRideMap, locationManager, startAddress, endAddress, label, endAddressString, startAddressString, time;
+@synthesize giveRideMap, locationManager, startAddress, endAddress, label, endAddressString, startAddressString, time, numbRiders;
 bool firstLoad;
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -95,6 +95,7 @@ bool firstLoad;
 
     startAddress.returnKeyType = UIReturnKeyGo;
     endAddress.returnKeyType = UIReturnKeyGo;
+    numbRiders.returnKeyType = UIReturnKeyGo;
 }
 
 -(void) removeSV{
@@ -262,6 +263,8 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     newRide[@"time"] = time.text;
     newRide[@"Requestor"] = PFUser.currentUser;
     newRide[@"giver"] = [NSNumber numberWithBool:true];
+    NSNumber *riders = [NSNumber numberWithFloat:[numbRiders.text floatValue]];
+    newRide[@"NumberOfRiders"] = riders;
     
 
     if ([_pay.text isEqualToString:@""]){
@@ -307,7 +310,7 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
 
 //Makes sure fields are complete
 - (void) checkFieldsComplete{
-    if ([time.text isEqualToString:@""]){
+    if ([time.text isEqualToString:@"" ]|| [numbRiders.text isEqualToString:@""]){
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops" message:@"Please enter a Time of Departure" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         [alert show];
     }

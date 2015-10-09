@@ -38,6 +38,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *time;
 
+@property (strong, nonatomic) IBOutlet UITextField *numbRiders;
+
 @property (weak, nonatomic) IBOutlet UIButton *findmeARideButton;
 
 

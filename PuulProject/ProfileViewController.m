@@ -52,10 +52,11 @@ NSMutableArray *myRides;
     profile.layer.cornerRadius = 32.5;
     profile.layer.masksToBounds = TRUE;
     profile.image = [UIImage imageWithData:[imageFile getData]];
-    
 
+}
+- (void)viewDidAppear:(BOOL)animated
+{
     [self findMyRides];
-
 }
 
 - (void)findMyRides
@@ -133,6 +134,10 @@ NSMutableArray *myRides;
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if ([myRides count] == 0)
+    {
+        return 1;
+    }
     return [myRides count];
 
 }
@@ -146,6 +151,29 @@ NSMutableArray *myRides;
     CustomCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell){
         cell = [[CustomCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    if ([myRides count] == 0)
+    {
+        cell.textLabel.text = @"You have no rides!";
+        cell.HeadLabel.hidden = YES;
+        cell.startAddressLabel.hidden = YES;
+        cell.endAddressLabel.hidden = YES;
+        cell.toLavel.hidden = YES;
+        cell.fromLabel.hidden = YES;
+        cell.pay.hidden = YES;
+        cell.moneyLabel.hidden = YES;
+        return cell;
+    }
+    else
+    {
+        cell.textLabel.text = @"";
+        cell.HeadLabel.hidden = NO;
+        cell.startAddressLabel.hidden = NO;
+        cell.endAddressLabel.hidden = NO;
+        cell.toLavel.hidden = NO;
+        cell.fromLabel.hidden = NO;
+        cell.pay.hidden = NO;
+        cell.moneyLabel.hidden = NO;
     }
     PFObject *ride = [myRides objectAtIndex:indexPath.row];
     cell.startAddressLabel.text = ride[@"startAddress"];

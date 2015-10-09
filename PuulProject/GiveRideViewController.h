@@ -38,6 +38,7 @@
 @property (strong, nonatomic) NSString *endAddressString;
 
 @property (strong, nonatomic) NSString *startAddressString;
+@property (strong, nonatomic) IBOutlet UITextField *numbRiders;
 
 @property (strong) NSString *parsePay;
 

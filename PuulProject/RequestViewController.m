@@ -80,7 +80,6 @@ int suggestedPay = 0;
     endAddress.delegate = self;
     startAddress.returnKeyType = UIReturnKeyGo;
     endAddress.returnKeyType = UIReturnKeyGo;
-
     [global sharedInstance];
     
     
@@ -269,7 +268,7 @@ int suggestedPay = 0;
 
 
 - (void) checkFieldsComplete{
-    if ([time.text isEqualToString:@""]){
+    if ([time.text isEqualToString:@"" ]){
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops" message:@"Please fill in a Time of Departure" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
