@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A5F0328E4156C37F3AC253C2732A93D5220C5DBB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A5F0328E4156C37F3AC253C2732A93D5220C5DBB" : 0,
+    "19E9AA86E89CC12C15789F188896FA8B35BE2536" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D78D4A86-5048-48CA-AC64-01BF33216880",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A5F0328E4156C37F3AC253C2732A93D5220C5DBB" : "PuulProject",
+    "19E9AA86E89CC12C15789F188896FA8B35BE2536" : "Puul\/Puul"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PuulProject",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PuulProject.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SNIP3ROV3RLORD420\/Puul.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "19E9AA86E89CC12C15789F188896FA8B35BE2536"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/davidhho\/Puul.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A5F0328E4156C37F3AC253C2732A93D5220C5DBB"
+    }
+  ]
+}
