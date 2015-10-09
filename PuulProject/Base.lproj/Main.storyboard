@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ckX-QO-aZP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ckX-QO-aZP">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -980,6 +981,7 @@ Personal Data: Geographic position</string>
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ssL-ZI-FZ9" id="t0C-6Z-0G0">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="71.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmg-q4-xx6">
@@ -1117,26 +1119,26 @@ Personal Data: Geographic position</string>
                                 <exclude reference="dVe-uG-ljq"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="9dE-Go-vyF"/>
-                                <exclude reference="CQv-s1-r8s"/>
-                                <exclude reference="Ua1-TY-Iza"/>
+                                <exclude reference="0uJ-19-wpQ"/>
+                                <exclude reference="UeE-9e-JTK"/>
+                                <exclude reference="tcn-4k-3Fn"/>
                                 <exclude reference="Uxf-L6-cVd"/>
                                 <exclude reference="Wx3-2U-1gt"/>
                                 <exclude reference="iXS-BW-lZb"/>
                                 <exclude reference="2md-5s-YMY"/>
                                 <exclude reference="w7V-2U-ULT"/>
-                                <exclude reference="KxT-34-TXX"/>
-                                <exclude reference="Zko-Eq-xYE"/>
-                                <exclude reference="gas-V5-HeC"/>
-                                <exclude reference="UeE-9e-JTK"/>
-                                <exclude reference="tcn-4k-3Fn"/>
-                                <exclude reference="XAR-0H-AhO"/>
-                                <exclude reference="hj9-Jz-crS"/>
-                                <exclude reference="zUv-yD-4cG"/>
                                 <exclude reference="RQH-16-aR0"/>
                                 <exclude reference="eMx-GK-jKi"/>
                                 <exclude reference="xsL-LK-Spv"/>
-                                <exclude reference="0uJ-19-wpQ"/>
+                                <exclude reference="XAR-0H-AhO"/>
+                                <exclude reference="hj9-Jz-crS"/>
+                                <exclude reference="zUv-yD-4cG"/>
+                                <exclude reference="9dE-Go-vyF"/>
+                                <exclude reference="CQv-s1-r8s"/>
+                                <exclude reference="Ua1-TY-Iza"/>
+                                <exclude reference="KxT-34-TXX"/>
+                                <exclude reference="Zko-Eq-xYE"/>
+                                <exclude reference="gas-V5-HeC"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1150,36 +1152,30 @@ Personal Data: Geographic position</string>
                                 <include reference="dVe-uG-ljq"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="9dE-Go-vyF"/>
-                                <include reference="CQv-s1-r8s"/>
-                                <include reference="Ua1-TY-Iza"/>
+                                <include reference="0uJ-19-wpQ"/>
+                                <include reference="UeE-9e-JTK"/>
+                                <include reference="tcn-4k-3Fn"/>
                                 <include reference="Uxf-L6-cVd"/>
                                 <include reference="Wx3-2U-1gt"/>
                                 <include reference="iXS-BW-lZb"/>
                                 <include reference="2md-5s-YMY"/>
                                 <include reference="w7V-2U-ULT"/>
-                                <include reference="KxT-34-TXX"/>
-                                <include reference="Zko-Eq-xYE"/>
-                                <include reference="gas-V5-HeC"/>
-                                <include reference="UeE-9e-JTK"/>
-                                <include reference="tcn-4k-3Fn"/>
-                                <include reference="XAR-0H-AhO"/>
-                                <include reference="hj9-Jz-crS"/>
-                                <include reference="zUv-yD-4cG"/>
                                 <include reference="RQH-16-aR0"/>
                                 <include reference="eMx-GK-jKi"/>
                                 <include reference="xsL-LK-Spv"/>
-                                <include reference="0uJ-19-wpQ"/>
+                                <include reference="XAR-0H-AhO"/>
+                                <include reference="hj9-Jz-crS"/>
+                                <include reference="zUv-yD-4cG"/>
+                                <include reference="9dE-Go-vyF"/>
+                                <include reference="CQv-s1-r8s"/>
+                                <include reference="Ua1-TY-Iza"/>
+                                <include reference="KxT-34-TXX"/>
+                                <include reference="Zko-Eq-xYE"/>
+                                <include reference="gas-V5-HeC"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="jxZ-K4-zO2">
-                        <barButtonItem key="rightBarButtonItem" image="alarm.png" id="xex-R3-e8M">
-                            <connections>
-                                <segue destination="tlC-7o-Omt" kind="presentation" id="BF3-aH-29v"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Profile" id="jxZ-K4-zO2"/>
                     <connections>
                         <outlet property="GiveRideButton" destination="JvP-FY-nQa" id="mVe-Od-7CW"/>
                         <outlet property="RequestRideButton" destination="IOT-18-Vrt" id="MsX-No-MnX"/>
@@ -1533,8 +1529,10 @@ Personal Data: Geographic position</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="vRS-TG-HM0">
+                                <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vRS-TG-HM0" id="mpf-OV-dj8">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1717,7 +1715,6 @@ Personal Data: Geographic position</string>
         </scene>
     </scenes>
     <resources>
-        <image name="alarm.png" width="24" height="24"/>
         <image name="feed.png" width="32" height="32"/>
         <image name="profile.png" width="32" height="32"/>
         <image name="settings.png" width="32" height="32"/>
