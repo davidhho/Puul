@@ -106,9 +106,8 @@ bool firstLoad;
         annotation.profilePic = [UIImage imageWithData:[pic getData]];
         if ([point[@"startAddress"] isEqualToString:@"Harvard Westlake High School"]){
             annotation.subtitle = point[@"endAddress"];
-            annotation.showInfo = [NSString stringWithFormat:@" %@ \n %@ \n %@ \n %@ %@ \n %@ %@",username[@"username"],point[@"endAddress"], point[@"time"], @"Cost:", point[@"pay"], @"Phone Number:", username[@"phone"]];
+            annotation.showInfo = [NSString stringWithFormat:@" %@ \n %@ \n %@ \n %@ %@ \n %@   	%@",username[@"username"],point[@"endAddress"], point[@"time"], @"Cost:", point[@"pay"], @"Phone Number:", username[@"phone"]];
             profileUser = username[@"installation"];
-
         }
         else{
             annotation.subtitle = point[@"startAddress"];
@@ -158,7 +157,7 @@ bool firstLoad;
         annotationView.canShowCallout = true;
             return annotationView;
     
-        }
+        }   
     if ([annotation isKindOfClass:[RideAnnotations class]])
     {
         MKPinAnnotationView *pinView=(MKPinAnnotationView*)[_mapView dequeueReusableAnnotationViewWithIdentifier:@"pin"];
