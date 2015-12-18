@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ckX-QO-aZP">
-=======
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ckX-QO-aZP">
->>>>>>> 0251eae6857ec4c97bd09a043317197ac31419ab
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -1002,11 +998,7 @@ Personal Data: Geographic position</string>
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ssL-ZI-FZ9" id="t0C-6Z-0G0">
-<<<<<<< HEAD
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
-=======
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="71.5"/>
->>>>>>> 0251eae6857ec4c97bd09a043317197ac31419ab
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmg-q4-xx6">
@@ -1203,7 +1195,13 @@ Personal Data: Geographic position</string>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="jxZ-K4-zO2"/>
+                    <navigationItem key="navigationItem" title="Profile" id="jxZ-K4-zO2">
+                        <barButtonItem key="rightBarButtonItem" image="alarm.png" id="xex-R3-e8M">
+                            <connections>
+                                <segue destination="tlC-7o-Omt" kind="presentation" id="BF3-aH-29v"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="GiveRideButton" destination="JvP-FY-nQa" id="mVe-Od-7CW"/>
                         <outlet property="RequestRideButton" destination="IOT-18-Vrt" id="MsX-No-MnX"/>
@@ -1588,11 +1586,7 @@ Personal Data: Geographic position</string>
                                 <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vRS-TG-HM0" id="mpf-OV-dj8">
-<<<<<<< HEAD
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
-=======
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
->>>>>>> 0251eae6857ec4c97bd09a043317197ac31419ab
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1791,6 +1785,7 @@ Personal Data: Geographic position</string>
         </scene>
     </scenes>
     <resources>
+        <image name="alarm.png" width="24" height="24"/>
         <image name="feed.png" width="32" height="32"/>
         <image name="profile.png" width="32" height="32"/>
         <image name="settings.png" width="32" height="32"/>

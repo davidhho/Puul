@@ -9,8 +9,6 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
-#import "DownPicker.h"
-
 
 @interface GreenAnnotation : NSObject <MKAnnotation>
 

@@ -60,12 +60,6 @@
 #define COCOAPODS_VERSION_MINOR_Bolts_Tasks 2
 #define COCOAPODS_VERSION_PATCH_Bolts_Tasks 0
 
-// DownPicker
-#define COCOAPODS_POD_AVAILABLE_DownPicker
-#define COCOAPODS_VERSION_MAJOR_DownPicker 0
-#define COCOAPODS_VERSION_MINOR_DownPicker 1
-#define COCOAPODS_VERSION_PATCH_DownPicker 34
-
 // Parse
 #define COCOAPODS_POD_AVAILABLE_Parse
 #define COCOAPODS_VERSION_MAJOR_Parse 1

@@ -18,7 +18,6 @@
 #import "EmailViewController.h"
 #import "LoginViewController.h"
 
-
 @implementation SettingsViewController
 
 -(void) viewDidLoad{
